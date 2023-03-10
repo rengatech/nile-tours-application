@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
@@ -18,6 +18,7 @@ onMounted(() => {
 
 })
 
+defineProps({ packages: Object });
 
 // defineProps({ user: Object })
 </script>
@@ -210,6 +211,28 @@ onMounted(() => {
                                         href="#"
                                         class="img d-flex justify-content-center align-items-center"
                                         style="
+                                            background-image: url(images/destination-2.jpg);
+                                        "
+                                    >
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            href="images/destination-2.jpg"
+                                        >
+                                            <span class="icon-search2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="text p-3">
+                                        <h3><a href="#">Ooty</a></h3>
+                                        <span class="listing"> Place name</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="destination">
+                                    <a
+                                        href="#"
+                                        class="img d-flex justify-content-center align-items-center"
+                                        style="
                                             background-image: url(images/destination-3.jpg);
                                         "
                                     >
@@ -297,6 +320,10 @@ onMounted(() => {
                 </div>
             </div>
         </section>
+
+<!-- ////// -->
+
+
 
         <section class="ftco-section bg-light">
             <div class="container-fluid">
@@ -561,7 +588,81 @@ onMounted(() => {
                 </div>
             </div>
         </section>
+<!-- //////////////////////////////////////////////////////////// -->
+        <section class="ftco-section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 heading-section ftco-animate">
+                        <span class="subheading">Special Offers</span>
+                        <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+                    </div>
 
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div
+                                class="col-md-4 ftco-animate"
+                                v-for="tourPackage in packages"
+                            >
+                                <div class="destination">
+                                    <a
+                                        href="#"
+                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourPackage.image +
+                                                ')',
+                                        }"
+                                    >
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            :href="'storage/' +tourPackage.image"
+                                        >
+                                            <span class="icon-search2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="text p-3">
+                                        <div class="d-flex">
+                                            <div class="one">
+                                                <h3>
+                                                    <!-- <a href="#"
+                                                            >Mysore, palace</a
+                                                        > -->
+                                                    {{ tourPackage.name }}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <!-- Far far away, behind the word
+                                                mountains, far from the
+                                                countries -->
+                                            {{ tourPackage.short_description }}
+                                        </p>
+                                        <p class="days">
+                                            <!-- <span>Oneday -5hours</span> -->
+                                        </p>
+                                        <hr />
+                                        <p class="bottom-area d-flex">
+                                            <span
+                                                ><i class="icon-map-o"></i>
+                                                {{ tourPackage.name}}</span
+                                            >
+                                            <span class="ml-auto">
+                                                <Link :href="'packages/'+tourPackage.url_slug" > Discover </Link>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- .col-md-8 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- //////////////////////////////// -->
         <section
             class="ftco-section ftco-counter img"
             id="section-counter"

@@ -158,7 +158,7 @@ defineProps({ packages: Object });
                                         <p class="bottom-area d-flex">
                                             <span
                                                 ><i class="icon-map-o"></i>
-                                                Mysore</span
+                                                {{ tourPackage.seo_title}}</span
                                             >
                                             <span class="ml-auto">
                                                 <Link :href="'/packages/'+tourPackage.url_slug" > Discover </Link>

@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/vue3";
 
 import Navbar from "../Components/Navbar.vue";
 import Footer from "../Components/Footer.vue";
+
 import { ref, onMounted } from 'vue'
 
 defineProps({
@@ -39,6 +40,7 @@ function appendMain() {
     <main>
         <article>
             <Navbar />
+
 
             <slot />
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ShowController;
 use App\Models\Package;
+use App\Models\Gallery;
 use App\Models\Destination;
 use Inertia\Inertia;
 
@@ -20,8 +21,17 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    return Inertia::render(
+        'Home',
+        [
+            'packages' => Package::all(),
+
+
+        ]
+    );
 })->name('home');
+
+
 
 Route::get('/packages', function () {
     return Inertia::render(
@@ -31,6 +41,7 @@ Route::get('/packages', function () {
         ]
     );
 })->name('packages');
+
 
 Route::get('/packages/{slug}', function ($slug) {
     return Inertia::render(
@@ -55,9 +66,17 @@ Route::get('/hotels', function () {
     return Inertia::render('Hotels');
 })->name('hotels');
 
+
+
 Route::get('/gallery', function () {
-    return Inertia::render('Gallery');
+    return Inertia::render(
+        'Gallery',
+        [
+            'gallery' => Gallery::all(),
+        ]
+    );
 })->name('gallery');
+
 
 Route::get('/reviews', function () {
     return Inertia::render('Reviews');

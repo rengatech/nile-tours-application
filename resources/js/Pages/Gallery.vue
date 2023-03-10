@@ -19,7 +19,7 @@ onMounted(() => {
 
 })
 
-
+defineProps({ gallery: Object });
 // defineProps({ user: Object })
 </script>
 
@@ -114,61 +114,18 @@ onMounted(() => {
                 <h2 class="mb-4"><strong>Gallery</strong> Place and Hotels</h2>
             </div>
 
-            <div class="container container--gallery">
+            <div class="container container--gallery" >
                 <div class="row">
-                    <div class="col-sm-6">
-                        <a class="photo-zoom" href="images/destination-1.jpg">
-                            <img src="images/destination-1.jpg" alt="" />
+                    <div class="col-sm-4"  v-for="tourgallery in gallery">
+                        <a class="photo-zoom"
+                        :href="'storage/' +tourgallery.image">
+                            <img
+                            v-bind:src="'storage/' +tourgallery.image"
+
+                                         />
                         </a>
                     </div>
 
-                    <div class="col-sm-6">
-                        <a class="photo-zoom" href="images/destination-2.jpg">
-                            <img src="images/destination-2.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a class="photo-zoom" href="images/destination-3.jpg">
-                            <img src="images/destination-3.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a class="photo-zoom" href="images/destination-5.jpg">
-                            <img src="images/destination-5.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a class="photo-zoom" href="images/destination-4.png">
-                            <img src="images/destination-4.png" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a class="photo-zoom" href="images/destination-6.jpg">
-                            <img src="images/destination-6.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <a class="photo-zoom" href="images/hotel-3.jpg">
-                            <img src="images/hotel-3.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-5">
-                        <a class="photo-zoom" href="images/hotel-1.jpg">
-                            <img src="images/hotel-1.jpg" alt="" />
-                        </a>
-                    </div>
-
-                    <div class="col-sm-7">
-                        <a class="photo-zoom" href="images/hotel-4.jpg">
-                            <img src="images/hotel-4.jpg" alt="" />
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>

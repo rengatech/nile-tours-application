@@ -103,7 +103,7 @@ import { Link } from "@inertiajs/vue3";
                                 >
                             </li>
                             <li class="nav-item cta">
-                                <Link href="/" class="nav-link"
+                                <Link href="#booknow1" class="nav-link"
                                     ><span>Book Now</span></Link
                                 >
                             </li>
@@ -111,6 +111,9 @@ import { Link } from "@inertiajs/vue3";
                     </div>
                 </div>
             </nav>
+
         </header>
+
     </main>
+
 </template>

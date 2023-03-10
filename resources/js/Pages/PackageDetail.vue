@@ -1,6 +1,20 @@
 <script setup>
 import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
+import { useForm } from "@inertiajs/vue3";
+import { ref, onMounted } from "vue";
+
+const form = useForm({
+    project_name: "",
+    sitemap_path: "",
+    csrf: "",
+});
+
+onMounted(() => {
+    form.csrf = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
+});
 
 defineProps({ package: Object });
 </script>
@@ -30,24 +44,19 @@ defineProps({ package: Object });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                >
+                            <span class="mr-2">
                                 <Link href="/"> Home </Link>
-
-                                </span
-                            >
-                            <span class="mr-2"
-                                >
+                            </span>
+                            <span class="mr-2">
                                 <Link href="/packages"> Packages </Link>
-                            </span
-                            >
+                            </span>
                             <span>{{ package.name }}</span>
                         </p>
                         <h1
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                        {{ package.name }}
+                            {{ package.name }}
                         </h1>
                     </div>
                 </div>
@@ -66,15 +75,31 @@ defineProps({ package: Object });
             <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
             <small>I'll get back to you as quickly as possible</small>
 
-            <form action="#">
-                <input placeholder="Name" type="text" required />
-                <input placeholder="Email" type="email" required />
-                <input placeholder="Mobile Number" type="text" required />
-                <input placeholder="Travel Date" type="date" required />
-                <input placeholder="Number Of Members" type="number" required />
-                <textarea placeholder="Message"></textarea>
-                <input class="formBtn" type="submit" />
-                <input class="formBtn" type="reset" />
+            <form method="POST" action="/leads">
+                <input type="hidden" name="_token" :value="form.csrf" />
+                <input placeholder="Name" type="text" name="name" required />
+                <input placeholder="Email" type="email" name="email" required />
+                <input
+                    placeholder="Mobile Number"
+                    type="text"
+                    name="mobile_number"
+                    required
+                />
+                <input
+                    placeholder="Travel Date"
+                    type="date"
+                    name="travel_date"
+                    required
+                />
+                <input
+                    placeholder="Number Of Members"
+                    type="number"
+                    name="number_of_members"
+                    required
+                />
+                <textarea placeholder="Message" name="message"></textarea>
+                <input class="formBtn btnsubmit" type="submit" />
+                <!-- <input class="formBtn" type="reset" /> -->
             </form>
         </div>
         <section class="ftco-section ftco-degree-bg">
