@@ -1,8 +1,8 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
+
 
 const form = useForm({
     project_name: "",
@@ -120,39 +120,49 @@ defineProps({ destination: Object });
                         <div
                             class="destination-slider owl-carousel ftco-animate"
                         >
-                        <div  v-for="tourdestination in destination">
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="/"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        v-bind:style="{
-                                            backgroundImage:
-                                                'url(storage/' +
-                                                tourdestination.image +
-                                                ')',
-                                        }"
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center  image-popup-vertical-fit"
-                                            :href="'storage/' +tourdestination.image"
+                            <div v-for="tourdestination in destination">
+                                <div class="item">
+                                    <div class="destination">
+                                        <a
+                                            href="/"
+                                            class="img d-flex justify-content-center align-items-center"
+                                            v-bind:style="{
+                                                backgroundImage:
+                                                    'url(storage/' +
+                                                    tourdestination.image +
+                                                    ')',
+                                            }"
                                         >
-                                            <span class="icon-search2"></span>
+                                            <div
+                                                class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                                :href="
+                                                    'storage/' +
+                                                    tourdestination.image
+                                                "
+                                            >
+                                                <span
+                                                    class="icon-search2"
+                                                ></span>
+                                            </div>
+                                        </a>
+                                        <div class="text p-3">
+                                            <h3>
+                                                <!-- <a href="#">Ooty</a> -->
+                                                {{ tourdestination.name }}
+                                            </h3>
+                                            <!-- <span class="listing">Place name</span> -->
+                                            <Link
+                                                :href="
+                                                    '/destination/' +
+                                                    tourdestination.url_slug
+                                                "
+                                            >
+                                                Discover
+                                            </Link>
                                         </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3>
-                                            <!-- <a href="#">Ooty</a> -->
-                                            {{ tourdestination.name }}
-                                        </h3>
-                                        <!-- <span class="listing">Place name</span> -->
-                                        <Link :href="'/destination/'+tourdestination.url_slug" > Discover </Link>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
                         </div>
                     </div>
                 </div>

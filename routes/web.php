@@ -5,6 +5,7 @@ use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ShowController;
 use App\Models\Package;
+use App\Models\Hotel;
 use App\Models\Gallery;
 use App\Models\Destination;
 use Inertia\Inertia;
@@ -25,9 +26,8 @@ Route::get('/', function () {
         'Home',
         [
             'packages' => Package::all(),
-
-
         ]
+
     );
 })->name('home');
 
@@ -43,6 +43,7 @@ Route::get('/packages', function () {
 })->name('packages');
 
 
+
 Route::get('/packages/{slug}', function ($slug) {
     return Inertia::render(
         'PackageDetail',
@@ -51,6 +52,7 @@ Route::get('/packages/{slug}', function ($slug) {
         ]
     );
 })->name('package.detail');
+
 
 Route::get('/destinations', function () {
     return Inertia::render(
@@ -62,8 +64,14 @@ Route::get('/destinations', function () {
     );
 })->name('destinations');
 
+
 Route::get('/hotels', function () {
-    return Inertia::render('Hotels');
+    return Inertia::render(
+        'Hotels',
+        [
+            'hotel' => Hotel::all(),
+        ]
+    );
 })->name('hotels');
 
 

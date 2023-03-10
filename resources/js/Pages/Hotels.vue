@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
@@ -16,6 +16,7 @@ onMounted(() => {
         .getAttribute("content");
 });
 
+defineProps({ hotel: Object });
 
 // defineProps({ user: Object })
 </script>
@@ -40,9 +41,7 @@ onMounted(() => {
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><a href="/">Home</a></span
-                            >
+                            <span class="mr-2"><a href="/">Home</a></span>
                             <span>Hotel</span>
                         </p>
                         <h1
@@ -110,13 +109,11 @@ onMounted(() => {
                 <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Special Offers</span>
-                        <h2 class="mb-4">
-                            <strong>Popular</strong> Hotels &amp; Rooms
-                        </h2>
+                        <h2 class="mb-4"><strong>Popular</strong> Hotels</h2>
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
+            <div class="container">
                 <div class="bookForm">
                     <div class="d-flex justify-content-end">
                         <img
@@ -129,271 +126,104 @@ onMounted(() => {
                     <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
                     <small>I'll get back to you as quickly as possible</small>
 
-                    <form action="#">
-                        <input placeholder="Name" type="text" required />
-                        <input placeholder="Email" type="email" required />
+                    <form method="POST" action="/leads">
+                        <input type="hidden" name="_token" :value="form.csrf" />
+                        <input
+                            placeholder="Name"
+                            type="text"
+                            name="name"
+                            required
+                        />
+                        <input
+                            placeholder="Email"
+                            type="email"
+                            name="email"
+                            required
+                        />
                         <input
                             placeholder="Mobile Number"
                             type="text"
+                            name="mobile_number"
                             required
                         />
-                        <input placeholder="Travel Date" type="date" required />
+                        <input
+                            placeholder="Travel Date"
+                            type="date"
+                            name="travel_date"
+                            required
+                        />
                         <input
                             placeholder="Number Of Members"
                             type="number"
+                            name="number_of_members"
                             required
                         />
-                        <textarea placeholder="Message"></textarea>
-                        <input class="formBtn" type="submit" />
-                        <input class="formBtn" type="reset" />
+                        <textarea
+                            placeholder="Message"
+                            name="message"
+                        ></textarea>
+                        <input class="formBtn btnsubmit" type="submit" />
+                        <!-- <input class="formBtn" type="reset" /> -->
                     </form>
                 </div>
-                <div class="row">
-                    <div class="col-sm col-md-6 col-lg ftco-animate">
-                        <div class="destination">
-                            <a
-                                href="hotel-single.html"
-                                class="img img-2 d-flex justify-content-center align-items-center"
-                                style="
-                                    background-image: url(images/hotel-1.jpg);
-                                "
-                            >
-                                <div
-                                    class="icon d-flex justify-content-center align-items-center"
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div
+                            class="col-md-4 ftco-animate"
+                            v-for="tourHotel in hotel"
+                        >
+                            <div class="destination">
+                                <a
+                                    href="#"
+                                    class="img img-2 d-flex justify-content-center align-items-center"
+                                    v-bind:style="{
+                                        backgroundImage:
+                                            'url(storage/' +
+                                            tourHotel.image +
+                                            ')',
+                                    }"
                                 >
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Hotel, Ooty</a></h3>
-                                        <!-- <p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<span>5 Rating</span>
-		    						</p> -->
+                                    <div
+                                        class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                        :href="'storage/' + tourHotel.image"
+                                    >
+                                        <span class="icon-search2"></span>
                                     </div>
-                                    <!-- <div class="two">
-	    							<span class="price per-price">₹500<br><small>/night</small></span>
-    							</div> -->
-                                </div>
-                                <p>
-                                    Far far away, behind the word mountains, far
-                                    from the countries
-                                </p>
-                                <hr />
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> Ooty</span>
-                                    <span class="ml-auto"
-                                        ><a href="#booknow1" class="book"
-                                            >Book Now</a
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm col-md-6 col-lg ftco-animate">
-                        <div class="destination">
-                            <a
-                                href="#"
-                                class="img img-2 d-flex justify-content-center align-items-center"
-                                style="
-                                    background-image: url(images/hotel-2.jpg);
-                                "
-                            >
-                                <div
-                                    class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                    href="images/hotel-2.jpg"
-                                >
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Hotel, Mysore</a></h3>
-                                        <!-- <p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p> -->
+                                </a>
+                                <div class="text p-3">
+                                    <div class="d-flex">
+                                        <div class="one">
+                                            <h3>
+                                                <!-- <a href="#"
+                                                            >Mysore, palace</a
+                                                        > -->
+                                                {{ tourHotel.name }}
+                                            </h3>
+                                        </div>
                                     </div>
-                                    <!-- <div class="two">
-	    							<span class="price per-price">₹500<br><small>/night</small></span>
-    							</div> -->
+                                    <p>
+                                        <!-- Far far away, behind the word
+                                                mountains, far from the
+                                                countries -->
+                                        {{ tourHotel.short_description }}
+                                    </p>
+                                    <p class="days">
+                                        <!-- <span>Oneday -5hours</span> -->
+                                    </p>
+                                    <hr />
+                                    <p class="bottom-area d-flex">
+                                        <span
+                                            ><i class="icon-map-o"></i>
+                                            {{ tourHotel.seo_title }}</span
+                                        >
+                                        <span class="ml-auto">
+                                            <a href="#booknow1" class="book"
+                                                >Book Now</a
+                                            >
+                                        </span>
+                                    </p>
                                 </div>
-                                <p>
-                                    Far far away, behind the word mountains, far
-                                    from the countries
-                                </p>
-                                <hr />
-                                <p class="bottom-area d-flex">
-                                    <span
-                                        ><i class="icon-map-o"></i> Mysore</span
-                                    >
-                                    <span class="ml-auto"
-                                        ><a href="#booknow1" class="book"
-                                            >Book Now</a
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm col-md-6 col-lg ftco-animate">
-                        <div class="destination">
-                            <a
-                                href="#"
-                                class="img img-2 d-flex justify-content-center align-items-center"
-                                style="
-                                    background-image: url(images/hotel-3.jpg);
-                                "
-                            >
-                                <div
-                                    class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                    href="images/hotel-3.jpg"
-                                >
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Hotel, Ooty</a></h3>
-                                        <!-- <p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p> -->
-                                    </div>
-                                    <!-- <div class="two">
-	    							<span class="price per-price">₹600<br><small>/night</small></span>
-    							</div> -->
-                                </div>
-                                <p>
-                                    Far far away, behind the word mountains, far
-                                    from the countries
-                                </p>
-                                <hr />
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> Ooty</span>
-                                    <span class="ml-auto"
-                                        ><a href="#booknow1" class="book"
-                                            >Book Now</a
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm col-md-6 col-lg ftco-animate">
-                        <div class="destination">
-                            <a
-                                href="#"
-                                class="img img-2 d-flex justify-content-center align-items-center"
-                                style="
-                                    background-image: url(images/hotel-4.jpg);
-                                "
-                            >
-                                <div
-                                    class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                    href="images/hotel-4.jpg"
-                                >
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Hotel, Mysore</a></h3>
-                                        <!-- <p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p> -->
-                                    </div>
-                                    <!-- <div class="two">
-	    							<span class="price per-price">₹1000<br><small>/night</small></span>
-    							</div> -->
-                                </div>
-                                <p>
-                                    Far far away, behind the word mountains, far
-                                    from the countries
-                                </p>
-                                <hr />
-                                <p class="bottom-area d-flex">
-                                    <span
-                                        ><i class="icon-map-o"></i> Mysore</span
-                                    >
-                                    <span class="ml-auto"
-                                        ><a href="#booknow1" class="book"
-                                            >Book Now</a
-                                        ></span
-                                    >
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm col-md-6 col-lg ftco-animate">
-                        <div class="destination">
-                            <a
-                                href="#"
-                                class="img img-2 d-flex justify-content-center align-items-center"
-                                style="
-                                    background-image: url(images/hotel-5.jpg);
-                                "
-                            >
-                                <div
-                                    class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                    href="images/hotel-5.jpg"
-                                >
-                                    <span class="icon-search2"></span>
-                                </div>
-                            </a>
-                            <div class="text p-3">
-                                <div class="d-flex">
-                                    <div class="one">
-                                        <h3><a href="#">Hotel, Ooty</a></h3>
-                                        <!-- <p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p> -->
-                                    </div>
-                                    <!-- <div class="two">
-	    							<span class="price per-price">₹700<br><small>/night</small></span>
-    							</div> -->
-                                </div>
-                                <p>
-                                    Far far away, behind the word mountains, far
-                                    from the countries
-                                </p>
-                                <hr />
-                                <p class="bottom-area d-flex">
-                                    <span><i class="icon-map-o"></i> Ooty</span>
-                                    <span class="ml-auto"
-                                        ><a href="#booknow1" class="book"
-                                            >Book Now</a
-                                        ></span
-                                    >
-                                </p>
                             </div>
                         </div>
                     </div>

@@ -109,7 +109,7 @@ defineProps({ gallery: Object });
         </div>
         <!-- Gallery Start-->
         <section>
-            <div class="container">
+            <div class="container mt-4">
                 <span class="subheading">Gallery</span>
                 <h2 class="mb-4"><strong>Gallery</strong> Place and Hotels</h2>
             </div>
