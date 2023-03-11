@@ -17,15 +17,20 @@ onMounted(() => {
         .getAttribute("content");
 });
 
-defineProps({ packages: Object });
+defineProps({ packages: Object, page: Object });
 </script>
 
 <template>
-    <HomeLayout>
+    <HomeLayout
+    :title="page.title"
+    :seo_meta_description="page.meta_description"
+    >
+
         <div
             class="hero-wrap js-fullheight"
-            style="background-image: url('/images/bg_2.jpg')"
-
+            v-bind:style="{
+                backgroundImage: 'url(storage/' + page.background_image + ')',
+            }"
         >
             <div class="overlay"></div>
             <div class="container">
@@ -130,7 +135,9 @@ defineProps({ packages: Object });
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            :href="'storage/' +tourPackage.image"
+                                            :href="
+                                                'storage/' + tourPackage.image
+                                            "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
@@ -159,17 +166,25 @@ defineProps({ packages: Object });
                                         <p class="bottom-area d-flex">
                                             <span
                                                 ><i class="icon-map-o"></i>
-                                                {{ tourPackage.seo_title}}</span
+                                                {{
+                                                    tourPackage.seo_title
+                                                }}</span
                                             >
                                             <span class="ml-auto">
-                                                <Link :href="'/packages/'+tourPackage.url_slug" > Discover </Link>
+                                                <Link
+                                                    :href="
+                                                        '/packages/' +
+                                                        tourPackage.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
                                             </span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- .col-md-8 -->
                 </div>

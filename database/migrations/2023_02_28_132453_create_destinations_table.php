@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('seo/title');
+            $table->string('seo_title');
             $table->text('description');
-            $table->text('seo/meta description');
+            $table->text('seo_meta_description');
             $table->timestamps();
         });
     }

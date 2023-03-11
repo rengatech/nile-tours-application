@@ -8,6 +8,7 @@ use App\Models\Package;
 use App\Models\Hotel;
 use App\Models\Gallery;
 use App\Models\Destination;
+use App\Models\Page;
 use Inertia\Inertia;
 
 /*
@@ -26,6 +27,9 @@ Route::get('/', function () {
         'Home',
         [
             'packages' => Package::all(),
+            'page' => Page::where('name', 'Home')->first(),
+            'hotels' => Hotel::all(),
+
         ]
 
     );
@@ -38,6 +42,8 @@ Route::get('/packages', function () {
         'Packages',
         [
             'packages' => Package::all(),
+            'page' => Page::where('name', 'Packages')->first(),
+
         ]
     );
 })->name('packages');
@@ -59,7 +65,9 @@ Route::get('/destinations', function () {
 
         'Destinations',
         [
-            'destination' => Destination::all(),
+            'destinations' => Destination::all(),
+            'page' => Page::where('name', 'Destinations')->first(),
+
         ]
     );
 })->name('destinations');
@@ -69,7 +77,8 @@ Route::get('/hotels', function () {
     return Inertia::render(
         'Hotels',
         [
-            'hotel' => Hotel::all(),
+            'hotels' => Hotel::all(),
+            'page' => Page::where('name', 'Hotels')->first(),
         ]
     );
 })->name('hotels');
@@ -81,17 +90,31 @@ Route::get('/gallery', function () {
         'Gallery',
         [
             'gallery' => Gallery::all(),
+            'page' => Page::where('name', 'Gallery')->first(),
         ]
     );
 })->name('gallery');
 
 
 Route::get('/reviews', function () {
-    return Inertia::render('Reviews');
+    return Inertia::render(
+        'Reviews',
+        [
+            'page' => Page::where('name', 'Reviews')->first(),
+        ]
+    );
 })->name('reviews');
 
+
+
 Route::get('/contact-us', function () {
-    return Inertia::render('Contact-us');
+    return Inertia::render(
+        'Contact-us',
+        [
+            'page' => Page::where('name', 'Contact-us')->first(),
+        ]
+    );
 })->name('contact_us');
+
 
 Route::post('/leads', [LeadController::class, 'store']);

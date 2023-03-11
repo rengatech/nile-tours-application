@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 
 class PackageResource extends Resource
 {
@@ -33,22 +34,12 @@ class PackageResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                MarkdownEditor::make('description')
-                ->required()
-                ->toolbarButtons([
-                    'bold',
-                    'bulletList',
-                    'edit',
-                    'italic',
-                    'link',
-                    'orderedList',
-                    'preview',
-                    'strike',
-                ]),
 
                 Forms\Components\TextInput::make('seo_title')
                 ->required()
                 ->maxLength(255),
+
+
 
                 Forms\Components\TextInput::make('url_slug')
                 ->required()
@@ -62,6 +53,18 @@ class PackageResource extends Resource
                     ->required()->preserveFilenames()
                     ->visibility('public'),
 
+
+                RichEditor::make('description')
+                ->toolbarButtons([
+                    'blockquote',
+                    'bold',
+                    'bulletList',
+                    'h2',
+                    'h3',
+                    'italic',
+                    'orderedList',
+                    'strike',
+                ]),
 
             ]);
 

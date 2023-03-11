@@ -19,15 +19,20 @@ onMounted(() => {
 
 })
 
-defineProps({ gallery: Object });
+defineProps({ gallery: Object, page: Object  });
 // defineProps({ user: Object })
 </script>
 
 <template>
-    <HomeLayout>
+    <HomeLayout
+    :title="page.title"
+    :seo_meta_description="page.meta_description"
+    >
         <div
             class="hero-wrap js-fullheight"
-            style="background-image: url('images/bg_6.jpg')"
+            v-bind:style="{
+                backgroundImage: 'url(storage/' + page.background_image + ')',
+            }"
         >
             <div class="overlay"></div>
             <div class="container">

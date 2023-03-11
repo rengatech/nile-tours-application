@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { Head, Link } from "@inertiajs/vue3";
+</script>
 
 <template>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -38,35 +40,35 @@
                         <h2 class="ftco-heading-2">Information</h2>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="destinations.html" class="py-2 d-block"
-                                    >Destination</a
+                                <Link href="/destinations" class="py-2 d-block"
+                                    >Destination</Link
                                 >
                             </li>
                             <li>
-                                <a href="Packages.html" class="py-2 d-block"
-                                    >Packages</a
+                                <Link href="/packages" class="py-2 d-block"
+                                    >Packages</Link
                                 >
                             </li>
                             <li>
-                                <a href="hotel.html" class="py-2 d-block"
-                                    >Hotels</a
+                                <Link href="/hotels" class="py-2 d-block"
+                                    >Hotels</Link
                                 >
                             </li>
                             <li>
-                                <a href="reviews.html" class="py-2 d-block"
-                                    >Reviews</a
+                                <Link href="/reviews" class="py-2 d-block"
+                                    >Reviews</Link
                                 >
                             </li>
                             <li>
-                                <a href="Gallery.html" class="py-2 d-block"
-                                    >Gallery</a
+                                <Link href="/gallery" class="py-2 d-block"
+                                    >Gallery</Link
                                 >
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="py-2 d-block"
                                     >Privacy and Policy</a
                                 >
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -75,9 +77,9 @@
                         <h2 class="ftco-heading-2">Customer Support</h2>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="faq.html" class="py-2 d-block">FAQ</a>
+                                <Link href="/contact-us" class="py-2 d-block">FAQ</Link>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" class="py-2 d-block"
                                     >Payment Option</a
                                 >
@@ -91,10 +93,10 @@
                                 <a href="#" class="py-2 d-block"
                                     >How it works</a
                                 >
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="contact.html" class="py-2 d-block"
-                                    >Contact Us</a
+                                <Link href="/contact-us" class="py-2 d-block"
+                                    >Contact Us</Link
                                 >
                             </li>
                         </ul>

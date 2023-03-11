@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\GalleryResource\Pages;
 use App\Filament\Resources\GalleryResource\RelationManagers;
 use App\Models\Gallery;
-use App\Filament\Resources\GalleryResource\Pages\ListGalleries;
+use App\Filament\Resources\GalleryResource\Pages\ListGallery;
 use App\Filament\Resources\GalleryResource\Pages\CreateGallery;
 use App\Filament\Resources\GalleryResource\Pages\EditGallery;
 use Filament\Forms;
@@ -20,6 +20,10 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
+
+    public static ?string $label = 'Image';
+
+    protected static ?string $pluralModelLabel = 'Gallery';
 
     protected static ?string $navigationIcon = 'heroicon-o-camera';
 
@@ -64,7 +68,7 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGalleries::route('/'),
+            'index' => Pages\ListGallery::route('/'),
             'create' => Pages\CreateGallery::route('/create'),
             'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];

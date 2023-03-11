@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 
 
 
@@ -35,31 +36,33 @@ class DestinationResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\TextInput::make('seo/title')
+                Forms\Components\TextInput::make('seo_title')
                 ->required()
                 ->maxLength(255),
 
-                FileUpload::make('image')->image()
-                    ->required()->preserveFilenames()
-                    ->visibility('public'),
 
-                Forms\Components\Textarea::make('seo/meta description')
+                RichEditor::make('description')
+                ->toolbarButtons([
+                    'blockquote',
+                    'bold',
+                    'bulletList',
+                    'h2',
+                    'h3',
+                    'italic',
+                    'orderedList',
+                    'strike',
+                ]),
+
+                FileUpload::make('image')->image()
+                ->required()->preserveFilenames()
+                ->visibility('public'),
+
+                Forms\Components\Textarea::make('seo_meta_description')
                 ->required()
                 ->maxLength(65535),
 
 
-                MarkdownEditor::make('description')
-                ->toolbarButtons([
-                    'attachFiles',
-                    'bold',
-                    'bulletList',
-                    'edit',
-                    'italic',
-                    'link',
-                    'orderedList',
-                    'preview',
-                    'strike',
-                ]),
+
             ]);
 
     }
@@ -72,9 +75,9 @@ class DestinationResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('seo/title'),
+                Tables\Columns\TextColumn::make('seo_title'),
                 Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('seo/meta description'),
+                Tables\Columns\TextColumn::make('seo_meta_description'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')

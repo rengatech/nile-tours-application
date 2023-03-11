@@ -17,14 +17,16 @@ onMounted(() => {
         .getAttribute("content");
 });
 
-// defineProps({ user: Object })
+defineProps({ page: Object });
 </script>
 
 <template>
     <HomeLayout>
         <div
             class="hero-wrap js-fullheight"
-            style="background-image: url('images/bg-7.jpg')"
+            v-bind:style="{
+                backgroundImage: 'url(storage/' + page.background_image + ')',
+            }"
         >
             <div class="overlay"></div>
             <div class="container">
@@ -40,9 +42,7 @@ onMounted(() => {
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><a href="/">Home</a></span
-                            >
+                            <span class="mr-2"><a href="/">Home</a></span>
                             <span>Packages</span>
                         </p>
                         <h1
@@ -208,8 +208,8 @@ onMounted(() => {
                                 </div>
                                 <!--name-and-username-->
                                 <div class="name-user">
-                                    <strong>Sathees Kumar</strong>
-                                    <span>@kokkikumar</span>
+                                    <strong>Ajay Kumar</strong>
+                                    <span>@Ajay kumar</span>
                                 </div>
                             </div>
                             <!--reviews------>

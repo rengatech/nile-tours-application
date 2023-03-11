@@ -10,7 +10,7 @@ class Destination extends Model
     use HasFactory;
 
 
-    protected $fillable = ['name', 'image', 'seo/title', 'description', 'seo/meta description',];
+    protected $fillable = ['name', 'image', 'seo_title', 'description', 'seo_meta_description',];
 
     protected $casts = [
         'image' => 'array',

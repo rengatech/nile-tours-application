@@ -16,16 +16,21 @@ onMounted(() => {
         .getAttribute("content");
 });
 
-defineProps({ hotel: Object });
+defineProps({ hotels: Object , page: Object  });
 
 // defineProps({ user: Object })
 </script>
 
 <template>
-    <HomeLayout>
+    <HomeLayout
+    :title="page.title"
+    :seo_meta_description="page.meta_description"
+    >
         <div
             class="hero-wrap js-fullheight"
-            style="background-image: url('images/bg_8.jpg')"
+            v-bind:style="{
+                backgroundImage: 'url(storage/' + page.background_image + ')',
+            }"
         >
             <div class="overlay"></div>
             <div class="container">
@@ -171,7 +176,7 @@ defineProps({ hotel: Object });
                     <div class="row">
                         <div
                             class="col-md-4 ftco-animate"
-                            v-for="tourHotel in hotel"
+                            v-for="tourHotel in hotels"
                         >
                             <div class="destination">
                                 <a

@@ -3,7 +3,6 @@ import HomeLayout from "../Layouts/HomeLayout.vue";
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
 
-
 const form = useForm({
     project_name: "",
     sitemap_path: "",
@@ -15,15 +14,19 @@ onMounted(() => {
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content");
 });
-defineProps({ destination: Object });
-// defineProps({ user: Object })
+defineProps({ destinations: Object, page: Object });
 </script>
 
 <template>
-    <HomeLayout>
+    <HomeLayout
+    :title="page.title"
+    :seo_meta_description="page.meta_description"
+    >
         <div
             class="hero-wrap js-fullheight"
-            style="background-image: url('images/bg_3.jpg')"
+            v-bind:style="{
+                backgroundImage: 'url(storage/' + page.background_image + ')',
+            }"
         >
             <div class="overlay"></div>
             <div class="container">
@@ -107,64 +110,144 @@ defineProps({ destination: Object });
         <!-- destination Start-->
         <section class="ftco-section ftco-destination">
             <div class="container">
-                <div class="row justify-content-start mb-5 pb-3">
+                <!-- <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Featured</span>
                         <h2 class="mb-4">
                             <strong>Featured</strong> Destination
                         </h2>
                     </div>
-                </div>
-                <div class="row">
+                </div> -->
+                <!-- <div class="row">
                     <div class="col-md-12">
                         <div
                             class="destination-slider owl-carousel ftco-animate"
                         >
-                            <div v-for="tourdestination in destination">
-                                <div class="item">
-                                    <div class="destination">
-                                        <a
-                                            href="/"
-                                            class="img d-flex justify-content-center align-items-center"
-                                            v-bind:style="{
-                                                backgroundImage:
-                                                    'url(storage/' +
-                                                    tourdestination.image +
-                                                    ')',
-                                            }"
+                            <div
+                                class="item"
+                                v-for="tourdestination in destinations"
+                            >
+                                <div class="destination">
+                                    <a
+                                        href="/"
+                                        class="img d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourdestination.image +
+                                                ')',
+                                        }"
+                                    >
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            :href="
+                                                'storage/' +
+                                                tourdestination.image
+                                            "
                                         >
-                                            <div
-                                                class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                                :href="
-                                                    'storage/' +
-                                                    tourdestination.image
-                                                "
-                                            >
-                                                <span
-                                                    class="icon-search2"
-                                                ></span>
-                                            </div>
-                                        </a>
-                                        <div class="text p-3">
-                                            <h3>
-                                                <!-- <a href="#">Ooty</a> -->
-                                                {{ tourdestination.name }}
-                                            </h3>
-                                            <!-- <span class="listing">Place name</span> -->
-                                            <Link
-                                                :href="
-                                                    '/destination/' +
-                                                    tourdestination.url_slug
-                                                "
-                                            >
-                                                Discover
-                                            </Link>
+                                            <span class="icon-search2"></span>
                                         </div>
+                                    </a>
+                                    <div class="text p-3">
+                                        <h3> -->
+                                            <!-- <a href="#">Ooty</a> -->
+                                            <!-- {{ tourdestination.name }}
+                                        </h3> -->
+                                        <!-- <span class="listing">Place name</span> -->
+                                        <!-- <Link
+                                            :href="
+                                                '/destination/' +
+                                                tourdestination.url_slug
+                                            "
+                                        >
+                                            Discover
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div> -->
+
+                <div class="row">
+                    <div class="col-md-7 heading-section ftco-animate">
+                        <span class="subheading">Featured</span>
+                        <h2 class="mb-4">
+                            <strong>Featured</strong> Destination
+                        </h2>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div
+                                class="col-md-4 ftco-animate"
+                                v-for="tourdestination in destinations"
+                            >
+                                <div class="destination">
+                                    <a
+                                        href="#"
+                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourdestination.image +
+                                                ')',
+                                        }"
+                                    >
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            :href="
+                                                'storage/' + tourdestination.image
+                                            "
+                                        >
+                                            <span class="icon-search2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="text p-3">
+                                        <div class="d-flex">
+                                            <div class="one">
+                                                <h3>
+                                                    <!-- <a href="#"
+                                                            >Mysore, palace</a
+                                                        > -->
+                                                    {{ tourdestination.name }}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <!-- Far far away, behind the word
+                                                mountains, far from the
+                                                countries -->
+                                            {{ tourdestination.short_description }}
+                                        </p>
+                                        <p class="days">
+                                            <!-- <span>Oneday -5hours</span> -->
+                                        </p>
+                                        <hr />
+                                        <p class="bottom-area d-flex">
+                                            <span
+                                                ><i class="icon-map-o"></i>
+                                                {{
+                                                    tourdestination.seo_title
+                                                }}</span
+                                            >
+                                            <span class="ml-auto">
+                                                <Link
+                                                    :href="
+                                                        '/packages/' +
+                                                        tourdestination.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .col-md-8 -->
                 </div>
             </div>
         </section>

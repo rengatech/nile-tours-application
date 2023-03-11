@@ -6,7 +6,7 @@ use App\Filament\Resources\GalleryResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListGalleries extends ListRecords
+class ListGallery extends ListRecords
 {
     protected static string $resource = GalleryResource::class;
 

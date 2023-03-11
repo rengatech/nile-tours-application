@@ -16,7 +16,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 
 class HotelResource extends Resource
 {
@@ -36,18 +36,6 @@ class HotelResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                MarkdownEditor::make('description')
-                    ->required()
-                    ->toolbarButtons([
-                        'bold',
-                        'bulletList',
-                        'edit',
-                        'italic',
-                        'link',
-                        'orderedList',
-                        'preview',
-                        'strike',
-                    ]),
 
                 Forms\Components\TextInput::make('seo_title')
                     ->required()
@@ -61,10 +49,23 @@ class HotelResource extends Resource
                     ->required()
                     ->maxLength(255),
 
+
                 FileUpload::make('image')->image()
                     ->required()->preserveFilenames()
                     ->visibility('public'),
 
+
+                    RichEditor::make('description')
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'orderedList',
+                        'strike',
+                    ]),
             ]);
     }
 
