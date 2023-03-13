@@ -24,13 +24,13 @@ defineProps({ contact_us: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page.title"
-    :seo_meta_description="page.meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_2.jpg)',
             }"
         >
             <div class="overlay"></div>

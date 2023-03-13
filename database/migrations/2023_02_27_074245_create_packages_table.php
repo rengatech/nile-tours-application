@@ -16,10 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('short_description');
             $table->text('description');
-            $table->string('image')->nullable();
+            $table->string('thumbnail_image')->nullable();
+            $table->string('images')->nullable();
             $table->string('url_slug');
             $table->string('seo_title');
             $table->string('seo_meta_description');
+            $table->string('youtube_embed_video_url');
             $table->timestamps();
         });
     }

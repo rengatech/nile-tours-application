@@ -22,14 +22,13 @@ defineProps({ packages: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page.title"
-    :seo_meta_description="page.meta_description"
+        :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :seo_meta_description="page?.meta_description"
     >
-
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_2.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -129,14 +128,14 @@ defineProps({ packages: Object, page: Object });
                                         v-bind:style="{
                                             backgroundImage:
                                                 'url(storage/' +
-                                                tourPackage.image +
+                                                tourPackage.thumbnail_image +
                                                 ')',
                                         }"
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourPackage.image
+                                                'storage/' + tourPackage.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
@@ -187,8 +186,11 @@ defineProps({ packages: Object, page: Object });
                         </div>
                     </div>
                     <!-- .col-md-8 -->
+
                 </div>
+
             </div>
+
         </section>
     </HomeLayout>
 </template>

@@ -11,18 +11,16 @@ const form = useForm({
 });
 
 onMounted(() => {
-
     form.csrf = document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content");
-
-})
+});
 
 defineProps({
     packages: Object,
     page: Object,
     hotels: Object,
-    destinations: Object
+    destinations: Object,
 });
 
 // defineProps({ user: Object })
@@ -30,14 +28,13 @@ defineProps({
 
 <template>
     <HomeLayout
-        :title="page.title"
-        :seo_meta_description="page.meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :seo_meta_description="page?.meta_description"
     >
-
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_1.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -164,184 +161,94 @@ defineProps({
                         </h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div
-                            class="destination-slider owl-carousel  ftco-animate"
-                        >
-                            <div class="item">
+                <div class="row justify-content-center ftco-animate">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div
+                                class="col-md-4 ftco-animate"
+                                v-for="tourdestination in destinations"
+                            >
                                 <div class="destination">
                                     <a
                                         href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-1.jpg);
-                                        "
+                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourdestination.image +
+                                                ')',
+                                        }"
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-1.jpg"
-                                        >
-                                            <!-- <a class="photo-zoom" href="images/destination-1.jpg">
-											<img src="images/destination-1.jpg" alt="" />
-										  </a> -->
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Ooty</a></h3>
-                                        <span class="listing">Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-2.jpg);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-2.jpg"
+                                            :href="
+                                                'storage/' + tourdestination.image
+                                            "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
                                     </a>
                                     <div class="text p-3">
-                                        <h3><a href="#">Ooty</a></h3>
-                                        <span class="listing"> Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-2.jpg);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-2.jpg"
-                                        >
-                                            <span class="icon-search2"></span>
+                                        <div class="d-flex">
+                                            <div class="one">
+                                                <h3>
+                                                    <!-- <a href="#"
+                                                            >Mysore, palace</a
+                                                        > -->
+                                                    {{ tourdestination.name }}
+                                                </h3>
+                                            </div>
                                         </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Ooty</a></h3>
-                                        <span class="listing"> Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-3.jpg);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-3.jpg"
-                                        >
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Mysore</a></h3>
-                                        <span class="listing">Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-4.png);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-4.png"
-                                        >
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Ooty</a></h3>
-                                        <span class="listing">Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-5.jpg);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-5.jpg"
-                                        >
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Mysore</a></h3>
-                                        <span class="listing">Place name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="destination">
-                                    <a
-                                        href="#"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        style="
-                                            background-image: url(images/destination-6.jpg);
-                                        "
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            href="images/destination-6.jpg"
-                                        >
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3><a href="#">Ooty</a></h3>
-                                        <span class="listing">Place name</span>
+                                        <!-- <p> -->
+                                            <!-- Far far away, behind the word
+                                                mountains, far from the
+                                                countries -->
+                                            {{ tourdestination.short_description }}
+                                        <!-- </p> -->
+                                        <!-- <p class="days"> -->
+                                            <!-- <span>Oneday -5hours</span> -->
+                                        <!-- </p> -->
+                                        <hr />
+                                        <p class="bottom-area d-flex">
+                                            <span
+                                                ><i class="icon-map-o"></i>
+                                                {{
+                                                    tourdestination.seo_title
+                                                }}</span
+                                            >
+                                            <!-- <span class="ml-auto">
+                                                <Link
+                                                    :href="
+                                                        '/packages/' +
+                                                        tourdestination.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
+                                            </span> -->
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <Link href="/destinations">
+                        <button type="button" class="btn btn-success explore">
+                            Explore More Destinations
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
 
-
-<!-- //////////////////////////////////////////////////////////// -->
+        <!-- //////////////////////////////////////////////////////////// -->
         <section class="ftco-section bg-light">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-7 heading-section ftco-animate">
-                        <span class="subheading">Special Offers</span>
-                        <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
-                    </div>
-
+                <div class="col-md-7 heading-section ftco-animate">
+                    <span class="subheading">Special Offers</span>
+                    <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+                </div>
+                <div class="row justify-content-center ftco-animate">
                     <div class="col-lg-12">
                         <div class="row">
                             <div
@@ -355,13 +262,15 @@ defineProps({
                                         v-bind:style="{
                                             backgroundImage:
                                                 'url(storage/' +
-                                                tourPackage.image +
+                                                tourPackage.thumbnail_image +
                                                 ')',
                                         }"
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            :href="'storage/' +tourPackage.image"
+                                            :href="
+                                                'storage/' + tourPackage.thumbnail_image
+                                            "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
@@ -390,19 +299,30 @@ defineProps({
                                         <p class="bottom-area d-flex">
                                             <span
                                                 ><i class="icon-map-o"></i>
-                                                {{ tourPackage.name}}</span
+                                                {{ tourPackage.name }}</span
                                             >
                                             <span class="ml-auto">
-                                                <Link :href="'packages/'+tourPackage.url_slug" > Discover </Link>
+                                                <Link
+                                                    :href="
+                                                        'packages/' +
+                                                        tourPackage.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
                                             </span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <!-- .col-md-8 -->
+                    <Link href="/packages">
+                        <button type="button" class="btn btn-success explore">
+                            Explore More Packages
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
@@ -486,9 +406,7 @@ defineProps({
                 <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Special Offers</span>
-                        <h2 class="mb-4">
-                            <strong>Popular</strong> Hotels
-                        </h2>
+                        <h2 class="mb-4"><strong>Popular</strong> Hotels</h2>
                     </div>
                 </div>
             </div>
@@ -505,11 +423,31 @@ defineProps({
                 <small>I'll get back to you as quickly as possible</small>
 
                 <form method="POST" action="/leads">
-                    <input type="hidden" name="_token" :value="form.csrf"/>
-                    <input placeholder="Name" type="text" name="name" required />
-                    <input placeholder="Email" type="email" name="email" required />
-                    <input placeholder="Mobile Number" type="text" name="mobile_number" required />
-                    <input placeholder="Travel Date" type="date" name="travel_date" required />
+                    <input type="hidden" name="_token" :value="form.csrf" />
+                    <input
+                        placeholder="Name"
+                        type="text"
+                        name="name"
+                        required
+                    />
+                    <input
+                        placeholder="Email"
+                        type="email"
+                        name="email"
+                        required
+                    />
+                    <input
+                        placeholder="Mobile Number"
+                        type="text"
+                        name="mobile_number"
+                        required
+                    />
+                    <input
+                        placeholder="Travel Date"
+                        type="date"
+                        name="travel_date"
+                        required
+                    />
                     <input
                         placeholder="Number Of Members"
                         type="number"
@@ -517,13 +455,12 @@ defineProps({
                         required
                     />
                     <textarea placeholder="Message" name="message"></textarea>
-                    <input class="formBtn btnsubmit" type="submit" />
+                    <input class="formBtn my-3 btnsubmit" type="submit" />
                     <!-- <input class="formBtn" type="reset" /> -->
                 </form>
             </div>
             <div class="container">
-                <div class="row">
-
+                <div class="row justify-content-center ftco-animate">
                     <div class="col-lg-12">
                     <div class="row">
                         <div
@@ -537,13 +474,13 @@ defineProps({
                                     v-bind:style="{
                                         backgroundImage:
                                             'url(storage/' +
-                                            tourHotel.image +
+                                            tourHotel.thumbnail_image +
                                             ')',
                                     }"
                                 >
                                     <div
                                         class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                        :href="'storage/' + tourHotel.image"
+                                        :href="'storage/' + tourHotel.thumbnail_image"
                                     >
                                         <span class="icon-search2"></span>
                                     </div>
@@ -575,9 +512,14 @@ defineProps({
                                             {{ tourHotel.seo_title }}</span
                                         >
                                         <span class="ml-auto">
-                                            <a href="#booknow1" class="book"
-                                                >Book Now</a
+                                            <Link
+                                                :href="
+                                                    '/hotels/' +
+                                                    tourHotel.url_slug
+                                                "
                                             >
+                                                Discover
+                                            </Link>
                                         </span>
                                     </p>
                                 </div>
@@ -585,6 +527,13 @@ defineProps({
                         </div>
                     </div>
                 </div>
+
+
+                <Link href="/hotels">
+                    <button type="button" class="btn btn-success explore">
+                        Explore More Hotels
+                    </button>
+                </Link>
                 </div>
             </div>
         </section>
@@ -592,11 +541,11 @@ defineProps({
         <!-- instagram Post Start-->
         <section class="ftco-section">
             <div class="container col-md-7 heading-section ftco-animate">
-                        <span class="subheading">Recent activity</span>
-                        <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
-                    </div>
+                <span class="subheading">Recent activity</span>
+                <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+            </div>
 
-            <div class=" container1">
+            <div class="container1">
                 <div class="content">
                     <a
                         href="https://www.instagram.com/niletours33/"

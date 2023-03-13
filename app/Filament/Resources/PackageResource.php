@@ -49,11 +49,6 @@ class PackageResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-                FileUpload::make('image')->image()
-                    ->required()->preserveFilenames()
-                    ->visibility('public'),
-
-
                 RichEditor::make('description')
                 ->toolbarButtons([
                     'blockquote',
@@ -66,6 +61,20 @@ class PackageResource extends Resource
                     'strike',
                 ]),
 
+                FileUpload::make('thumbnail_image')->image()
+                    ->required()->preserveFilenames()
+                    ->visibility('public'),
+
+
+                FileUpload::make('images')->image()
+                    ->multiple()
+                    ->required()->preserveFilenames()
+                    ->visibility('public'),
+
+                Forms\Components\TextInput::make('youtube_embed_video_url')
+                ->url()
+                ->maxLength(255),
+
             ]);
 
     }
@@ -75,7 +84,7 @@ class PackageResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('thumbnail_image'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('url_slug'),
                 Tables\Columns\TextColumn::make('created_at')

@@ -16,20 +16,22 @@ onMounted(() => {
         .getAttribute("content");
 });
 
-defineProps({ hotels: Object , page: Object  });
+defineProps({ hotels: Object, page: Object });
 
 // defineProps({ user: Object })
 </script>
 
 <template>
     <HomeLayout
-    :title="page.title"
-    :seo_meta_description="page.meta_description"
+        :title="page?.title ? page.title : 'Nile Tours Hotels'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image
+                    ? 'url(storage/' + page.background_image + ')'
+                    : 'url(/images/bg_8.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -173,66 +175,75 @@ defineProps({ hotels: Object , page: Object  });
                 </div>
 
                 <div class="col-lg-12">
-                    <div class="row">
-                        <div
-                            class="col-md-4 ftco-animate"
-                            v-for="tourHotel in hotels"
-                        >
-                            <div class="destination">
-                                <a
-                                    href="#"
-                                    class="img img-2 d-flex justify-content-center align-items-center"
-                                    v-bind:style="{
-                                        backgroundImage:
-                                            'url(storage/' +
-                                            tourHotel.image +
-                                            ')',
-                                    }"
-                                >
-                                    <div
-                                        class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                        :href="'storage/' + tourHotel.image"
+                        <div class="row">
+                            <div
+                                class="col-md-4 ftco-animate"
+                                v-for="tourHotel in hotels"
+                            >
+                                <div class="destination">
+                                    <a
+                                        href="#"
+                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourHotel.thumbnail_image +
+                                                ')',
+                                        }"
                                     >
-                                        <span class="icon-search2"></span>
-                                    </div>
-                                </a>
-                                <div class="text p-3">
-                                    <div class="d-flex">
-                                        <div class="one">
-                                            <h3>
-                                                <!-- <a href="#"
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            :href="
+                                                'storage/' + tourHotel.thumbnail_image
+                                            "
+                                        >
+                                            <span class="icon-search2"></span>
+                                        </div>
+                                    </a>
+                                    <div class="text p-3">
+                                        <div class="d-flex">
+                                            <div class="one">
+                                                <h3>
+                                                    <!-- <a href="#"
                                                             >Mysore, palace</a
                                                         > -->
-                                                {{ tourHotel.name }}
-                                            </h3>
+                                                    {{ tourHotel.name }}
+                                                </h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <p>
-                                        <!-- Far far away, behind the word
+                                        <p>
+                                            <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                        {{ tourHotel.short_description }}
-                                    </p>
-                                    <p class="days">
-                                        <!-- <span>Oneday -5hours</span> -->
-                                    </p>
-                                    <hr />
-                                    <p class="bottom-area d-flex">
-                                        <span
-                                            ><i class="icon-map-o"></i>
-                                            {{ tourHotel.seo_title }}</span
-                                        >
-                                        <span class="ml-auto">
-                                            <a href="#booknow1" class="book"
-                                                >Book Now</a
+                                            {{ tourHotel.short_description }}
+                                        </p>
+                                        <p class="days">
+                                            <!-- <span>Oneday -5hours</span> -->
+                                        </p>
+                                        <hr />
+                                        <p class="bottom-area d-flex">
+                                            <span
+                                                ><i class="icon-map-o"></i>
+                                                {{
+                                                    tourHotel.seo_title
+                                                }}</span
                                             >
-                                        </span>
-                                    </p>
+                                            <span class="ml-auto">
+                                                <Link
+                                                    :href="
+                                                        '/hotels/' +
+                                                        tourHotel.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
+                                            </span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
     </HomeLayout>

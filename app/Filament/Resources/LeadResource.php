@@ -40,6 +40,7 @@ class LeadResource extends Resource
                 Forms\Components\Textarea::make('message')
                     ->required()
                     ->maxLength(65535),
+
             ]);
     }
 

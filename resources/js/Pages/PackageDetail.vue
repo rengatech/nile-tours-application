@@ -27,7 +27,7 @@ defineProps({ package: Object });
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(/storage/' + package.image + ')',
+                backgroundImage: 'url(/storage/' + package.thumbnail_image + ')',
             }"
         >
             <div class="overlay"></div>
@@ -109,35 +109,13 @@ defineProps({ package: Object });
                         <div class="row">
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div class="item">
+                                    <div class="item" v-for="image in package.images">
                                         <div
                                             class="hotel-img"
                                             v-bind:style="{
                                                 backgroundImage:
                                                     'url(/storage/' +
-                                                    package.image +
-                                                    ')',
-                                            }"
-                                        ></div>
-                                    </div>
-                                    <div class="item">
-                                        <div
-                                            class="hotel-img"
-                                            v-bind:style="{
-                                                backgroundImage:
-                                                    'url(/storage/' +
-                                                    package.image +
-                                                    ')',
-                                            }"
-                                        ></div>
-                                    </div>
-                                    <div class="item">
-                                        <div
-                                            class="hotel-img"
-                                            v-bind:style="{
-                                                backgroundImage:
-                                                    'url(/storage/' +
-                                                    package.image +
+                                                    image +
                                                     ')',
                                             }"
                                         ></div>
@@ -149,8 +127,8 @@ defineProps({ package: Object });
                             >
                                 <span>Our curated packages</span>
                                 <h2>{{ package.name }}</h2>
-                                <p>{{ package.description }}</p>
-                                <div class="d-md-flex mt-5 mb-5">
+                                <p v-html="package.description"></p>
+                                <!-- <div class="d-md-flex mt-5 mb-5">
                                     <ul>
                                         <li>Gardens and parks</li>
                                         <li>Lakes and dams</li>
@@ -175,7 +153,7 @@ defineProps({ package: Object });
                                     Village and the subline of her own road, the
                                     Line Lane. Pityful a rethoric question ran
                                     over her cheek, then she continued her way.
-                                </p>
+                                </p> -->
                             </div>
                             <div
                                 class="col-md-12 hotel-single ftco-animate mb-5 mt-4"
@@ -183,17 +161,10 @@ defineProps({ package: Object });
                                 <h4 class="mb-4">Take A Tour</h4>
                                 <div class="block-16">
                                     <figure>
-                                        <img
-                                            :src="'/storage/' + package.image"
-                                            alt="Image placeholder"
-                                            class="img-fluid"
-                                        />
-                                        <a
-                                            href="./images/videoplayback.mp4"
-                                            class="play-button popup-vimeo"
-                                            ><span class="icon-play"></span
-                                        ></a>
+                                        <iframe width="960" height="540" :src="package?.youtube_embed_video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
                                     </figure>
+
                                 </div>
                             </div>
                         </div>

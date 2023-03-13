@@ -19,6 +19,8 @@ use Filament\Forms\Components\RichEditor;
 
 
 
+
+
 class DestinationResource extends Resource
 {
     protected static ?string $model = Destination::class;
@@ -37,34 +39,34 @@ class DestinationResource extends Resource
                     ->maxLength(255),
 
                 Forms\Components\TextInput::make('seo_title')
-                ->required()
-                ->maxLength(255),
+                    ->required()
+                    ->maxLength(255),
 
 
                 RichEditor::make('description')
-                ->toolbarButtons([
-                    'blockquote',
-                    'bold',
-                    'bulletList',
-                    'h2',
-                    'h3',
-                    'italic',
-                    'orderedList',
-                    'strike',
-                ]),
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'orderedList',
+                        'strike',
+                    ]),
 
                 FileUpload::make('image')->image()
-                ->required()->preserveFilenames()
-                ->visibility('public'),
+                    ->required()->preserveFilenames()
+                    ->visibility('public'),
+
 
                 Forms\Components\Textarea::make('seo_meta_description')
-                ->required()
-                ->maxLength(65535),
+                    ->required()
+                    ->maxLength(65535),
 
 
 
             ]);
-
     }
 
 
@@ -76,7 +78,6 @@ class DestinationResource extends Resource
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('seo_title'),
-                Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\TextColumn::make('seo_meta_description'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),

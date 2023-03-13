@@ -21,11 +21,14 @@ defineProps({ page: Object });
 </script>
 
 <template>
-    <HomeLayout>
+    <HomeLayout
+    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :seo_meta_description="page?.meta_description"
+    >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)',
             }"
         >
             <div class="overlay"></div>

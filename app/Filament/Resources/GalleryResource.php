@@ -34,6 +34,7 @@ class GalleryResource extends Resource
                 FileUpload::make('image')->image()
                     ->required()->preserveFilenames()
                     ->visibility('public'),
+
             ]);
     }
 

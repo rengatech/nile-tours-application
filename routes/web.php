@@ -26,15 +26,20 @@ Route::get('/', function () {
     return Inertia::render(
         'Home',
         [
-            'packages' => Package::all(),
+
+            'destinations' => Destination::limit(6)->get(),
+            'packages' => Package::limit(6)->get(),
             'page' => Page::where('name', 'Home')->first(),
-            'hotels' => Hotel::all(),
+            'hotels' => Hotel::limit(6)->get(),
 
         ]
 
     );
 })->name('home');
 
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');
 
 
 Route::get('/packages', function () {
@@ -84,6 +89,16 @@ Route::get('/hotels', function () {
 })->name('hotels');
 
 
+Route::get('/hotels/{slug}', function ($slug) {
+    return Inertia::render(
+        'hotelDetail',
+        [
+            'hotel' => Hotel::where('url_slug', $slug)->first(),
+        ]
+    );
+})->name('hotel.detail');
+
+
 
 Route::get('/gallery', function () {
     return Inertia::render(
@@ -118,3 +133,5 @@ Route::get('/contact-us', function () {
 
 
 Route::post('/leads', [LeadController::class, 'store']);
+
+

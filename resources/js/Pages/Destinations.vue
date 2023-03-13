@@ -19,13 +19,13 @@ defineProps({ destinations: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page.title"
-    :seo_meta_description="page.meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(storage/' + page.background_image + ')',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_3.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -214,15 +214,15 @@ defineProps({ destinations: Object, page: Object });
                                                 </h3>
                                             </div>
                                         </div>
-                                        <p>
+                                        <!-- <p> -->
                                             <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
                                             {{ tourdestination.short_description }}
-                                        </p>
-                                        <p class="days">
+                                        <!-- </p> -->
+                                        <!-- <p class="days"> -->
                                             <!-- <span>Oneday -5hours</span> -->
-                                        </p>
+                                        <!-- </p> -->
                                         <hr />
                                         <p class="bottom-area d-flex">
                                             <span

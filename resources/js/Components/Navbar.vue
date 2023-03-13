@@ -46,6 +46,7 @@ import { Link } from "@inertiajs/vue3";
                                 :class="[
                                     'nav-item',
                                     route().current('packages') ? 'active' : null,
+                                    route().current('package.detail') ? 'active' : null,
                                 ]"
                             >
                                 <Link href="/packages" class="nav-link"
@@ -66,6 +67,7 @@ import { Link } from "@inertiajs/vue3";
                                 :class="[
                                     'nav-item',
                                     route().current('hotels') ? 'active' : null,
+                                    route().current('hotel.detail') ? 'active' : null,
                                 ]"
                             >
                                 <Link href="/hotels" class="nav-link"

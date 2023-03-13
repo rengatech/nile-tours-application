@@ -9840,3 +9840,8 @@
   .titleinsta{
     text-transform: uppercase;display: flex;justify-content: center;color: #0D7A3B;
   }
+
+  .explore{
+    background-color: #0D7A3B;
+    color:#fff;
+  }

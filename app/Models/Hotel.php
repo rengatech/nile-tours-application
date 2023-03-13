@@ -9,10 +9,21 @@ class Hotel extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image', 'seo_title', 'short_description', 'description', 'seo_meta_description',];
+    protected $fillable = [
+        'name',
+        'thumbnail_image',
+        'youtube_embed_video_url',
+        'images',
+        'seo_title',
+        'url_slug',
+        'short_description',
+        'description',
+        'seo_meta_description',
+    ];
 
     protected $casts = [
-        'image' => 'array',
+        'thumbnail_image' => 'array',
+        'images' => 'array',
     ];
 }
 
