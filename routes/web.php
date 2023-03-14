@@ -133,7 +133,7 @@ Route::get('/reviews', function () {
 
 Route::get('/contact-us', function () {
     return Inertia::render(
-        'Contact-us',
+        'ContactUs',
         [
             'page' => Page::where('name', 'Contact-us')->first(),
         ]

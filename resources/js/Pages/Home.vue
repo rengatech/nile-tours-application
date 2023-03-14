@@ -232,7 +232,7 @@ defineProps({
                             </div>
                         </div>
                     </div>
-                    <Link href="/destinations">
+                    <Link v-if="destinations?.length > 6" href="/destinations">
                         <button type="button" class="btn btn-success explore">
                             Explore More Destinations
                         </button>
@@ -318,7 +318,7 @@ defineProps({
                         </div>
                     </div>
                     <!-- .col-md-8 -->
-                    <Link href="/packages">
+                    <Link v-if="packages?.length > 6" href="/packages">
                         <button type="button" class="btn btn-success explore">
                             Explore More Packages
                         </button>
@@ -529,7 +529,7 @@ defineProps({
                 </div>
 
 
-                <Link href="/hotels">
+                <Link v-if="hotels?.length > 6" href="/hotels">
                     <button type="button" class="btn btn-success explore">
                         Explore More Hotels
                     </button>

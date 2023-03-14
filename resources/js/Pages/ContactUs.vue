@@ -1,5 +1,5 @@
 <script setup>
-import { Head , Link } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
 import { useForm } from "@inertiajs/vue3";
@@ -24,13 +24,15 @@ defineProps({ contact_us: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :title="page?.title ? page.title : 'Nile Tours Packages'"
         :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_2.jpg)',
+                backgroundImage: page?.background_image
+                    ? 'url(storage/' + page.background_image + ')'
+                    : 'url(/images/bg_2.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -47,9 +49,7 @@ defineProps({ contact_us: Object, page: Object });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><Link href="/">Home</Link></span
-                            >
+                            <span class="mr-2"><Link href="/">Home</Link></span>
                             <span>Contact</span>
                         </p>
                         <h1
@@ -83,7 +83,6 @@ defineProps({ contact_us: Object, page: Object });
 
             <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
             <small>I'll get back to you as quickly as possible</small>
-
 
             <form method="POST" action="/leads">
                 <input type="hidden" name="_token" :value="form.csrf" />
@@ -191,7 +190,9 @@ defineProps({ contact_us: Object, page: Object });
                     </div>
                     <div class="w-100"></div>
                     <div class="col-md-3">
-                        <p><span>Address:</span>41/81, GP Road ,Chennai. 600002</p>
+                        <p>
+                            <span>Address:</span>41/81, GP Road ,Chennai. 600002
+                        </p>
                     </div>
                     <div class="col-md-3">
                         <p>
@@ -208,7 +209,10 @@ defineProps({ contact_us: Object, page: Object });
                         </p>
                     </div>
                     <div class="col-md-3">
-                        <p><span>Website</span> <a href="#">WWW.Niletours.com</a></p>
+                        <p>
+                            <span>Website</span>
+                            <a href="#">WWW.Niletours.com</a>
+                        </p>
                     </div>
                 </div>
                 <div class="row block-9">
@@ -258,7 +262,7 @@ defineProps({ contact_us: Object, page: Object });
                     <div class="col-md-6">
                         <iframe
                             class="w-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62575.03261385947!2d76.65840187028057!3d11.411934660077936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84b5f3d78d%3A0x179bdb14c93e3f42!2sOoty%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1676632868106!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15546.231235952419!2d80.25846386889654!3d13.06379470669923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267484e3bce2d%3A0x48b7e03be81f5a79!2sNile%20Tours!5e0!3m2!1sen!2sin!4v1678802397314!5m2!1sen!2sin"
                             width="600"
                             height="450"
                             style="border: 0"

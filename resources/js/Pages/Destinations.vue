@@ -20,13 +20,15 @@ defineProps({ destinations: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Destinations'"
+        :title="page?.title ? page.title : 'Nile Tours Destinations'"
         :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_3.jpg)',
+                backgroundImage: page?.background_image
+                    ? 'url(storage/' + page.background_image + ')'
+                    : 'url(/images/bg_3.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -43,9 +45,7 @@ defineProps({ destinations: Object, page: Object });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><Link href="/">Home</Link></span
-                            >
+                            <span class="mr-2"><Link href="/">Home</Link></span>
                             <span>Destinations</span>
                         </p>
                         <h1
@@ -151,11 +151,11 @@ defineProps({ destinations: Object, page: Object });
                                     </a>
                                     <div class="text p-3">
                                         <h3> -->
-                                            <!-- <a href="#">Ooty</a> -->
-                                            <!-- {{ tourdestination.name }}
+                <!-- <a href="#">Ooty</a> -->
+                <!-- {{ tourdestination.name }}
                                         </h3> -->
-                                        <!-- <span class="listing">Place name</span> -->
-                                        <!-- <Link
+                <!-- <span class="listing">Place name</span> -->
+                <!-- <Link
                                             :href="
                                                 '/destination/' +
                                                 tourdestination.url_slug
@@ -185,8 +185,11 @@ defineProps({ destinations: Object, page: Object });
                                 v-for="tourDestination in destinations"
                             >
                                 <div class="destination">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        :href="
+                                            '/destinations/' +
+                                            tourDestination.url_slug
+                                        "
                                         class="img img-2 d-flex justify-content-center align-items-center"
                                         v-bind:style="{
                                             backgroundImage:
@@ -198,12 +201,13 @@ defineProps({ destinations: Object, page: Object });
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourDestination.thumbnail_image
+                                                'storage/' +
+                                                tourDestination.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div class="text p-3">
                                         <div class="d-flex">
                                             <div class="one">
@@ -216,13 +220,13 @@ defineProps({ destinations: Object, page: Object });
                                             </div>
                                         </div>
                                         <!-- <p> -->
-                                            <!-- Far far away, behind the word
+                                        <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                            {{ tourDestination.short_description }}
+                                        {{ tourDestination.short_description }}
                                         <!-- </p> -->
                                         <!-- <p class="days"> -->
-                                            <!-- <span>Oneday -5hours</span> -->
+                                        <!-- <span>Oneday -5hours</span> -->
                                         <!-- </p> -->
                                         <hr />
                                         <p class="bottom-area d-flex">
@@ -248,8 +252,6 @@ defineProps({ destinations: Object, page: Object });
                             </div>
                         </div>
                     </div>
-
-
 
                     <!-- .col-md-8 -->
                 </div>
