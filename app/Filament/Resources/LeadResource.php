@@ -23,16 +23,7 @@ class LeadResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('mobile_number')
-                    ->required()
-                    ->maxLength(15),
+
                 Forms\Components\DateTimePicker::make('travel_date')
                     ->required(),
                 Forms\Components\TextInput::make('number_of_members')

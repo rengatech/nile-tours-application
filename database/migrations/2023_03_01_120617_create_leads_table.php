@@ -13,12 +13,7 @@ return new class extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('mobile_number', 15);
-            $table->dateTime('travel_date');
-            $table->integer('number_of_members');
-            $table->text('message');
+
             $table->timestamps();
         });
     }
