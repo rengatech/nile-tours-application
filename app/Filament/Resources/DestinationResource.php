@@ -38,33 +38,50 @@ class DestinationResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\TextInput::make('seo_title')
+                Forms\Components\TextInput::make('short_description')
                     ->required()
                     ->maxLength(255),
 
 
-                RichEditor::make('description')
-                    ->toolbarButtons([
-                        'blockquote',
-                        'bold',
-                        'bulletList',
-                        'h2',
-                        'h3',
-                        'italic',
-                        'orderedList',
-                        'strike',
-                    ]),
+                Forms\Components\TextInput::make('seo_title')
+                ->required()
+                ->maxLength(255),
 
-                FileUpload::make('image')->image()
+
+
+                Forms\Components\TextInput::make('url_slug')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\TextInput::make('seo_meta_description')
+                ->required()
+                ->maxLength(255),
+
+                RichEditor::make('description')
+                ->toolbarButtons([
+                    'blockquote',
+                    'bold',
+                    'bulletList',
+                    'h2',
+                    'h3',
+                    'italic',
+                    'orderedList',
+                    'strike',
+                ]),
+
+                FileUpload::make('thumbnail_image')->image()
                     ->required()->preserveFilenames()
                     ->visibility('public'),
 
 
-                Forms\Components\Textarea::make('seo_meta_description')
-                    ->required()
-                    ->maxLength(65535),
+                FileUpload::make('images')->image()
+                    ->multiple()
+                    ->required()->preserveFilenames()
+                    ->visibility('public'),
 
-
+                Forms\Components\TextInput::make('youtube_embed_video_url')
+                ->url()
+                ->maxLength(255),
 
             ]);
     }
@@ -75,11 +92,11 @@ class DestinationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('thumbnail_image'),
                 Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('seo_title'),
-                Tables\Columns\TextColumn::make('seo_meta_description'),
+                Tables\Columns\TextColumn::make('url_slug'),
                 Tables\Columns\TextColumn::make('created_at')
+
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),

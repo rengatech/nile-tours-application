@@ -77,6 +77,15 @@ Route::get('/destinations', function () {
     );
 })->name('destinations');
 
+Route::get('/destinations/{slug}', function ($slug) {
+    return Inertia::render(
+        'DestinationDetail',
+        [
+            'destination' => Destination::where('url_slug', $slug)->first(),
+        ]
+    );
+})->name('destination.detail');
+
 
 Route::get('/hotels', function () {
     return Inertia::render(
@@ -91,7 +100,7 @@ Route::get('/hotels', function () {
 
 Route::get('/hotels/{slug}', function ($slug) {
     return Inertia::render(
-        'hotelDetail',
+        'HotelDetail',
         [
             'hotel' => Hotel::where('url_slug', $slug)->first(),
         ]

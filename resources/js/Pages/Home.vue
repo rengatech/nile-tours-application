@@ -175,14 +175,14 @@ defineProps({
                                         v-bind:style="{
                                             backgroundImage:
                                                 'url(storage/' +
-                                                tourdestination.image +
+                                                tourdestination.thumbnail_image +
                                                 ')',
                                         }"
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourdestination.image
+                                                'storage/' + tourdestination.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
@@ -216,16 +216,16 @@ defineProps({
                                                     tourdestination.seo_title
                                                 }}</span
                                             >
-                                            <!-- <span class="ml-auto">
+                                            <span class="ml-auto">
                                                 <Link
                                                     :href="
-                                                        '/packages/' +
+                                                        '/destinations/' +
                                                         tourdestination.url_slug
                                                     "
                                                 >
                                                     Discover
                                                 </Link>
-                                            </span> -->
+                                            </span>
                                         </p>
                                     </div>
                                 </div>

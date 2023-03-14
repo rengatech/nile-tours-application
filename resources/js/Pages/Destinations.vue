@@ -1,4 +1,5 @@
 <script setup>
+import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
@@ -19,7 +20,7 @@ defineProps({ destinations: Object, page: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Packages'"
+    :title="page?.title ? page.title : 'Nile Tours Destinations'"
         :seo_meta_description="page?.meta_description"
     >
         <div
@@ -43,9 +44,9 @@ defineProps({ destinations: Object, page: Object });
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
                             <span class="mr-2"
-                                ><a href="index.html">Home</a></span
+                                ><Link href="/">Home</Link></span
                             >
-                            <span>Packages</span>
+                            <span>Destinations</span>
                         </p>
                         <h1
                             class="mb-3 bread"
@@ -181,7 +182,7 @@ defineProps({ destinations: Object, page: Object });
                         <div class="row">
                             <div
                                 class="col-md-4 ftco-animate"
-                                v-for="tourdestination in destinations"
+                                v-for="tourDestination in destinations"
                             >
                                 <div class="destination">
                                     <a
@@ -190,14 +191,14 @@ defineProps({ destinations: Object, page: Object });
                                         v-bind:style="{
                                             backgroundImage:
                                                 'url(storage/' +
-                                                tourdestination.image +
+                                                tourDestination.thumbnail_image +
                                                 ')',
                                         }"
                                     >
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourdestination.image
+                                                'storage/' + tourDestination.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
@@ -210,7 +211,7 @@ defineProps({ destinations: Object, page: Object });
                                                     <!-- <a href="#"
                                                             >Mysore, palace</a
                                                         > -->
-                                                    {{ tourdestination.name }}
+                                                    {{ tourDestination.name }}
                                                 </h3>
                                             </div>
                                         </div>
@@ -218,7 +219,7 @@ defineProps({ destinations: Object, page: Object });
                                             <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                            {{ tourdestination.short_description }}
+                                            {{ tourDestination.short_description }}
                                         <!-- </p> -->
                                         <!-- <p class="days"> -->
                                             <!-- <span>Oneday -5hours</span> -->
@@ -228,14 +229,14 @@ defineProps({ destinations: Object, page: Object });
                                             <span
                                                 ><i class="icon-map-o"></i>
                                                 {{
-                                                    tourdestination.seo_title
+                                                    tourDestination.seo_title
                                                 }}</span
                                             >
                                             <span class="ml-auto">
                                                 <Link
                                                     :href="
-                                                        '/packages/' +
-                                                        tourdestination.url_slug
+                                                        '/destinations/' +
+                                                        tourDestination.url_slug
                                                     "
                                                 >
                                                     Discover
@@ -247,6 +248,9 @@ defineProps({ destinations: Object, page: Object });
                             </div>
                         </div>
                     </div>
+
+
+
                     <!-- .col-md-8 -->
                 </div>
             </div>

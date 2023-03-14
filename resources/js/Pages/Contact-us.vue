@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head , Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
 import { useForm } from "@inertiajs/vue3";
@@ -48,7 +48,7 @@ defineProps({ contact_us: Object, page: Object });
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
                             <span class="mr-2"
-                                ><a href="index.html">Home</a></span
+                                ><Link href="/">Home</Link></span
                             >
                             <span>Contact</span>
                         </p>

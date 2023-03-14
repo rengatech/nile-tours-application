@@ -57,6 +57,7 @@ import { Link } from "@inertiajs/vue3";
                                 :class="[
                                     'nav-item',
                                     route().current('destinations') ? 'active' : null,
+                                    route().current('destination.detail') ? 'active' : null,
                                 ]"
                             >
                                 <Link href="/destinations" class="nav-link"

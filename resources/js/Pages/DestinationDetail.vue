@@ -1,7 +1,6 @@
 <script setup>
-import { Head , Link } from "@inertiajs/vue3";
+import { Head, Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-
 import { useForm } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
 
@@ -12,26 +11,23 @@ const form = useForm({
 });
 
 onMounted(() => {
-
     form.csrf = document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content");
+});
 
-})
-
-defineProps({ gallery: Object, page: Object  });
-// defineProps({ user: Object })
+defineProps({ destination: Object });
 </script>
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Gallery'"
-        :seo_meta_description="page?.meta_description"
+        :title=" destination.seo_title"
+        :seo_meta_description=" destination.seo_meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_6.jpg)',
+                backgroundImage: 'url(/storage/' +  destination.thumbnail_image + ')',
             }"
         >
             <div class="overlay"></div>
@@ -48,31 +44,25 @@ defineProps({ gallery: Object, page: Object  });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><Link href="/">Home</Link></span
-                            >
-                            <span>Gallery</span>
+                            <span class="mr-2">
+                                <Link href="/"> Home </Link>
+                            </span>
+                            <span class="mr-2">
+                                <Link href="/destinations"> Destinations </Link>
+                            </span>
+                            <span>{{  destination.name }}</span>
                         </p>
                         <h1
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            Gallery
+                            {{  destination.name }}
                         </h1>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a href="https://wa.link/tmal22">
-                <img src="/images/whatsapp.png" class="whatsapp"
-            /></a>
-        </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a href="#booknow1">
-                <img src="/images/Book-Now.png" class="booknow blink"
-            /></a>
-        </div>
+
         <div class="bookForm" id="booknow1">
             <div class="d-flex justify-content-end">
                 <img
@@ -112,28 +102,52 @@ defineProps({ gallery: Object, page: Object  });
                 <!-- <input class="formBtn" type="reset" /> -->
             </form>
         </div>
-        <!-- Gallery Start-->
-        <section>
-            <div class="container mt-4">
-                <span class="subheading">Gallery</span>
-                <h2 class="mb-4"><strong>Gallery</strong> Place and Hotels</h2>
-            </div>
-
-            <div class="container container--gallery" >
+        <section class="ftco-section ftco-degree-bg">
+            <div class="container">
                 <div class="row">
-                    <div class="col-sm-4"  v-for="tourgallery in gallery">
-                        <a class="photo-zoom"
-                        :href="'storage/' +tourgallery.image">
-                            <img
-                            v-bind:src="'storage/' +tourgallery.image"
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 ftco-animate">
+                                <div class="single-slider owl-carousel">
+                                    <div class="item" v-for="image in  destination.images">
+                                        <div
+                                            class="hotel-img"
+                                            v-bind:style="{
+                                                backgroundImage:
+                                                    'url(/storage/' +
+                                                    image +
+                                                    ')',
+                                            }"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
+                            >
+                                <span>Our curated packages</span>
+                                <h2>{{  destination.name }}</h2>
+                                <p v-html=" destination.description"></p>
 
-                                         />
-                        </a>
+                            </div>
+                            <div
+                                class="col-md-12 hotel-single ftco-animate mb-5 mt-4"
+                            >
+                                <h4 class="mb-4">Take A Tour</h4>
+                                <div class="block-16">
+                                    <figure>
+                                        <iframe width="960" height="540" :src=" destination?.youtube_embed_video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                                    </figure>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
+                    <!-- .col-md-8 -->
                 </div>
             </div>
         </section>
-        <!-- Gallery End-->
+        <!-- .section -->
     </HomeLayout>
 </template>

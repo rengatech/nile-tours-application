@@ -48,7 +48,7 @@ defineProps({ hotels: Object, page: Object });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"><a href="/">Home</a></span>
+                            <span class="mr-2"><Link href="/">Home</Link></span>
                             <span>Hotel</span>
                         </p>
                         <h1
