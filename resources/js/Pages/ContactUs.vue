@@ -1,13 +1,11 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
 import { useForm } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
+import { onMounted } from "vue";
 
 const form = useForm({
-    project_name: "",
-    sitemap_path: "",
     csrf: "",
 });
 
@@ -19,7 +17,6 @@ onMounted(() => {
 
 defineProps({ contact_us: Object, page: Object });
 
-// defineProps({ user: Object })
 </script>
 
 <template>
@@ -71,45 +68,6 @@ defineProps({ contact_us: Object, page: Object });
             <a href="#booknow1">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
-        </div>
-        <div class="bookForm" id="booknow1">
-            <div class="d-flex justify-content-end">
-                <img
-                    src="/images/close-outline.svg"
-                    width="50"
-                    class="call-btn"
-                />
-            </div>
-
-            <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
-            <small>I'll get back to you as quickly as possible</small>
-
-            <form method="POST" action="/leads">
-                <input type="hidden" name="_token" :value="form.csrf" />
-                <input placeholder="Name" type="text" name="name" required />
-                <input placeholder="Email" type="email" name="email" required />
-                <input
-                    placeholder="Mobile Number"
-                    type="text"
-                    name="mobile_number"
-                    required
-                />
-                <input
-                    placeholder="Travel Date"
-                    type="date"
-                    name="travel_date"
-                    required
-                />
-                <input
-                    placeholder="Number Of Members"
-                    type="number"
-                    name="number_of_members"
-                    required
-                />
-                <textarea placeholder="Message" name="message"></textarea>
-                <input class="formBtn btnsubmit" type="submit" />
-                <!-- <input class="formBtn" type="reset" /> -->
-            </form>
         </div>
 
         <section class="smart_accordian-section">
@@ -184,78 +142,106 @@ defineProps({ contact_us: Object, page: Object });
 
         <section class="ftco-section contact-section ftco-degree-bg">
             <div class="container">
-                <div class="row d-flex mb-5 contact-info">
-                    <div class="col-md-12 mb-4">
-                        <h2 class="h4">Contact Information</h2>
+                <div
+                    class="row d-flex justify-content-around mb-5 contact-info"
+                >
+                    <div class="mb-4">
+                        <h3>Contact Information</h3>
                     </div>
                     <div class="w-100"></div>
-                    <div class="col-md-3">
-                        <p>
-                            <span>Address:</span>41/81, GP Road ,Chennai. 600002
-                        </p>
+                    <div class=" ">
+                        <h6>
+                            <span><b>Address :</b></span> 41/81, GP Road
+                            ,Chennai. 600002
+                        </h6>
                     </div>
-                    <div class="col-md-3">
-                        <p>
-                            <span>Phone:</span>
-                            <a href="tel://1234567920">+91 9952 787 786</a>
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <p>
-                            <span>Email:</span>
-                            <a href="mailto:Niletours33@gmail.com"
-                                >Niletours33@gmail.com</a
+                    <div class=" ">
+                        <h6>
+                            <span><b>Phone :</b></span>
+                            <a href="tel://1234567920" class="text-success"
+                                >+91 9952 787 786</a
                             >
-                        </p>
+                        </h6>
                     </div>
-                    <div class="col-md-3">
+                    <div class="">
+                        <h6>
+                            <span><b>Email :</b></span>
+                            <a
+                                href="mailto:Niletours33@gmail.com"
+                                class="text-success"
+                                >niletours33@gmail.com</a
+                            >
+                        </h6>
+                    </div>
+                    <!-- <div class="col-md-3">
                         <p>
                             <span>Website</span>
                             <a href="#">WWW.Niletours.com</a>
                         </p>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row block-9">
                     <div class="col-md-6 pr-md-5">
-                        <form action="#">
+
+                        <form method="POST" action="/leads">
+                            <input
+                                type="hidden"
+                                name="_token"
+                                :value="form.csrf"
+                            />
                             <div class="form-group">
                                 <input
+                                    placeholder="Name"
                                     type="text"
-                                    class="form-control"
-                                    placeholder="Your Name"
+                                    name="name"
+                                    required
                                 />
                             </div>
                             <div class="form-group">
                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Your Email"
+                                    placeholder="Email"
+                                    type="email"
+                                    name="email"
+                                    required
                                 />
                             </div>
                             <div class="form-group">
                                 <input
+                                    placeholder="Mobile Number"
                                     type="text"
-                                    class="form-control"
-                                    placeholder="Subject"
+                                    name="mobile_number"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Travel Date"
+                                    type="date"
+                                    name="travel_date"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Number Of Members"
+                                    type="number"
+                                    name="number_of_members"
+                                    required
                                 />
                             </div>
                             <div class="form-group">
                                 <textarea
-                                    name=""
-                                    id=""
-                                    cols="30"
-                                    rows="7"
-                                    class="form-control"
                                     placeholder="Message"
+                                    name="message"
                                 ></textarea>
                             </div>
                             <div class="form-group">
                                 <input
+                                    class="formBtn my-3 btnsubmit"
                                     type="submit"
-                                    value="Send Message"
-                                    class="btn btn-primary py-3 px-5"
                                 />
                             </div>
+                            <!-- <input class="formBtn" type="reset" /> -->
                         </form>
                     </div>
 

@@ -18,5 +18,9 @@ class DatabaseSeeder extends Seeder
             'name' => 'Nile Tours - Admin',
             'email' => 'niletours33@gmail.com',
         ]);
+
+        $this->call([
+            PageSeeder::class,
+        ]);
     }
 }

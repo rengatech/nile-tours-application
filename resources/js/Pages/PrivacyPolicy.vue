@@ -2,18 +2,22 @@
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
-defineProps({ gallery: Object, page: Object  });
+
+defineProps({ page: Object });
+
 </script>
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Gallery'"
+        :title="page?.title ? page.title : 'Nile Tours Packages'"
         :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_6.jpg)',
+                backgroundImage: page?.background_image
+                    ? 'url(storage/' + page.background_image + ')'
+                    : 'url(/images/bg_2.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -30,16 +34,14 @@ defineProps({ gallery: Object, page: Object  });
                             class="breadcrumbs"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <span class="mr-2"
-                                ><Link href="/">Home</Link></span
-                            >
-                            <span>Gallery</span>
+                            <span class="mr-2"><Link href="/">Home</Link></span>
+                            <span>Privacy Policy </span>
                         </p>
                         <h1
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            Gallery
+                            Privacy Policy
                         </h1>
                     </div>
                 </div>
@@ -56,28 +58,15 @@ defineProps({ gallery: Object, page: Object  });
             /></a>
         </div>
 
-        <!-- Gallery Start-->
-        <section class=" min-height-400">
-            <div class="container mt-4">
-                <span class="subheading">Gallery</span>
-                <h2 class="mb-4"><strong>Gallery</strong> Place and Hotels</h2>
+
+        <section class="container mt-5 my-5">
+            <div class="mb-4">
+                <h2 class=" text-success">Privacy Policy</h2>
             </div>
 
-            <div class="container container--gallery" >
-                <div class="row">
-                    <div class="col-sm-4" v-for="tourgallery in gallery">
-                        <a class="photo-zoom"
-                        :href="'storage/' +tourgallery.image">
-                            <img
-                            v-bind:src="'storage/' +tourgallery.image"
+            <div v-html=page?.content ></div>
 
-                                         />
-                        </a>
-                    </div>
-
-                </div>
-            </div>
         </section>
-        <!-- Gallery End-->
-    </HomeLayout>
+
+  </HomeLayout>
 </template>

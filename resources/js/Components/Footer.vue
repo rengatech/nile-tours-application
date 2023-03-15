@@ -1,8 +1,63 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
+import { onMounted } from "vue";
+
+import { useForm } from "@inertiajs/vue3";
+
+const form = useForm({
+    csrf: "",
+});
+
+onMounted(() => {
+    form.csrf = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
+});
+
 </script>
 
 <template>
+
+<div class="bookForm" >
+            <div class="d-flex justify-content-end">
+                    <img
+                        src="/images/close-outline.svg"
+                        width="50"
+                        class="call-btn"
+                    />
+            </div>
+
+            <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
+            <small>I'll get back to you as quickly as possible</small>
+
+            <form method="POST" action="/leads">
+                <input type="hidden" name="_token" :value="form.csrf" />
+                <input placeholder="Name" type="text" name="name" required />
+                <input placeholder="Email" type="email" name="email" required />
+                <input
+                    placeholder="Mobile Number"
+                    type="text"
+                    name="mobile_number"
+                    required
+                />
+                <input
+                    placeholder="Travel Date"
+                    type="date"
+                    name="travel_date"
+                    required
+                />
+                <input
+                    placeholder="Number Of Members"
+                    type="number"
+                    name="number_of_members"
+                    required
+                />
+                <textarea placeholder="Message" name="message"></textarea>
+                <input class="formBtn btnsubmit" type="submit" />
+                <!-- <input class="formBtn" type="reset" /> -->
+            </form>
+        </div>
+
     <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
             <div class="row mb-5">
@@ -10,9 +65,13 @@ import { Head, Link } from "@inertiajs/vue3";
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Nile Tours</h2>
                         <p>
-                            “Travelling is like flirting with life. It’s like
+                            <!-- “Travelling is like flirting with life. It’s like
                             saying, ‘I would stay and love you, but I have to
-                            go; this is my station.'”
+                            go; this is my station.'” -->
+
+                            “Age is Barrier When it comes to Travel. It’s like
+                            saying, ‘Travel Is Never a Matter of Money But of Courage.'”
+
                         </p>
                         <ul
                             class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
@@ -41,7 +100,7 @@ import { Head, Link } from "@inertiajs/vue3";
                         <ul class="list-unstyled">
                             <li>
                                 <Link href="/destinations" class="py-2 d-block"
-                                    >Destination</Link
+                                    >Destinations</Link
                                 >
                             </li>
                             <li>
@@ -77,7 +136,10 @@ import { Head, Link } from "@inertiajs/vue3";
                         <h2 class="ftco-heading-2">Customer Support</h2>
                         <ul class="list-unstyled">
                             <li>
-                                <Link href="/contact-us" class="py-2 d-block">FAQ</Link>
+                                <Link href="/privacy-policy" class="py-2 d-block">Privacy Policy</Link>
+                            </li>
+                            <li>
+                                <Link href="/faq" class="py-2 d-block">FAQ</Link>
                             </li>
                             <!-- <li>
                                 <a href="#" class="py-2 d-block"
@@ -125,7 +187,7 @@ import { Head, Link } from "@inertiajs/vue3";
                                     <a href="mailto:Niletours33@gmail.com"
                                         ><span class="icon icon-envelope"></span
                                         ><span class="text"
-                                            >Niletours33@gmail.com</span
+                                            >niletours33@gmail.com</span
                                         ></a
                                     >
                                 </li>

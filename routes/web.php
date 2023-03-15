@@ -141,6 +141,19 @@ Route::get('/contact-us', function () {
 })->name('contact_us');
 
 
+Route::get('/privacy-policy', function () {
+    return Inertia::render('PrivacyPolicy', [
+        'page' => Page::find(1)
+    ]);
+})->name('privacy_policy');
+
+Route::get('/faq', function () {
+    return Inertia::render('FAQ',);
+})->name('faq');
+
+
 Route::post('/leads', [LeadController::class, 'store']);
+
+Route::post('/contact_us', [ ContactUsController::class, 'store']);
 
 

@@ -1,20 +1,7 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-import { useForm } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
 
-const form = useForm({
-    project_name: "",
-    sitemap_path: "",
-    csrf: "",
-});
-
-onMounted(() => {
-    form.csrf = document
-        .querySelector('meta[name="csrf-token"]')
-        .getAttribute("content");
-});
 
 defineProps({ package: Object });
 </script>
@@ -63,45 +50,6 @@ defineProps({ package: Object });
             </div>
         </div>
 
-        <div class="bookForm" id="booknow1">
-            <div class="d-flex justify-content-end">
-                <img
-                    src="/images/close-outline.svg"
-                    width="50"
-                    class="call-btn"
-                />
-            </div>
-
-            <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
-            <small>I'll get back to you as quickly as possible</small>
-
-            <form method="POST" action="/leads">
-                <input type="hidden" name="_token" :value="form.csrf" />
-                <input placeholder="Name" type="text" name="name" required />
-                <input placeholder="Email" type="email" name="email" required />
-                <input
-                    placeholder="Mobile Number"
-                    type="text"
-                    name="mobile_number"
-                    required
-                />
-                <input
-                    placeholder="Travel Date"
-                    type="date"
-                    name="travel_date"
-                    required
-                />
-                <input
-                    placeholder="Number Of Members"
-                    type="number"
-                    name="number_of_members"
-                    required
-                />
-                <textarea placeholder="Message" name="message"></textarea>
-                <input class="formBtn btnsubmit" type="submit" />
-                <!-- <input class="formBtn" type="reset" /> -->
-            </form>
-        </div>
         <section class="ftco-section ftco-degree-bg">
             <div class="container">
                 <div class="row">
@@ -126,7 +74,7 @@ defineProps({ package: Object });
                                 class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
                             >
                                 <span>Our curated packages</span>
-                                <h2>{{ package.name }}</h2>
+                                <h1 class="my-4">{{ package.name }}</h1>
                                 <p v-html="package.description"></p>
                                 <!-- <div class="d-md-flex mt-5 mb-5">
                                     <ul>

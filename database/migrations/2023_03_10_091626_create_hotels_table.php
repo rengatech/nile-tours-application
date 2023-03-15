@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('url_slug');
             $table->string('seo_title');
             $table->string('seo_meta_description');
-            $table->string('youtube_embed_video_url');
+            $table->string('youtube_embed_video_url')->nullable();
             $table->timestamps();
         });
     }

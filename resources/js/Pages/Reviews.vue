@@ -1,21 +1,6 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-
-import { useForm } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
-
-const form = useForm({
-    project_name: "",
-    sitemap_path: "",
-    csrf: "",
-});
-
-onMounted(() => {
-    form.csrf = document
-        .querySelector('meta[name="csrf-token"]')
-        .getAttribute("content");
-});
 
 defineProps({ page: Object });
 </script>
@@ -69,45 +54,7 @@ defineProps({ page: Object });
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
         </div>
-        <div class="bookForm" id="booknow1">
-            <div class="d-flex justify-content-end">
-                <img
-                    src="/images/close-outline.svg"
-                    width="50"
-                    class="call-btn"
-                />
-            </div>
 
-            <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
-            <small>I'll get back to you as quickly as possible</small>
-
-            <form method="POST" action="/leads">
-                <input type="hidden" name="_token" :value="form.csrf" />
-                <input placeholder="Name" type="text" name="name" required />
-                <input placeholder="Email" type="email" name="email" required />
-                <input
-                    placeholder="Mobile Number"
-                    type="text"
-                    name="mobile_number"
-                    required
-                />
-                <input
-                    placeholder="Travel Date"
-                    type="date"
-                    name="travel_date"
-                    required
-                />
-                <input
-                    placeholder="Number Of Members"
-                    type="number"
-                    name="number_of_members"
-                    required
-                />
-                <textarea placeholder="Message" name="message"></textarea>
-                <input class="formBtn btnsubmit" type="submit" />
-                <!-- <input class="formBtn" type="reset" /> -->
-            </form>
-        </div>
         <body>
             <section id="testimonials">
                 <!--heading--->

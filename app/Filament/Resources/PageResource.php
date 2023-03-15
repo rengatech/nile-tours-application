@@ -13,6 +13,7 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 
 class PageResource extends Resource
 {
@@ -36,6 +37,10 @@ class PageResource extends Resource
                 Forms\Components\TextInput::make('meta_description')
                 ->required()
                 ->maxLength(255),
+
+                RichEditor::make('content')
+                ->required()
+                ->maxLength(20000),
 
                 FileUpload::make('background_image')->image()
                 ->required()->preserveFilenames()

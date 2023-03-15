@@ -1,20 +1,7 @@
 <script setup>
-import { Head, Link } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-import { useForm } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
 
-const form = useForm({
-    project_name: "",
-    sitemap_path: "",
-    csrf: "",
-});
-
-onMounted(() => {
-    form.csrf = document
-        .querySelector('meta[name="csrf-token"]')
-        .getAttribute("content");
-});
 
 defineProps({
     packages: Object,
@@ -23,18 +10,19 @@ defineProps({
     destinations: Object,
 });
 
-// defineProps({ user: Object })
 </script>
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :title="page?.title ? page.title : 'Nile Tours Packages'"
         :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_1.jpg)',
+                backgroundImage: page?.background_image
+                    ? 'url(storage/' + page.background_image + ')'
+                    : 'url(/images/bg_1.jpg)',
             }"
         >
             <div class="overlay"></div>
@@ -169,8 +157,11 @@ defineProps({
                                 v-for="tourdestination in destinations"
                             >
                                 <div class="destination">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        :href="
+                                            '/destinations/' +
+                                            tourdestination.url_slug
+                                        "
                                         class="img img-2 d-flex justify-content-center align-items-center"
                                         v-bind:style="{
                                             backgroundImage:
@@ -182,12 +173,13 @@ defineProps({
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourdestination.thumbnail_image
+                                                'storage/' +
+                                                tourdestination.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div class="text p-3">
                                         <div class="d-flex">
                                             <div class="one">
@@ -200,13 +192,13 @@ defineProps({
                                             </div>
                                         </div>
                                         <!-- <p> -->
-                                            <!-- Far far away, behind the word
+                                        <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                            {{ tourdestination.short_description }}
+                                        {{ tourdestination.short_description }}
                                         <!-- </p> -->
                                         <!-- <p class="days"> -->
-                                            <!-- <span>Oneday -5hours</span> -->
+                                        <!-- <span>Oneday -5hours</span> -->
                                         <!-- </p> -->
                                         <hr />
                                         <p class="bottom-area d-flex">
@@ -256,8 +248,10 @@ defineProps({
                                 v-for="tourPackage in packages"
                             >
                                 <div class="destination">
-                                    <a
-                                        href="#"
+                                    <Link
+                                        :href="
+                                            'packages/' + tourPackage.url_slug
+                                        "
                                         class="img img-2 d-flex justify-content-center align-items-center"
                                         v-bind:style="{
                                             backgroundImage:
@@ -269,12 +263,13 @@ defineProps({
                                         <div
                                             class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
                                             :href="
-                                                'storage/' + tourPackage.thumbnail_image
+                                                'storage/' +
+                                                tourPackage.thumbnail_image
                                             "
                                         >
                                             <span class="icon-search2"></span>
                                         </div>
-                                    </a>
+                                    </Link>
                                     <div class="text p-3">
                                         <div class="d-flex">
                                             <div class="one">
@@ -410,130 +405,84 @@ defineProps({
                     </div>
                 </div>
             </div>
-            <div class="bookForm" id="#booknow1">
-                <div class="d-flex justify-content-end">
-                    <img
-                        src="/images/close-outline.svg"
-                        width="50"
-                        class="call-btn"
-                    />
-                </div>
 
-                <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
-                <small>I'll get back to you as quickly as possible</small>
-
-                <form method="POST" action="/leads">
-                    <input type="hidden" name="_token" :value="form.csrf" />
-                    <input
-                        placeholder="Name"
-                        type="text"
-                        name="name"
-                        required
-                    />
-                    <input
-                        placeholder="Email"
-                        type="email"
-                        name="email"
-                        required
-                    />
-                    <input
-                        placeholder="Mobile Number"
-                        type="text"
-                        name="mobile_number"
-                        required
-                    />
-                    <input
-                        placeholder="Travel Date"
-                        type="date"
-                        name="travel_date"
-                        required
-                    />
-                    <input
-                        placeholder="Number Of Members"
-                        type="number"
-                        name="number_of_members"
-                        required
-                    />
-                    <textarea placeholder="Message" name="message"></textarea>
-                    <input class="formBtn my-3 btnsubmit" type="submit" />
-                    <!-- <input class="formBtn" type="reset" /> -->
-                </form>
-            </div>
             <div class="container">
                 <div class="row justify-content-center ftco-animate">
                     <div class="col-lg-12">
-                    <div class="row">
-                        <div
-                            class="col-md-4 ftco-animate"
-                            v-for="tourHotel in hotels"
-                        >
-                            <div class="destination">
-                                <a
-                                    href="#"
-                                    class="img img-2 d-flex justify-content-center align-items-center"
-                                    v-bind:style="{
-                                        backgroundImage:
-                                            'url(storage/' +
-                                            tourHotel.thumbnail_image +
-                                            ')',
-                                    }"
-                                >
-                                    <div
-                                        class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                        :href="'storage/' + tourHotel.thumbnail_image"
+                        <div class="row">
+                            <div
+                                class="col-md-4 ftco-animate"
+                                v-for="tourHotel in hotels"
+                            >
+                                <div class="destination">
+                                    <Link
+                                        :href="'/hotels/' + tourHotel.url_slug"
+                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                        v-bind:style="{
+                                            backgroundImage:
+                                                'url(storage/' +
+                                                tourHotel.thumbnail_image +
+                                                ')',
+                                        }"
                                     >
-                                        <span class="icon-search2"></span>
-                                    </div>
-                                </a>
-                                <div class="text p-3">
-                                    <div class="d-flex">
-                                        <div class="one">
-                                            <h3>
-                                                <!-- <a href="#"
+                                        <div
+                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                            :href="
+                                                'storage/' +
+                                                tourHotel.thumbnail_image
+                                            "
+                                        >
+                                            <span class="icon-search2"></span>
+                                        </div>
+                                    </Link>
+                                    <div class="text p-3">
+                                        <div class="d-flex">
+                                            <div class="one">
+                                                <h3>
+                                                    <!-- <a href="#"
                                                             >Mysore, palace</a
                                                         > -->
-                                                {{ tourHotel.name }}
-                                            </h3>
+                                                    {{ tourHotel.name }}
+                                                </h3>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <p>
-                                        <!-- Far far away, behind the word
+                                        <p>
+                                            <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                        {{ tourHotel.short_description }}
-                                    </p>
-                                    <p class="days">
-                                        <!-- <span>Oneday -5hours</span> -->
-                                    </p>
-                                    <hr />
-                                    <p class="bottom-area d-flex">
-                                        <span
-                                            ><i class="icon-map-o"></i>
-                                            {{ tourHotel.seo_title }}</span
-                                        >
-                                        <span class="ml-auto">
-                                            <Link
-                                                :href="
-                                                    '/hotels/' +
-                                                    tourHotel.url_slug
-                                                "
+                                            {{ tourHotel.short_description }}
+                                        </p>
+                                        <p class="days">
+                                            <!-- <span>Oneday -5hours</span> -->
+                                        </p>
+                                        <hr />
+                                        <p class="bottom-area d-flex">
+                                            <span
+                                                ><i class="icon-map-o"></i>
+                                                {{ tourHotel.seo_title }}</span
                                             >
-                                                Discover
-                                            </Link>
-                                        </span>
-                                    </p>
+                                            <span class="ml-auto">
+                                                <Link
+                                                    :href="
+                                                        '/hotels/' +
+                                                        tourHotel.url_slug
+                                                    "
+                                                >
+                                                    Discover
+                                                </Link>
+                                            </span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-
-                <Link v-if="hotels?.length > 6" href="/hotels">
-                    <button type="button" class="btn btn-success explore">
-                        Explore More Hotels
-                    </button>
-                </Link>
+                    <Link v-if="hotels?.length > 6" href="/hotels">
+                        <button type="button" class="btn btn-success explore">
+                            Explore More Hotels
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
