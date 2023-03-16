@@ -59,7 +59,7 @@ defineProps({ page: Object });
         </div>
 
 
-        <section class="container mt-5 my-5">
+        <section class="container mt-5 my-5 min-height-400">
             <div class="mb-4">
                 <h2 class=" text-success">Privacy Policy</h2>
             </div>

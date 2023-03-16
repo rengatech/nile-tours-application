@@ -70,7 +70,7 @@ defineProps({ contact_us: Object, page: Object });
             /></a>
         </div>
 
-        <section class="smart_accordian-section">
+        <!-- <section class="smart_accordian-section my-3">
             <div class="container">
                 <h2 class="sec_title mt-2">FREQUENTLY ASKED QUESTIONS</h2>
                 <div class="accourdian">
@@ -138,9 +138,9 @@ defineProps({ contact_us: Object, page: Object });
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="ftco-section contact-section ftco-degree-bg">
+        <section class="ftco-section contact-section ftco-degree-bg ">
             <div class="container">
                 <div
                     class="row d-flex justify-content-around mb-5 contact-info"
@@ -180,7 +180,7 @@ defineProps({ contact_us: Object, page: Object });
                         </p>
                     </div> -->
                 </div>
-                <div class="row block-9">
+                <div class="row block-9 my-4">
                     <div class="col-md-6 pr-md-5">
 
                         <form method="POST" action="/leads">

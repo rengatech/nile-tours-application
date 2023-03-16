@@ -70,7 +70,7 @@ onMounted(() => {
                             go; this is my station.'” -->
 
                             “Age is Barrier When it comes to Travel. It’s like
-                            saying, ‘Travel Is Never a Matter of Money But of Courage.'”
+                            saying, ‘Travel Is Never a Matter of Money But of Courage.”
 
                         </p>
                         <ul

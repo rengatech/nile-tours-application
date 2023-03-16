@@ -9,6 +9,7 @@ use App\Models\Hotel;
 use App\Models\Gallery;
 use App\Models\Destination;
 use App\Models\Page;
+use App\Models\FAQ;
 use Inertia\Inertia;
 
 /*
@@ -31,6 +32,7 @@ Route::get('/', function () {
             'packages' => Package::limit(6)->get(),
             'page' => Page::where('name', 'Home')->first(),
             'hotels' => Hotel::limit(6)->get(),
+            'faq' => FAQ::limit(4)->get(),
 
         ]
 
@@ -148,12 +150,17 @@ Route::get('/privacy-policy', function () {
 })->name('privacy_policy');
 
 Route::get('/faq', function () {
-    return Inertia::render('FAQ',);
+    return Inertia::render(
+        'FAQ',
+        [
+            'faq' => FAQ::all(),
+        ]
+    );
 })->name('faq');
 
 
 Route::post('/leads', [LeadController::class, 'store']);
 
-Route::post('/contact_us', [ ContactUsController::class, 'store']);
+
 
 
