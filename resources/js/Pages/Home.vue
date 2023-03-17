@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
 
+
 defineProps({
     packages: Object,
     page: Object,
@@ -75,8 +76,7 @@ defineProps({
                                     Best Price Guarantee
                                 </h3>
                                 <p>
-                                    A small river named Duden flows by their
-                                    place and supplies.
+                                    Our team is here to provide you with the support you need, including assistance to make your trip enjoyable and more.
                                 </p>
                             </div>
                         </div>
@@ -93,8 +93,7 @@ defineProps({
                             <div class="media-body p-2 mt-2">
                                 <h3 class="heading mb-3">Travellers Love Us</h3>
                                 <p>
-                                    A small river named Duden flows by their
-                                    place and supplies.
+                                    Our goal is for you to experience worry-free trips, each time you travel with Nile Travel.
                                 </p>
                             </div>
                         </div>
@@ -111,8 +110,7 @@ defineProps({
                             <div class="media-body p-2 mt-2">
                                 <h3 class="heading mb-3">Best Travel Agent</h3>
                                 <p>
-                                    A small river named Duden flows by their
-                                    place and supplies.
+                                    Our services enable simplified and improved relationships between travel agencies to better serve customers.
                                 </p>
                             </div>
                         </div>
@@ -131,8 +129,7 @@ defineProps({
                                     Our Dedicated Support
                                 </h3>
                                 <p>
-                                    A small river named Duden flows by their
-                                    place and supplies.
+                                    Price guarantee pays you the difference between the flight price when you book and the lowest ticket price.
                                 </p>
                             </div>
                         </div>
@@ -689,7 +686,7 @@ defineProps({
             </div>
         </section>
 
-        <section class="ftco-section-parallax">
+        <!-- <section class="ftco-section-parallax">
             <div class="parallax-img d-flex align-items-center">
                 <div class="container">
                     <div class="row d-flex justify-content-center">
@@ -705,12 +702,13 @@ defineProps({
                             </p>
                             <div class="row d-flex justify-content-center mt-5">
                                 <div class="col-md-8">
-                                    <form action="#" class="subscribe-form">
+                                     <form action="#" class="subscribe-form">
                                         <div class="form-group d-flex">
                                             <input
                                                 type="text"
                                                 class="form-control"
                                                 placeholder="Enter email address"
+                                                name="enter_email_address"
                                             />
                                             <input
                                                 type="submit"
@@ -725,6 +723,6 @@ defineProps({
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </HomeLayout>
 </template>

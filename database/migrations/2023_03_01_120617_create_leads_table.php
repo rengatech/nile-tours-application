@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('mobile_number', 15);
+            $table->string('package_name');
             $table->dateTime('travel_date');
             $table->integer('number_of_members');
             $table->text('message');

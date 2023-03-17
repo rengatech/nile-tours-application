@@ -33,6 +33,9 @@ class LeadResource extends Resource
                 Forms\Components\TextInput::make('mobile_number')
                     ->required()
                     ->maxLength(15),
+                Forms\Components\TextInput::make('package_name')
+                    ->required()
+                    ->maxLength(255),
                 Forms\Components\DateTimePicker::make('travel_date')
                     ->required(),
                 Forms\Components\TextInput::make('number_of_members')
@@ -51,6 +54,7 @@ class LeadResource extends Resource
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('mobile_number'),
+                Tables\Columns\TextColumn::make('package_name'),
                 Tables\Columns\TextColumn::make('travel_date')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('number_of_members'),

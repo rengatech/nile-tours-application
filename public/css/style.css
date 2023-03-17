@@ -13629,11 +13629,11 @@ textarea {
     font-family: inherit;
     text-transform: inherit;
     font-size: inherit;
-
     display: block;
     width: 100%;
     padding: .4em;
 }
+
 
 textarea {
     height: 80px;
@@ -13649,6 +13649,19 @@ textarea {
     font-size: 1.0 em;
     border: none;
     cursor: pointer;
+
+    /* height: 30px; */
+}
+.form_Btn {
+    width: 220px;
+    background: #0D7A3B;
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.0 em;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    height: 50px;
 
     /* height: 30px; */
 }
@@ -13987,4 +14000,15 @@ textarea {
 
 .min-height-400 {
     min-height: 400px;
+}
+
+
+.input_area{
+    width: 60% !important;
+}
+
+@media (max-width: 500px) {
+    .input_area {
+        width: 100% !important;;
+    }
 }

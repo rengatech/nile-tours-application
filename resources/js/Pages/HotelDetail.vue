@@ -49,7 +49,6 @@ defineProps({ hotel: Object });
             </div>
         </div>
 
-
         <section class="ftco-section ftco-degree-bg">
             <div class="container">
                 <div class="row">
@@ -57,7 +56,10 @@ defineProps({ hotel: Object });
                         <div class="row">
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div class="item" v-for="image in hotel.images">
+                                    <div
+                                        class="item"
+                                        v-for="image in hotel.images"
+                                    >
                                         <div
                                             class="hotel-img"
                                             v-bind:style="{
@@ -76,18 +78,26 @@ defineProps({ hotel: Object });
                                 <span>Our curated packages</span>
                                 <h1 class="my-4">{{ hotel.name }}</h1>
                                 <p v-html="hotel.description"></p>
-
                             </div>
                             <div
                                 class="col-md-12 hotel-single ftco-animate mb-5 mt-4"
+                                v-if="hotel?.youtube_embed_video_url != null"
                             >
                                 <h4 class="mb-4">Take A Tour</h4>
                                 <div class="block-16">
                                     <figure>
-                                        <iframe width="960" height="540" :src="hotel?.youtube_embed_video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                                        <iframe
+                                            width="100%"
+                                            height="540"
+                                            :src="
+                                                hotel?.youtube_embed_video_url
+                                            "
+                                            title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen
+                                        ></iframe>
                                     </figure>
-
                                 </div>
                             </div>
                         </div>

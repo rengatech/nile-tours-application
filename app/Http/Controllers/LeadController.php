@@ -12,6 +12,7 @@ class LeadController extends Controller
         Lead::create([
             'name' => $request->name,
             'email' => $request->email,
+            'package_name' => $request->package_name ? $request->package_name : 'General contact form',
             'mobile_number' => $request->mobile_number,
             'travel_date' => $request->travel_date,
             'number_of_members' => $request->number_of_members,

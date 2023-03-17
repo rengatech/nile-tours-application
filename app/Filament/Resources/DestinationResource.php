@@ -30,58 +30,56 @@ class DestinationResource extends Resource
     public static function form(Form $form): Form
 
     {
-        return $form
+        return $form->columns(1)
 
             ->schema([
 
                 Forms\Components\TextInput::make('name')
+                    ->helperText('Eg: 3D 4N Ooty Destination')
                     ->required()
                     ->maxLength(255),
 
                 Forms\Components\TextInput::make('short_description')
+                    ->helperText('Eg: 3D 4N Ooty Destination')
                     ->required()
                     ->maxLength(255),
 
 
                 Forms\Components\TextInput::make('seo_title')
-                ->required()
-                ->maxLength(255),
+                    ->helperText('Eg: 3D 4N Ooty Destination')
+                    ->required()
+                    ->maxLength(255),
 
 
 
                 Forms\Components\TextInput::make('url_slug')
-                ->required()
-                ->maxLength(255),
+                    ->helperText('Eg: 3d-4n-ooty-Destination')
+                    ->required()
+                    ->maxLength(255),
 
                 Forms\Components\TextInput::make('seo_meta_description')
-                ->required()
-                ->maxLength(255),
+                    ->helperText('Eg: 3D 4N Ooty Destination')
+                    ->required()
+                    ->maxLength(255),
 
-                RichEditor::make('description')
-                ->toolbarButtons([
-                    'blockquote',
-                    'bold',
-                    'bulletList',
-                    'h2',
-                    'h3',
-                    'italic',
-                    'orderedList',
-                    'strike',
-                ]),
+                RichEditor::make('description'),
 
                 FileUpload::make('thumbnail_image')->image()
+                    ->helperText('Thumbnail and Background image')
                     ->required()->preserveFilenames()
                     ->visibility('public'),
 
 
                 FileUpload::make('images')->image()
+                    ->helperText('Detail page slider images')
                     ->multiple()
                     ->required()->preserveFilenames()
                     ->visibility('public'),
 
                 Forms\Components\TextInput::make('youtube_embed_video_url')
-                ->url()
-                ->maxLength(255),
+                    ->helperText('Eg: - https://www.youtube.com/embed/qZVTkn2NjS0')
+                    ->url()
+                    ->maxLength(255),
 
             ]);
     }

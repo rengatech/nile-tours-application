@@ -20,7 +20,7 @@ class FAQResource extends Resource
 
     protected static ?string $pluralModelLabel = 'FAQ';
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-chat';
 
     public static function form(Form $form): Form
     {

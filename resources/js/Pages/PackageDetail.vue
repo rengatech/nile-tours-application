@@ -2,8 +2,21 @@
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
 
+import { onMounted } from "vue";
 
-defineProps({ package: Object });
+import { useForm } from "@inertiajs/vue3";
+
+const form = useForm({
+    csrf: "",
+});
+
+onMounted(() => {
+    form.csrf = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
+});
+
+defineProps({ package: Object, Lead: Object });
 </script>
 
 <template>
@@ -14,7 +27,8 @@ defineProps({ package: Object });
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: 'url(/storage/' + package.thumbnail_image + ')',
+                backgroundImage:
+                    'url(/storage/' + package.thumbnail_image + ')',
             }"
         >
             <div class="overlay"></div>
@@ -50,14 +64,18 @@ defineProps({ package: Object });
             </div>
         </div>
 
-        <section class="ftco-section ftco-degree-bg">
+
+        <section class="ftco-section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div class="item" v-for="image in package.images">
+                                    <div
+                                        class="item"
+                                        v-for="image in package.images"
+                                    >
                                         <div
                                             class="hotel-img"
                                             v-bind:style="{
@@ -70,54 +88,124 @@ defineProps({ package: Object });
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
-                            >
+                            <div class="col-md-12 mt-4 mb-5 ftco-animate">
                                 <span>Our curated packages</span>
                                 <h1 class="my-4">{{ package.name }}</h1>
                                 <p v-html="package.description"></p>
-                                <!-- <div class="d-md-flex mt-5 mb-5">
-                                    <ul>
-                                        <li>Gardens and parks</li>
-                                        <li>Lakes and dams</li>
-                                        <li>Tribal huts and museum</li>
-                                        <li>Nilgiri Mountain Railway</li>
-                                    </ul>
-                                    <ul class="ml-md-5">
-                                        <li>Historical buildings</li>
-                                        <li>Tea Factory</li>
-                                        <li>Radio Telescope</li>
-                                        <li>
-                                            Headline of Alphabet Village and the
-                                            subline
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>
-                                    When she reached the first hills of the
-                                    Italic Mountains, she had a last view back
-                                    on the skyline of her hometown
-                                    Bookmarksgrove, the headline of Alphabet
-                                    Village and the subline of her own road, the
-                                    Line Lane. Pityful a rethoric question ran
-                                    over her cheek, then she continued her way.
-                                </p> -->
                             </div>
+
                             <div
-                                class="col-md-12 hotel-single ftco-animate mb-5 mt-4"
+                                class="col-md-12 ftco-animate mb-3 mt-4"
+                                v-if="package?.youtube_embed_video_url != null"
                             >
                                 <h4 class="mb-4">Take A Tour</h4>
                                 <div class="block-16">
                                     <figure>
-                                        <iframe width="960" height="540" :src="package?.youtube_embed_video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                                        <iframe
+                                            width="100%"
+                                            height="540"
+                                            :src="
+                                                package?.youtube_embed_video_url
+                                            "
+                                            title="YouTube video player"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen
+                                        ></iframe>
                                     </figure>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- .col-md-8 -->
+                </div>
+            </div>
+        </section>
+
+        <section class="ftco-section contact-section">
+            <div class="container">
+                <div class="text-center">
+                    <h4 class="text-success"><b>Contact Us</b></h4>
+                </div>
+                <div class="row block-9 my-4">
+                    <div class="col-md-12">
+                        <form method="POST" action="/leads">
+                            <input
+                                type="hidden"
+                                name="_token"
+                                :value="form.csrf"
+                            />
+                            <div class="form-group">
+                                <input
+                                    placeholder="Name"
+                                    type="text"
+                                    name="name"
+                                    required
+                                    class="input_area"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Email"
+                                    type="email"
+                                    name="email"
+                                    required
+                                    class="input_area"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Mobile Number"
+                                    type="text"
+                                    name="mobile_number"
+                                    required
+                                    class="input_area"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    class="input_area"
+                                    placeholder="Package Name"
+                                    type="text"
+                                    name="package_name"
+                                    required
+                                    v-model="package.name"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Travel Date"
+                                    type="date"
+                                    name="travel_date"
+                                    required
+                                    class="input_area"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    placeholder="Number Of Members"
+                                    type="number"
+                                    name="number_of_members"
+                                    required
+                                    class="input_area"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <textarea
+                                    placeholder="Message"
+                                    name="message"
+                                    class="input_area"
+                                ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    class="form_Btn my-3 btnsubmit"
+                                    type="submit"
+                                    value="Get Quote for this Package"
+                                />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
