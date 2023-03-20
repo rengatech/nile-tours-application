@@ -26,4 +26,12 @@ class Package extends Model
         'thumbnail_image' => 'array',
         'images' => 'array',
     ];
+
+    public function destinations()
+    {
+        return $this->belongsToMany(Destination::class)
+        ->withPivot([
+            'destination_id', 'package_id'
+        ]);
+    }
 }

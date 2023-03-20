@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Destination;
+use App\Models\Package;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,8 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            $table->text('images')->nullable()->change();
+        Schema::create('destination_package', function (Blueprint $table) {
+            $table->foreignIdFor(Destination::class);
+            $table->foreignIdFor(Package::class);
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('destinations', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('destination_package');
     }
 };

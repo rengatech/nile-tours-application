@@ -1,39 +1,27 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\PackageResource\RelationManagers;
 
-use App\Filament\Resources\DestinationResource\Pages;
-use App\Filament\Resources\DestinationResource\RelationManagers\PackagesRelationManager;
-use App\Models\Destination;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Form;
-use Filament\Resources\Resource;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\RichEditor;
-use Filament\Tables\Actions\AttachAction;
 
-
-
-
-
-class DestinationResource extends Resource
+class DestinationsRelationManager extends RelationManager
 {
-    protected static ?string $model = Destination::class;
+    protected static string $relationship = 'destinations';
 
-    protected static ?string $navigationIcon = 'heroicon-o-map';
+    protected static ?string $recordTitleAttribute = 'id';
 
     public static function form(Form $form): Form
-
     {
-        return $form->columns(1)
-
+        return $form
             ->schema([
-
                 Forms\Components\TextInput::make('name')
                     ->helperText('Eg: 3D 4N Ooty Destination')
                     ->required()
@@ -80,55 +68,31 @@ class DestinationResource extends Resource
                     ->helperText('Eg: - https://www.youtube.com/embed/qZVTkn2NjS0')
                     ->url()
                     ->maxLength(255),
-
             ]);
     }
-
-
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('thumbnail_image'),
                 Tables\Columns\TextColumn::make('name'),
-                // Tables\Columns\TextColumn::make('packages.name'),
-                Tables\Columns\TextColumn::make('url_slug'),
-                Tables\Columns\TextColumn::make('created_at')
-
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
             ])
             ->filters([
                 //
             ])
+            ->headerActions([
+                Tables\Actions\CreateAction::make(),
+                Tables\Actions\AttachAction::make(),
+            ])
             ->actions([
-                AttachAction::make()->form(fn (AttachAction $action): array => [
-                    $action->getRecordSelect(),
-                    $action->recordTitleAttribute('package_id'),
-                    Forms\Components\Select::make('packages')->required(),
-                ]),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DetachAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
+                Tables\Actions\DetachBulkAction::make(),
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            PackagesRelationManager::class
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListDestinations::route('/'),
-            'create' => Pages\CreateDestination::route('/create'),
-            'edit' => Pages\EditDestination::route('/{record}/edit'),
-        ];
-    }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\PackageResource\RelationManagers\DestinationsRelationManager;
 use App\Filament\Resources\PackageResource\Pages;
-use App\Filament\Resources\PackageResource\RelationManagers;
 use App\Models\Package;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
+use Filament\Tables\Actions\AttachAction;
 
 class PackageResource extends Resource
 {
@@ -84,6 +85,8 @@ class PackageResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail_image'),
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('destinations.name'),
+
                 Tables\Columns\TextColumn::make('url_slug'),
                 Tables\Columns\TextColumn::make('created_at')
 
@@ -95,6 +98,12 @@ class PackageResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\AttachAction::make()->form(fn (AttachAction $action): array => [
+                    $action->getRecordSelect(),
+                    $action->recordTitleAttribute('destination_id'),
+                    Forms\Components\Select::make('destinations')->required(),
+                ])
+                    ->preloadRecordSelect(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
@@ -105,7 +114,7 @@ class PackageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            DestinationsRelationManager::class,
         ];
     }
 

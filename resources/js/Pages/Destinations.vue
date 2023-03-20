@@ -52,7 +52,7 @@ defineProps({ destinations: Object, page: Object });
             /></a>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a href="#booknow1">
+            <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
         </div>

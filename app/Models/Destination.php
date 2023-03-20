@@ -26,4 +26,21 @@ class Destination extends Model
         'thumbnail_image' => 'array',
         'images' => 'array',
     ];
+
+
+    // public function packages()
+    // {
+    //     return $this->belongsToMany(Package::class);
+
+    // }
+
+    public function packages()
+    {
+        return $this->belongsToMany(Package::class)
+        ->withPivot([
+            'destination_id', 'package_id'
+        ]);
+    }
+
+
 }

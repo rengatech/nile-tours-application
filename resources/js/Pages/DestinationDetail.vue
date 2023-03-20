@@ -54,6 +54,110 @@ defineProps({ destination: Object });
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+                        <section class="ftco-section min-height-400">
+                            <div class="container">
+                                <div class="row">
+                                    <div
+                                        class="col-md-7 heading-section ftco-animate"
+                                    >
+                                        <span class="subheading"
+                                            >Special Offers</span
+                                        >
+                                        <h2 class="mb-4">
+                                            <strong>Top</strong> Tour Packages
+                                        </h2>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div class="row">
+                                            <div
+                                                class="col-md-4 ftco-animate"
+                                                v-for="tourPackage in destination.packages"
+                                            >
+                                                <div class="destination">
+                                                    <Link
+                                                        :href="
+                                                            '/packages/' +
+                                                            tourPackage.url_slug
+                                                        "
+                                                        class="img img-2 d-flex justify-content-center align-items-center"
+                                                        v-bind:style="{
+                                                            backgroundImage:
+                                                                'url(/storage/' +
+                                                                tourPackage.thumbnail_image +
+                                                                ')',
+                                                        }"
+                                                    >
+                                                        <div
+                                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                                            :href="
+                                                                '/storage/' +
+                                                                tourPackage.thumbnail_image
+                                                            "
+                                                        >
+                                                            <span
+                                                                class="icon-search2"
+                                                            ></span>
+                                                        </div>
+                                                    </Link>
+                                                    <div class="text p-3">
+                                                        <div class="d-flex">
+                                                            <div class="one">
+                                                                <h3>
+                                                                    <!-- <a href="#"
+                                                            >Mysore, palace</a
+                                                        > -->
+                                                                    {{
+                                                                        tourPackage.name
+                                                                    }}
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                        <p>
+                                                            <!-- Far far away, behind the word
+                                                mountains, far from the
+                                                countries -->
+                                                            {{
+                                                                tourPackage.short_description
+                                                            }}
+                                                        </p>
+                                                        <p class="days">
+                                                            <!-- <span>Oneday -5hours</span> -->
+                                                        </p>
+                                                        <hr />
+                                                        <p
+                                                            class="bottom-area d-flex"
+                                                        >
+                                                            <span
+                                                                ><i
+                                                                    class="icon-map-o"
+                                                                ></i>
+                                                                {{
+                                                                    tourPackage.seo_title
+                                                                }}</span
+                                                            >
+                                                            <span
+                                                                class="ml-auto"
+                                                            >
+                                                                <Link
+                                                                    :href="
+                                                                        '/packages/' +
+                                                                        tourPackage.url_slug
+                                                                    "
+                                                                >
+                                                                    Discover
+                                                                </Link>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- .col-md-8 -->
+                                </div>
+                            </div>
+                        </section>
                         <div class="row">
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
@@ -76,13 +180,15 @@ defineProps({ destination: Object });
                             <div
                                 class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
                             >
-                                <span>Our curated packages</span>
+                                <span>Our Popular Destinations </span>
                                 <h1 class="my-4">{{ destination.name }}</h1>
                                 <p v-html="destination.description"></p>
                             </div>
                             <div
                                 class="col-md-12 hotel-single ftco-animate mb-5 mt-4"
-                                v-if="destination?.youtube_embed_video_url != null"
+                                v-if="
+                                    destination?.youtube_embed_video_url != null
+                                "
                             >
                                 <h4 class="mb-4">Take A Tour</h4>
                                 <div class="block-16">

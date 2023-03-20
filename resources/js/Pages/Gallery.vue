@@ -51,7 +51,7 @@ defineProps({ gallery: Object, page: Object  });
             /></a>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a href="#booknow1">
+            <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
         </div>
@@ -60,7 +60,7 @@ defineProps({ gallery: Object, page: Object  });
         <section class=" min-height-400">
             <div class="container mt-4">
                 <span class="subheading">Gallery</span>
-                <h2 class="mb-4"><strong>Gallery</strong> Place and Hotels</h2>
+                <h3 class="mb-4"><strong>Gallery</strong> Place and Hotels</h3>
             </div>
 
             <div class="container container--gallery" >

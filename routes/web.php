@@ -1,15 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ShowController;
-use App\Models\Package;
-use App\Models\Hotel;
-use App\Models\Gallery;
 use App\Models\Destination;
-use App\Models\Page;
 use App\Models\FAQ;
+use App\Models\Gallery;
+use App\Models\Hotel;
+use App\Models\Package;
+use App\Models\Page;
+use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 /*
@@ -75,6 +75,7 @@ Route::get('/destinations', function () {
             'destinations' => Destination::all(),
             'page' => Page::where('name', 'Destinations')->first(),
 
+
         ]
     );
 })->name('destinations');
@@ -83,7 +84,7 @@ Route::get('/destinations/{slug}', function ($slug) {
     return Inertia::render(
         'DestinationDetail',
         [
-            'destination' => Destination::where('url_slug', $slug)->first(),
+            'destination' => Destination::with('packages')->where('url_slug', $slug)->first(),
         ]
     );
 })->name('destination.detail');
