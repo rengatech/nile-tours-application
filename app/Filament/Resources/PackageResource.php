@@ -98,12 +98,7 @@ class PackageResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\AttachAction::make()->form(fn (AttachAction $action): array => [
-                    $action->getRecordSelect(),
-                    $action->recordTitleAttribute('destination_id'),
-                    Forms\Components\Select::make('destinations')->required(),
-                ])
-                    ->preloadRecordSelect(),
+
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

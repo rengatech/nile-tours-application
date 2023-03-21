@@ -6,16 +6,18 @@ use App\Filament\Resources\DestinationResource\Pages;
 use App\Filament\Resources\DestinationResource\RelationManagers\PackagesRelationManager;
 use App\Models\Destination;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Actions\AttachAction;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\RichEditor;
-use Filament\Tables\Actions\AttachAction;
+
+
 
 
 
@@ -26,6 +28,7 @@ class DestinationResource extends Resource
     protected static ?string $model = Destination::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-map';
+
 
     public static function form(Form $form): Form
 
@@ -104,11 +107,8 @@ class DestinationResource extends Resource
                 //
             ])
             ->actions([
-                AttachAction::make()->form(fn (AttachAction $action): array => [
-                    $action->getRecordSelect(),
-                    $action->recordTitleAttribute('package_id'),
-                    Forms\Components\Select::make('packages')->required(),
-                ]),
+
+
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
