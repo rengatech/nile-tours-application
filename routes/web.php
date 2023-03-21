@@ -61,7 +61,7 @@ Route::get('/packages/{slug}', function ($slug) {
     return Inertia::render(
         'PackageDetail',
         [
-            'package' => Package::where('url_slug', $slug)->first(),
+            'package' => Package::with('destinations')->where('url_slug', $slug)->first(),
         ]
     );
 })->name('package.detail');

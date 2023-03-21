@@ -21,7 +21,7 @@ defineProps({ contact_us: Object, page: Object });
 
 <template>
     <HomeLayout
-        :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :title="page?.title ? page.title : 'Nile Tours Contact-us'"
         :seo_meta_description="page?.meta_description"
     >
         <div

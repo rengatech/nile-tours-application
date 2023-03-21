@@ -17,7 +17,7 @@ defineProps({
 
 <template>
     <HomeLayout
-        :title="page?.title ? page.title : 'Nile Tours Packages'"
+        :title="page?.title ? page.title : 'Nile Tours Home'"
         :seo_meta_description="page?.meta_description"
     >
         <div
@@ -49,7 +49,7 @@ defineProps({
             </div>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a href="https://wa.link/zt2tjo">
+            <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
             /></a>
         </div>

@@ -60,66 +60,7 @@ defineProps({ destinations: Object, page: Object });
         <!-- destination Start-->
         <section class="ftco-section ftco-destination">
             <div class="container">
-                <!-- <div class="row justify-content-start mb-5 pb-3">
-                    <div class="col-md-7 heading-section ftco-animate">
-                        <span class="subheading">Featured</span>
-                        <h2 class="mb-4">
-                            <strong>Featured</strong> Destination
-                        </h2>
-                    </div>
-                </div> -->
-                <!-- <div class="row">
-                    <div class="col-md-12">
-                        <div
-                            class="destination-slider owl-carousel ftco-animate"
-                        >
-                            <div
-                                class="item"
-                                v-for="tourdestination in destinations"
-                            >
-                                <div class="destination">
-                                    <a
-                                        href="/"
-                                        class="img d-flex justify-content-center align-items-center"
-                                        v-bind:style="{
-                                            backgroundImage:
-                                                'url(storage/' +
-                                                tourdestination.image +
-                                                ')',
-                                        }"
-                                    >
-                                        <div
-                                            class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
-                                            :href="
-                                                'storage/' +
-                                                tourdestination.image
-                                            "
-                                        >
-                                            <span class="icon-search2"></span>
-                                        </div>
-                                    </a>
-                                    <div class="text p-3">
-                                        <h3> -->
-                <!-- <a href="#">Ooty</a> -->
-                <!-- {{ tourdestination.name }}
-                                        </h3> -->
-                <!-- <span class="listing">Place name</span> -->
-                <!-- <Link
-                                            :href="
-                                                '/destination/' +
-                                                tourdestination.url_slug
-                                            "
-                                        >
-                                            Discover
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-                <div class="row  min-height-400">
+            <div class="row  min-height-400">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Featured</span>
                         <h2 class="mb-4">
