@@ -17,7 +17,7 @@ class DestinationsRelationManager extends RelationManager
 {
     protected static string $relationship = 'destinations';
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -83,7 +83,13 @@ class DestinationsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
-                Tables\Actions\AttachAction::make()->preloadRecordSelect(),
+                // Tables\Actions\AttachAction::make()->preloadRecordSelect(),
+
+                AttachAction::make()
+                    ->form(fn(AttachAction $action): array => [
+                        $action->getRecordSelect(),
+                    ])->preloadRecordSelect(),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

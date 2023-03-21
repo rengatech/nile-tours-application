@@ -16,7 +16,7 @@ class PackagesRelationManager extends RelationManager
 {
     protected static string $relationship = 'packages';
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -37,8 +37,6 @@ class PackagesRelationManager extends RelationManager
                 ->helperText('Eg: 3D 4N Ooty Destination')
                 ->required()
                 ->maxLength(255),
-
-
 
             Forms\Components\TextInput::make('url_slug')
                 ->helperText('Eg: 3d-4n-ooty-Destination')
