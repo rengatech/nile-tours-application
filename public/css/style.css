@@ -14043,7 +14043,12 @@ textarea {
     background: #8bc34a;
     color: #fff;
 }
-
+@media (max-width: 500px) {
+    .hotel-img {
+        height: 200px;
+        margin-bottom: 2em;
+    }
+}
 
 
 
