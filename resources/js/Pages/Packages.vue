@@ -51,7 +51,7 @@ defineProps({ packages: Object, page: Object });
             /></a>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
-            <a class="nav-link" style="cursor: pointer;">
+            <a class="nav-link" style="cursor: pointer">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
         </div>
@@ -61,7 +61,7 @@ defineProps({ packages: Object, page: Object });
                 <div class="row">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Special Offers</span>
-                        <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+                        <h3 class="mb-4"><strong>Top</strong> Tour Packages</h3>
                     </div>
 
                     <div class="col-lg-12">
@@ -115,12 +115,10 @@ defineProps({ packages: Object, page: Object });
                                         </p>
                                         <hr />
                                         <p class="bottom-area d-flex">
-                                            <span
-                                                ><i class="icon-map-o"></i>
-                                                {{
-                                                    tourPackage.seo_title
-                                                }}</span
-                                            >
+                                            <span>
+                                                <i class="icon-map-o mr-2"></i>
+                                                {{ tourPackage?.destinations.map(destination => destination.name).join(', ') }}
+                                            </span>
                                             <span class="ml-auto">
                                                 <Link
                                                     :href="

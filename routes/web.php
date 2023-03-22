@@ -48,7 +48,7 @@ Route::get('/packages', function () {
     return Inertia::render(
         'Packages',
         [
-            'packages' => Package::all(),
+            'packages' => Package::with('destinations')->get(),
             'page' => Page::where('name', 'Packages')->first(),
 
         ]
@@ -84,7 +84,7 @@ Route::get('/destinations/{slug}', function ($slug) {
     return Inertia::render(
         'DestinationDetail',
         [
-            'destination' => Destination::with('packages')->where('url_slug', $slug)->first(),
+            'destination' => Destination::with('packages.destinations')->where('url_slug', $slug)->first(),
         ]
     );
 })->name('destination.detail');

@@ -45,6 +45,8 @@ class PackageResource extends Resource
 
 
 
+
+
                 Forms\Components\TextInput::make('url_slug')
                     ->helperText('Eg: 3d-4n-ooty-package')
                     ->required()
@@ -85,7 +87,7 @@ class PackageResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail_image'),
                 Tables\Columns\TextColumn::make('name'),
-                // Tables\Columns\TextColumn::make('destinations.name'),
+                Tables\Columns\TextColumn::make('destinations.name'),
 
                 Tables\Columns\TextColumn::make('url_slug'),
                 Tables\Columns\TextColumn::make('created_at')

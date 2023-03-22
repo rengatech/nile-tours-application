@@ -140,11 +140,11 @@ defineProps({
 
         <section class="ftco-section ftco-destination">
             <div class="container">
-                <div class="row justify-content-start mb-5 pb-3">
+                <div class="row justify-content-start mb-3">
                     <div class="col-md-7 heading-section ftco-animate">
-                        <span class="subheading">Featured</span>
+                        <span class="subheading">Spotlight</span>
                         <h2 class="mb-4">
-                            <strong>Featured</strong> Destination
+                            <strong>Featured</strong> Destinations
                         </h2>
                     </div>
                 </div>
@@ -200,14 +200,14 @@ defineProps({
                                         <!-- <span>Oneday -5hours</span> -->
                                         <!-- </p> -->
                                         <hr />
-                                        <p class="bottom-area d-flex">
-                                            <span
+                                        <p class="bottom-area-1 d-flex justify-content-center">
+                                            <!-- <span
                                                 ><i class="icon-map-o"></i>
                                                 {{
                                                     tourdestination.seo_title
                                                 }}</span
-                                            >
-                                            <span class="ml-auto">
+                                            > -->
+                                            <span >
                                                 <Link
                                                     :href="
                                                         '/destinations/' +
@@ -235,9 +235,11 @@ defineProps({
         <!-- //////////////////////////////////////////////////////////// -->
         <section class="ftco-section bg-light">
             <div class="container">
-                <div class="col-md-7 heading-section ftco-animate">
-                    <span class="subheading">Special Offers</span>
-                    <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
+                <div class="row justify-content-start mb-3">
+                    <div class="col-md-7 heading-section ftco-animate">
+                        <span class="subheading">Top packages</span>
+                        <h2 class="mb-4"><strong>Specially Curated</strong> Tour Packages</h2>
+                    </div>
                 </div>
                 <div class="row justify-content-center ftco-animate">
                     <div class="col-lg-12">
@@ -455,12 +457,12 @@ defineProps({
                                             <!-- <span>Oneday -5hours</span> -->
                                         </p>
                                         <hr />
-                                        <p class="bottom-area d-flex">
-                                            <span
+                                        <p class="bottom-area-1 d-flex justify-content-center">
+                                            <!-- <span
                                                 ><i class="icon-map-o"></i>
                                                 {{ tourHotel.seo_title }}</span
-                                            >
-                                            <span class="ml-auto">
+                                            > -->
+                                            <span>
                                                 <Link
                                                     :href="
                                                         '/hotels/' +

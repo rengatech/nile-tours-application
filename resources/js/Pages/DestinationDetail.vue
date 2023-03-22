@@ -61,11 +61,12 @@ defineProps({ destination: Object });
                                         class="col-md-7 heading-section ftco-animate"
                                     >
                                         <span class="subheading"
-                                            >Special Offers</span
+                                            >Curated packages</span
                                         >
-                                        <h2 class="mb-4">
-                                            <strong>Top</strong> Tour Packages
-                                        </h2>
+                                        <h3 class="mb-4">
+                                            <strong>Popular</strong> packages
+                                            for <span>{{ destination.name }}</span>
+                                        </h3>
                                     </div>
 
                                     <div class="col-lg-12">
@@ -132,9 +133,10 @@ defineProps({ destination: Object });
                                                                 ><i
                                                                     class="icon-map-o"
                                                                 ></i>
-                                                                {{
-                                                                    tourPackage.seo_title
-                                                                }}</span
+                                                {{ tourPackage?.destinations.map(destination => destination.name).join(', ') }}
+
+
+                                                                </span
                                                             >
                                                             <span
                                                                 class="ml-auto"
@@ -159,6 +161,13 @@ defineProps({ destination: Object });
                             </div>
                         </section>
                         <div class="row">
+
+                            <div class="col-md-12 heading-section ftco-animate text-center">
+                                <h3 class="mb-4">
+                                    <strong>{{ destination.name }}</strong> in a glance
+                                </h3>
+                            </div>
+
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
                                     <div
@@ -180,7 +189,7 @@ defineProps({ destination: Object });
                             <div
                                 class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
                             >
-                                <span>Our Popular Destinations </span>
+                                <span>Our  curated Destination </span>
                                 <h1 class="my-4">{{ destination.name }}</h1>
                                 <p v-html="destination.description"></p>
                             </div>

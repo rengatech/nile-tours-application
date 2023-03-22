@@ -181,6 +181,18 @@ defineProps({ contact_us: Object, page: Object });
                     </div> -->
                 </div>
                 <div class="row block-9 my-4">
+                    <div class="col-md-6">
+                        <iframe
+                            class="w-100"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15546.231235952419!2d80.25846386889654!3d13.06379470669923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267484e3bce2d%3A0x48b7e03be81f5a79!2sNile%20Tours!5e0!3m2!1sen!2sin!4v1678802397314!5m2!1sen!2sin"
+                            width="600"
+                            height="450"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </div>
                     <div class="col-md-6 pr-md-5">
 
                         <form method="POST" action="/leads">
@@ -237,25 +249,12 @@ defineProps({ contact_us: Object, page: Object });
                             </div>
                             <div class="form-group">
                                 <input
-                                    class="formBtn my-3 btnsubmit"
+                                    class="formBtn my-3 d-block btnsubmit"
                                     type="submit"
                                 />
                             </div>
                             <!-- <input class="formBtn" type="reset" /> -->
                         </form>
-                    </div>
-
-                    <div class="col-md-6">
-                        <iframe
-                            class="w-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15546.231235952419!2d80.25846386889654!3d13.06379470669923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267484e3bce2d%3A0x48b7e03be81f5a79!2sNile%20Tours!5e0!3m2!1sen!2sin!4v1678802397314!5m2!1sen!2sin"
-                            width="600"
-                            height="450"
-                            style="border: 0"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        ></iframe>
                     </div>
                 </div>
             </div>

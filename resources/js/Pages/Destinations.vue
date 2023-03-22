@@ -63,13 +63,13 @@ defineProps({ destinations: Object, page: Object });
             <div class="row  min-height-400">
                     <div class="col-md-7 heading-section ftco-animate">
                         <span class="subheading">Featured</span>
-                        <h2 class="mb-4">
+                        <h3 class="mb-4">
                             <strong>Featured</strong> Destination
-                        </h2>
+                        </h3>
                     </div>
 
                     <div class="col-lg-12">
-                        <div class="row">
+                        <div class="row mt-2">
                             <div
                                 class="col-md-4 ftco-animate"
                                 v-for="tourDestination in destinations"
@@ -119,14 +119,14 @@ defineProps({ destinations: Object, page: Object });
                                         <!-- <span>Oneday -5hours</span> -->
                                         <!-- </p> -->
                                         <hr />
-                                        <p class="bottom-area d-flex">
-                                            <span
+                                        <p class="bottom-area-1 d-flex justify-content-center">
+                                            <!-- <span
                                                 ><i class="icon-map-o"></i>
                                                 {{
                                                     tourDestination.seo_title
                                                 }}</span
-                                            >
-                                            <span class="ml-auto">
+                                            > -->
+                                            <span >
                                                 <Link
                                                     :href="
                                                         '/destinations/' +
@@ -147,6 +147,7 @@ defineProps({ destinations: Object, page: Object });
                 </div>
             </div>
         </section>
+
         <!-- destination end -->
     </HomeLayout>
 </template>

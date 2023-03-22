@@ -74,15 +74,13 @@ defineProps({ package: Object, Lead: Object });
                                     <div
                                         class="col-md-7 heading-section ftco-animate"
                                     >
-                                        <span class="subheading">Featured</span>
-                                        <h2 class="mb-4">
-                                            <strong>Featured</strong>
-                                            Destination
-                                        </h2>
+                                        <h3 class="mb-4">
+                                            Destinations in <strong>{{ package.name }}</strong>
+                                        </h3>
                                     </div>
 
-                                    <div class="col-lg-12">
-                                        <div class="row">
+                                    <div class="col-lg-12" >
+                                        <div class="row mt-2">
                                             <div
                                                 class="col-md-4 ftco-animate"
                                                 v-for="tourDestination in package.destinations"
@@ -139,18 +137,18 @@ defineProps({ package: Object, Lead: Object });
                                                         <!-- </p> -->
                                                         <hr />
                                                         <p
-                                                            class="bottom-area d-flex"
+                                                            class="bottom-area-1 d-flex justify-content-center"
                                                         >
-                                                            <span
+                                                            <!-- <span
                                                                 ><i
                                                                     class="icon-map-o"
                                                                 ></i>
                                                                 {{
                                                                     tourDestination.seo_title
                                                                 }}</span
-                                                            >
+                                                            > -->
                                                             <span
-                                                                class="ml-auto"
+
                                                             >
                                                                 <Link
                                                                     :href="
@@ -174,6 +172,15 @@ defineProps({ package: Object, Lead: Object });
                         </section>
 
                         <div class="row">
+
+
+                            <div class="col-md-12 heading-section ftco-animate text-center">
+                                <h3 class="mb-4">
+                                    <strong>{{ package.name }}</strong> in a glance
+                                </h3>
+                            </div>
+
+
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
                                     <div
@@ -193,7 +200,7 @@ defineProps({ package: Object, Lead: Object });
                                 </div>
                             </div>
                             <div class="col-md-12 mt-4 mb-5 ftco-animate">
-                                <span>Our curated packages</span>
+                                <span>Our curated package</span>
                                 <h1 class="my-4">{{ package.name }}</h1>
                                 <p v-html="package.description"></p>
                             </div>
@@ -226,7 +233,7 @@ defineProps({ package: Object, Lead: Object });
             </div>
         </section>
 
-        <section class="ftco-section contact-section">
+        <section class=" contact-section">
             <div class="container">
                 <div class="text-center">
                     <h4 class="text-success"><b>Contact Us</b></h4>

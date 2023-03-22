@@ -64,7 +64,7 @@ defineProps({ hotels: Object, page: Object });
             <div class="container">
                 <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
-                        <span class="subheading">Special Offers</span>
+                        <span class="subheading">Specially Offers</span>
                         <h2 class="mb-4"><strong>Popular</strong> Hotels</h2>
                     </div>
                 </div>
@@ -120,12 +120,12 @@ defineProps({ hotels: Object, page: Object });
                                         <!-- <span>Oneday -5hours</span> -->
                                     </p>
                                     <hr />
-                                    <p class="bottom-area d-flex">
-                                        <span
+                                    <p class="bottom-area-1  d-flex justify-content-center">
+                                        <!-- <span
                                             ><i class="icon-map-o"></i>
                                             {{ tourHotel.seo_title }}</span
-                                        >
-                                        <span class="ml-auto">
+                                        > -->
+                                        <span class="">
                                             <Link
                                                 :href="
                                                     '/hotels/' +
