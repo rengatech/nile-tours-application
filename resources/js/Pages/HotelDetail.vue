@@ -7,8 +7,8 @@ defineProps({ hotel: Object });
 
 <template>
     <HomeLayout
-        :title="hotel.seo_title"
-        :seo_meta_description="hotel.seo_meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Hotel-Details'"
+    :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"

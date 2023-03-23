@@ -21,8 +21,8 @@ defineProps({ package: Object, Lead: Object });
 
 <template>
     <HomeLayout
-        :title="package.seo_title"
-        :seo_meta_description="package.seo_meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Packages-Details'"
+    :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"

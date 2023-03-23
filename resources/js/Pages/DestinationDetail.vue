@@ -7,8 +7,8 @@ defineProps({ destination: Object });
 
 <template>
     <HomeLayout
-        :title="destination.seo_title"
-        :seo_meta_description="destination.seo_meta_description"
+    :title="page?.title ? page.title : 'Nile Tours Destinations-Details'"
+    :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"

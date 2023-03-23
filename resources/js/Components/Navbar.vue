@@ -20,7 +20,8 @@ import { Link } from "@inertiajs/vue3";
                             />
                         </div>
                     </Link>
-                    <button
+
+                    <!-- <button
                         class="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
@@ -29,9 +30,15 @@ import { Link } from "@inertiajs/vue3";
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <span class="oi oi-menu"></span> Menu
-                    </button>
 
+                        <span class="oi oi-menu"></span> Menu
+                    </button> -->
+
+                    <div class=" navbar-toggler" onclick="myFunction(this)" data-toggle="collapse"  data-target="#ftco-nav"  aria-controls="ftco-nav">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                    </div>
                     <div class="collapse navbar-collapse" id="ftco-nav">
                         <ul class="navbar-nav ml-auto">
                             <li
@@ -45,8 +52,12 @@ import { Link } from "@inertiajs/vue3";
                             <li
                                 :class="[
                                     'nav-item',
-                                    route().current('packages') ? 'active' : null,
-                                    route().current('package.detail') ? 'active' : null,
+                                    route().current('packages')
+                                        ? 'active'
+                                        : null,
+                                    route().current('package.detail')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/packages" class="nav-link"
@@ -56,8 +67,12 @@ import { Link } from "@inertiajs/vue3";
                             <li
                                 :class="[
                                     'nav-item',
-                                    route().current('destinations') ? 'active' : null,
-                                    route().current('destination.detail') ? 'active' : null,
+                                    route().current('destinations')
+                                        ? 'active'
+                                        : null,
+                                    route().current('destination.detail')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/destinations" class="nav-link"
@@ -68,7 +83,9 @@ import { Link } from "@inertiajs/vue3";
                                 :class="[
                                     'nav-item',
                                     route().current('hotels') ? 'active' : null,
-                                    route().current('hotel.detail') ? 'active' : null,
+                                    route().current('hotel.detail')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/hotels" class="nav-link"
@@ -78,7 +95,9 @@ import { Link } from "@inertiajs/vue3";
                             <li
                                 :class="[
                                     'nav-item',
-                                    route().current('gallery') ? 'active' : null,
+                                    route().current('gallery')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/gallery" class="nav-link"
@@ -88,7 +107,9 @@ import { Link } from "@inertiajs/vue3";
                             <li
                                 :class="[
                                     'nav-item',
-                                    route().current('reviews') ? 'active' : null,
+                                    route().current('reviews')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/reviews" class="nav-link"
@@ -98,7 +119,9 @@ import { Link } from "@inertiajs/vue3";
                             <li
                                 :class="[
                                     'nav-item',
-                                    route().current('contact_us') ? 'active' : null,
+                                    route().current('contact_us')
+                                        ? 'active'
+                                        : null,
                                 ]"
                             >
                                 <Link href="/contact-us" class="nav-link"
@@ -106,15 +129,12 @@ import { Link } from "@inertiajs/vue3";
                                 >
                             </li>
                             <li class="nav-item cta">
-                                    <a class="nav-link"><span>Book Now</span></a>
+                                <a class="nav-link"><span>Book Now</span></a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </header>
-
     </main>
-
 </template>
