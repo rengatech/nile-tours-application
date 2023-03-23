@@ -13719,7 +13719,7 @@ textarea {
     .whatsapp {
         width: 12%;
         position: absolute;
-        top: 621px;
+        top: 600px;
         left: 10px;
         border-radius: 50%;
     }
@@ -13728,8 +13728,8 @@ textarea {
 @media (max-width:400px) {
     .booknow {
         position: absolute;
-        top: 626px;
-        right: 0;
+        top: 600px;
+        right: 2px;
         width: 42%;
         height: 49px;
     }
