@@ -7,8 +7,8 @@ defineProps({ destination: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Destinations-Details'"
-    :seo_meta_description="page?.meta_description"
+        :title="page?.title ? page.title : 'Nile Tours Destinations-Details'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
@@ -65,7 +65,8 @@ defineProps({ destination: Object });
                                         >
                                         <h3 class="mb-4">
                                             <strong>Popular</strong> packages
-                                            for <span>{{ destination.name }}</span>
+                                            for
+                                            <span>{{ destination.name }}</span>
                                         </h3>
                                     </div>
 
@@ -133,11 +134,19 @@ defineProps({ destination: Object });
                                                                 ><i
                                                                     class="icon-map-o"
                                                                 ></i>
-                                                {{ tourPackage?.destinations.map(destination => destination.name).join(', ') }}
-
-
-                                                                </span
-                                                            >
+                                                                {{
+                                                                    tourPackage?.destinations
+                                                                        .map(
+                                                                            (
+                                                                                destination
+                                                                            ) =>
+                                                                                destination.name
+                                                                        )
+                                                                        .join(
+                                                                            ", "
+                                                                        )
+                                                                }}
+                                                            </span>
                                                             <span
                                                                 class="ml-auto"
                                                             >
@@ -161,35 +170,47 @@ defineProps({ destination: Object });
                             </div>
                         </section>
                         <div class="row">
-
-                            <div class="col-md-12 heading-section ftco-animate text-center">
+                            <div
+                                class="col-md-12 heading-section ftco-animate text-center"
+                            >
                                 <h3 class="mb-4">
-                                    <strong>{{ destination.name }}</strong> in a glance
+                                    <strong>{{ destination.name }}</strong> in a
+                                    glance
                                 </h3>
                             </div>
 
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div
-                                        class="item"
+                                    <a
+                                        class="item icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                        :href="'/storage/' + image"
                                         v-for="image in destination.images"
                                     >
                                         <div
-                                            class="hotel-img"
+                                            class="hotel-img destination d-flex justify-content-center align-items-center"
                                             v-bind:style="{
                                                 backgroundImage:
                                                     'url(/storage/' +
                                                     image +
                                                     ')',
                                             }"
-                                        ></div>
-                                    </div>
+                                        >
+                                            <div
+                                                class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                                :href="'/storage/' + image"
+                                            >
+                                                <span
+                                                    class="icon-search2"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <div
                                 class="col-md-12 hotel-single mt-4 mb-5 ftco-animate"
                             >
-                                <span>Our  curated Destination </span>
+                                <span>Our curated Destination </span>
                                 <h1 class="my-4">{{ destination.name }}</h1>
                                 <p v-html="destination.description"></p>
                             </div>

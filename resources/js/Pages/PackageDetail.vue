@@ -21,8 +21,8 @@ defineProps({ package: Object, Lead: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Packages-Details'"
-    :seo_meta_description="page?.meta_description"
+        :title="page?.title ? page.title : 'Nile Tours Packages-Details'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
@@ -75,11 +75,12 @@ defineProps({ package: Object, Lead: Object });
                                         class="col-md-7 heading-section ftco-animate"
                                     >
                                         <h3 class="mb-4">
-                                            Destinations in <strong>{{ package.name }}</strong>
+                                            Destinations in
+                                            <strong>{{ package.name }}</strong>
                                         </h3>
                                     </div>
 
-                                    <div class="col-lg-12" >
+                                    <div class="col-lg-12">
                                         <div class="row mt-2">
                                             <div
                                                 class="col-md-4 ftco-animate"
@@ -147,9 +148,7 @@ defineProps({ package: Object, Lead: Object });
                                                                     tourDestination.seo_title
                                                                 }}</span
                                                             > -->
-                                                            <span
-
-                                                            >
+                                                            <span>
                                                                 <Link
                                                                     :href="
                                                                         '/destinations/' +
@@ -172,31 +171,41 @@ defineProps({ package: Object, Lead: Object });
                         </section>
 
                         <div class="row">
-
-
-                            <div class="col-md-12 heading-section ftco-animate text-center">
+                            <div
+                                class="col-md-12 heading-section ftco-animate text-center"
+                            >
                                 <h3 class="mb-4">
-                                    <strong>{{ package.name }}</strong> in a glance
+                                    <strong>{{ package.name }}</strong> in a
+                                    glance
                                 </h3>
                             </div>
 
-
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div
-                                        class="item"
+                                    <a
+                                        class="item icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                        :href="'/storage/' + image"
                                         v-for="image in package.images"
                                     >
                                         <div
-                                            class="hotel-img"
+                                            class="hotel-img destination d-flex justify-content-center align-items-center"
                                             v-bind:style="{
                                                 backgroundImage:
                                                     'url(/storage/' +
                                                     image +
                                                     ')',
                                             }"
-                                        ></div>
-                                    </div>
+                                        >
+                                            <div
+                                                class="icon d-flex justify-content-center align-items-center image-popup-vertical-fit"
+                                                :href="'/storage/' + image"
+                                            >
+                                                <span
+                                                    class="icon-search2"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-4 mb-5 ftco-animate">
@@ -233,7 +242,7 @@ defineProps({ package: Object, Lead: Object });
             </div>
         </section>
 
-        <section class=" contact-section">
+        <section class="contact-section">
             <div class="container">
                 <div class="text-center">
                     <h4 class="text-success"><b>Contact Us</b></h4>

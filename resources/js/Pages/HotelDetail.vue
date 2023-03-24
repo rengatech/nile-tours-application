@@ -7,8 +7,8 @@ defineProps({ hotel: Object });
 
 <template>
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Hotel-Details'"
-    :seo_meta_description="page?.meta_description"
+        :title="page?.title ? page.title : 'Nile Tours Hotel-Details'"
+        :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
@@ -56,20 +56,30 @@ defineProps({ hotel: Object });
                         <div class="row">
                             <div class="col-md-12 ftco-animate">
                                 <div class="single-slider owl-carousel">
-                                    <div
-                                        class="item"
+                                    <a
+                                        class="item icon d-flex justify-content-center  align-items-center image-popup-vertical-fit"
+                                        :href="'/storage/' + image"
                                         v-for="image in hotel.images"
                                     >
                                         <div
-                                            class="hotel-img"
+                                            class="hotel-img destination d-flex justify-content-center align-items-center"
                                             v-bind:style="{
                                                 backgroundImage:
                                                     'url(/storage/' +
                                                     image +
                                                     ')',
                                             }"
-                                        ></div>
-                                    </div>
+                                        >
+                                            <div
+                                                class="icon d-flex justify-content-center  align-items-center image-popup-vertical-fit"
+                                                :href="'/storage/' + image"
+                                            >
+                                                <span
+                                                    class="icon-search2"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                             <div
