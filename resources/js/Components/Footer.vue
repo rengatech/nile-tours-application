@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="bookForm">
+    <div v-if="route().current() != leads" class="bookForm">
         <div class="d-flex justify-content-end">
             <img src="/images/close-outline.svg" width="50" class="call-btn" />
         </div>

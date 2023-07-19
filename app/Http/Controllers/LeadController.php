@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lead;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class LeadController extends Controller
 {
@@ -19,7 +20,6 @@ class LeadController extends Controller
             'message' => $request->message,
         ]);
 
-        // return Lead::all();
-        return Redirect::to('/');
+        return Inertia::render('ThankYou');
     }
 }
