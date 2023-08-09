@@ -125,6 +125,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'rednote_api_key' => env('REDNOTE_API_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
