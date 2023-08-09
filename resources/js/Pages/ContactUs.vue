@@ -227,6 +227,14 @@ defineProps({ contact_us: Object, page: Object });
                             </div>
                             <div class="form-group">
                                 <input
+                                    placeholder="From City"
+                                    type="text"
+                                    name="from_city"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
                                     placeholder="Travel Date"
                                     type="date"
                                     name="travel_date"

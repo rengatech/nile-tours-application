@@ -34,6 +34,13 @@ onMounted(() => {
                 name="mobile_number"
                 required
             />
+          
+            <input
+                placeholder="From City"
+                type="text"
+                name="from_city"
+                required
+            />
             <input
                 placeholder="Travel Date"
                 type="date"
