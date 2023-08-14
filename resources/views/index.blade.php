@@ -423,7 +423,6 @@
             <input placeholder="Name" type="text" name="name" required />
             <input placeholder="Email" type="email" name="email" required />
             <input placeholder="Mobile Number" type="text" name="mobile_number" required />
-            {{-- <input placeholder="From City" type="text" name="from_city" required /> --}}
             <input placeholder="Travel Date" type="date" name="travel_date" required />
             <input placeholder="Number Of Members" type="number" name="number_of_members" required />
             <textarea placeholder="Message" name="message"></textarea>
