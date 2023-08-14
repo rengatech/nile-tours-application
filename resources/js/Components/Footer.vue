@@ -34,19 +34,23 @@ onMounted(() => {
                 name="mobile_number"
                 required
             />
-          
-            <input
+
+            <!-- <input
                 placeholder="From City"
                 type="text"
                 name="from_city"
                 required
-            />
+            /> -->
             <input
-                placeholder="Travel Date"
-                type="date"
-                name="travel_date"
-                required
+            placeholder="Travel Date"
+            type="text"
+            name="travel_date"
+            onfocus="(this.type='date')"
+            onblur="(this.type='text')"
+            id="travel_date"
+            required
             />
+
             <input
                 placeholder="Number Of Members"
                 type="number"

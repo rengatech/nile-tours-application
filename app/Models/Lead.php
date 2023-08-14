@@ -11,6 +11,6 @@ class Lead extends Model
 
     // protected $guarded = [];
 
-    protected $fillable = ['name' , 'email' , 'mobile_number' , 'package_name' , 'travel_date', 'number_of_members' , 'message' , 'from_city'];
+    protected $fillable = ['name' , 'email' , 'mobile_number' , 'package_name' , 'travel_date', 'number_of_members' , 'message'];
 
 }

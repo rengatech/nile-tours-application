@@ -225,19 +225,22 @@ defineProps({ contact_us: Object, page: Object });
                                     required
                                 />
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <input
                                     placeholder="From City"
                                     type="text"
                                     name="from_city"
                                     required
                                 />
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <input
                                     placeholder="Travel Date"
-                                    type="date"
+                                    type="text"
                                     name="travel_date"
+                                    onfocus="(this.type='date')"
+                                    onblur="(this.type='text')"
+                                    id="travel_date"
                                     required
                                 />
                             </div>
