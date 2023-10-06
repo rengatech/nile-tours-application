@@ -46,10 +46,23 @@ class LeadController extends Controller
             'CustomTextValue2' => $request->travel_date,
         ];
 
-           Http::post($url, $data);
+        $privyrUrl = 'https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/PzwrSsrl#generic-webhook';
+        $privyrData = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'package_name' => $request->package_name ? $request->package_name : 'General contact form',
+            'mobile_number' => $request->mobile_number,
+            // 'from_city' => $request->from_city,
+            'travel_date' => $request->travel_date,
+            'number_of_members' => $request->number_of_members,
+            'message' => $request->message,
+        ];
+
+        $rednoteResponse = Http::post($url, $data);
+        $privyrResponse = Http::post($privyrUrl, $privyrData);
+        //    Http::post($url, $data ,$privyrUrl, $privyrData);
 
             return Inertia::render('ThankYou');
 
-        // return Inertia::render('ThankYou');
     }
 }
