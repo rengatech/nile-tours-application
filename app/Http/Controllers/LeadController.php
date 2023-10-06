@@ -49,9 +49,10 @@ class LeadController extends Controller
         $privyrUrl = 'https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/PzwrSsrl#generic-webhook';
         $privyrData = [
             'name' => $request->name,
+            'display_name' => $request->name,
             'email' => $request->email,
             'package_name' => $request->package_name ? $request->package_name : 'General contact form',
-            'mobile_number' => $request->mobile_number,
+            'phone' => $request->mobile_number,
             // 'from_city' => $request->from_city,
             'travel_date' => $request->travel_date,
             'number_of_members' => $request->number_of_members,
