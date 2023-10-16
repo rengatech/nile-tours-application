@@ -64,6 +64,11 @@
   gtag('config', 'AW-11147814777');
 </script>
 
+<!-- Event snippet for Lead form submit conversion page -->
+<script>
+    gtag('event', 'conversion', {'send_to': 'AW-11147814777/_Kf0CNqC1-wYEPnO2MMp'});
+  </script>
+  
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -91,7 +96,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKL23XG4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     @inertia
 
     <script src="/js/jquery.min.js"></script>
