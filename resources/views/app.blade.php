@@ -54,20 +54,24 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11372471903"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11147814777"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-11372471903');
+  gtag('config', 'AW-11147814777');
 </script>
 
+<!-- Event snippet for Page view conversion page -->
+<script>
+    gtag('event', 'conversion', {'send_to': 'AW-11147814777/B--YCLyS2uwYEPnO2MMp'});
+  </script>
+  
 
-   
-    <!-- Google tag (gtag.js) -->
-    {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11147814777"></script>
+    {{-- <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11147814777"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -75,6 +79,7 @@
 
     gtag('config', 'AW-11147814777');
     </script> --}}
+    
 </head>
 <body>
     @inertia
