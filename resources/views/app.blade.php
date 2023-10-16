@@ -64,8 +64,13 @@
   gtag('config', 'AW-11147814777');
 </script>
 
-<!-- Event snippet for Lead form submit conversion page -->
+<!-- Event snippet for Lead Form conversion page -->
 <script>
+    gtag('event', 'conversion', {'send_to': 'AW-11147814777/sP2UCNLa4-wYEPnO2MMp'});
+  </script>
+
+<!-- Event snippet for Lead form submit conversion page -->
+    <script>
     gtag('event', 'conversion', {'send_to': 'AW-11147814777/_Kf0CNqC1-wYEPnO2MMp'});
   </script>
   
@@ -76,20 +81,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KKL23XG4');</script>
     <!-- End Google Tag Manager -->
-
-
-  
-
-    {{-- <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11147814777"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-11147814777');
-    </script> --}}
-    
+   
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
