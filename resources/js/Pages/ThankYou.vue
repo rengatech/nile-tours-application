@@ -5,7 +5,7 @@ import HomeLayout from "../Layouts/HomeLayout.vue";
 
 
 defineProps({faq: Object, page: Object });
-gtag('event', 'conversion', {'send_to': 'AW-11147814777/B--YCLyS2uwYEPnO2MMp'});
+gtag('event', 'conversion', {'send_to': 'AW-11147814777/_Kf0CNqC1-wYEPnO2MMp'});
 </script>
 
 <template>
