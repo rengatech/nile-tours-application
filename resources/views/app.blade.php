@@ -64,10 +64,7 @@
   gtag('config', 'AW-11147814777');
 </script>
 
-<!-- Event snippet for Page view conversion page -->
-<script>
-    gtag('event', 'conversion', {'send_to': 'AW-11147814777/B--YCLyS2uwYEPnO2MMp'});
-  </script>
+
   
 
     {{-- <!-- Google tag (gtag.js) -->
