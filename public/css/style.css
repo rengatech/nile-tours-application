@@ -10466,9 +10466,9 @@ h5,
 }
 
 .ftco-navbar-light {
-    background: transparent !important;
+    background: white !important;
     position: absolute;
-    top: 20px;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 3;
@@ -10498,7 +10498,7 @@ h5,
 }
 
 .ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover {
-    color: #fff;
+    color: #0D7A3B;
 }
 
 .ftco-navbar-light .navbar-nav>.nav-item .dropdown-menu {
