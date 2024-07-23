@@ -80,7 +80,7 @@
         </div>
         <!--Comments---------------------------------------->
         <div class="client-comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+          
         </div>
     </div>
     <!--BOX-2-------------->
@@ -110,7 +110,7 @@
         </div>
         <!--Comments---------------------------------------->
         <div class="client-comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+            
         </div>
     </div>
     <!--BOX-3-------------->
@@ -139,10 +139,9 @@
             </div>
         </div>
         <!--Comments---------------------------------------->
-        <div class="client-comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
-        </div>
-    </div>
+        <!-- <div class="client-comment">
+           
+    </div> -->
     <!--BOX-4-------------->
     <div class="testimonial-box">
         <!--top------------------------->
@@ -169,9 +168,10 @@
             </div>
         </div>
         <!--Comments---------------------------------------->
-        <div class="client-comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
-        </div>
+        <!-- <div class="client-comment">
+            
+        </div> -->
+        
     </div>
 </div>
 </section></body>
