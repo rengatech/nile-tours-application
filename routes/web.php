@@ -161,7 +161,3 @@ Route::get('/faq', function () {
 
 
 Route::post('/leads', [LeadController::class, 'store']);
-
-
-
-

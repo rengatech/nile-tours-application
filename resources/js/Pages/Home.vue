@@ -15,6 +15,7 @@ defineProps({
 
 </script>
 
+
 <template>
     <HomeLayout
         :title="page?.title ? page.title : 'Nile Tours Home'"
@@ -48,6 +49,7 @@ defineProps({
                 </div>
             </div>
         </div>
+        
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
