@@ -63,8 +63,7 @@ defineProps({ page: Object });
                     <span>Customer Reviews</span>
                     <h4>Clients Say</h4>
                 </div>
-                <!-- <div class="review-widget_net" data-uuid="bfafaa3d-4e46-49d1-ab8b-bb7f09c52ce6" data-template="10" data-filter="" data-lang="en" data-theme="light"><center><a href="https://www.review-widget.net/" target="_blank" rel="noopener"><img src="https://grwapi.net/assets/spinner/spin.svg" title="Google Review Widget" alt="Google Review Widget"></a></center></div><script async type="text/javascript" src="https://grwapi.net/widget.min.js"></script> -->
-                <!--testimonials-box-container------>
+               
                
             </section>
         </body>
