@@ -1,14 +1,44 @@
 <script setup>
+import { onMounted } from 'vue';
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-
 defineProps({ page: Object });
-
+onMounted(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.defer = true;
+    script.setAttribute('data-use-service-core', '');
+    document.body.appendChild(script);
+});
 </script>
-
+<style>
+.elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea{
+    width: 100%;
+            height: 300px;
+            border: 1px solid #cccccc;
+            left: 98%;
+            bottom: 300px;
+}
+@media (max-width: 600px) {
+            .elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea {
+                width: 100%;
+                height: 400px;
+                
+            }
+        }
+        @media (min-width: 601px) and (max-width: 900px) {
+            .elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea {
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+                
+            }
+        }
+</style>
 <template>
+   
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Reviews'"
+        :title="page?.title ? page.title : 'Nile Tours Reviews'"
         :seo_meta_description="page?.meta_description"
     >
         <div
@@ -38,8 +68,8 @@ defineProps({ page: Object });
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            Reviews
-                        </h1>
+                            Reviews <br>
+                            <div class="elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea" data-elfsight-app-lazy></div>                        </h1>
                     </div>
                 </div>
             </div>
@@ -47,26 +77,21 @@ defineProps({ page: Object });
         <!-- reviews Start-->
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
-                <img src="/images/whatsapp.png" class="whatsapp"
-            /></a>
+                <img src="/images/whatsapp.png" class="whatsapp"/>
+            </a>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
-                <img src="/images/Book-Now.png" class="booknow blink"
-            /></a>
+                <img src="/images/Book-Now.png" class="booknow blink"/>
+            </a>
         </div>
-
-        <body>
-            <section id="testimonials">
-                <!--heading--->
-                <div class="testimonial-heading">
-                    <span>Customer Reviews</span>
-                    <h4>Clients Say</h4>
-                </div>
-               
-               
-            </section>
-        </body>
+        <section id="testimonials">
+            <!--heading--->
+            <h4>Client Says</h4>
+            <!-- Elfsight widget -->
+           
+            <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div><br>
+          </section>
         <!-- reviews end-->
     </HomeLayout>
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
+import { onMounted } from 'vue';
 
 
 
@@ -13,8 +14,36 @@ defineProps({
 
 });
 
+onMounted(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.defer = true;
+    script.setAttribute('data-use-service-core', '');
+    document.body.appendChild(script);
+});
 </script>
-
+<style>
+.elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516{
+    width: 100%;
+            height: 400px;
+            border: 1px solid #cccccc;
+}
+@media (max-width: 600px) {
+            .elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516 {
+                width: 100%;
+                height: 400px;
+                
+            }
+        }
+        @media (min-width: 601px) and (max-width: 900px) {
+            .elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516 {
+                width: 100%;
+                height: 300px;
+                margin-bottom: 10px;
+                
+            }
+        }
+</style>
 
 <template>
     <HomeLayout
@@ -43,13 +72,18 @@ defineProps({
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city
+                            <strong>Explore <br /></strong> your amazing city <br> <br>
+                            <div class="elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516" data-elfsight-app-lazy></div>
                         </h1>
+
                     </div>
+                    
                 </div>
+               
             </div>
         </div>
         
+
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
