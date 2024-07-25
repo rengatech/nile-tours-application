@@ -160,4 +160,6 @@ Route::get('/faq', function () {
 })->name('faq');
 
 
+
+
 Route::post('/leads', [LeadController::class, 'store']);

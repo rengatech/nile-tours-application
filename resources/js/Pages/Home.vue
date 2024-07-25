@@ -1,6 +1,7 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
+import { onMounted } from 'vue';
 
 
 
@@ -13,6 +14,13 @@ defineProps({
 
 });
 
+onMounted(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.defer = true;
+    script.setAttribute('data-use-service-core', '');
+    document.body.appendChild(script);
+});
 </script>
 
 
@@ -43,13 +51,17 @@ defineProps({
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city
+                            <strong>Explore <br /></strong> your amazing city <br>
                         </h1>
+
                     </div>
+                    
                 </div>
+               
             </div>
         </div>
         
+
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
@@ -672,7 +684,9 @@ defineProps({
 
         <section class="smart_accordian-section my-5">
             <div class="container">
-                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS</h2>
+                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
+
+                
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "

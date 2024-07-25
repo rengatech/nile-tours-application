@@ -1,20 +1,29 @@
 <script setup>
+import { onMounted } from 'vue';
 import { Link } from "@inertiajs/vue3";
 import HomeLayout from "../Layouts/HomeLayout.vue";
-
 defineProps({ page: Object });
-
+onMounted(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.defer = true;
+    script.setAttribute('data-use-service-core', '');
+    document.body.appendChild(script);
+});
 </script>
-
 <template>
+   
     <HomeLayout
-    :title="page?.title ? page.title : 'Nile Tours Reviews'"
+        :title="page?.title ? page.title : 'Nile Tours Reviews'"
         :seo_meta_description="page?.meta_description"
     >
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)'
+                
+                
+                ,
             }"
         >
             <div class="overlay"></div>
@@ -38,7 +47,13 @@ defineProps({ page: Object });
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            Reviews
+                            Reviews <br> <br>
+                           
+                          
+                          
+
+
+                            
                         </h1>
                     </div>
                 </div>
@@ -47,26 +62,21 @@ defineProps({ page: Object });
         <!-- reviews Start-->
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
-                <img src="/images/whatsapp.png" class="whatsapp"
-            /></a>
+                <img src="/images/whatsapp.png" class="whatsapp"/>
+            </a>
         </div>
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
-                <img src="/images/Book-Now.png" class="booknow blink"
-            /></a>
+                <img src="/images/Book-Now.png" class="booknow blink"/>
+            </a>
         </div>
-
-        <body>
-            <section id="testimonials">
-                <!--heading--->
-                <div class="testimonial-heading">
-                    <span>Customer Reviews</span>
-                    <h4>Clients Say</h4>
-                </div>
-               
-               
-            </section>
-        </body>
+        <section id="testimonials">
+            <!--heading--->
+            <h4>Client Says</h4>
+            <!-- Elfsight widget -->
+           
+            <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div> <br>
+        </section>
         <!-- reviews end-->
     </HomeLayout>
 </template>
