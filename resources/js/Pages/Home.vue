@@ -22,28 +22,7 @@ onMounted(() => {
     document.body.appendChild(script);
 });
 </script>
-<style>
-.elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516{
-    width: 100%;
-            height: 400px;
-            border: 1px solid #cccccc;
-}
-@media (max-width: 600px) {
-            .elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516 {
-                width: 100%;
-                height: 400px;
-                
-            }
-        }
-        @media (min-width: 601px) and (max-width: 900px) {
-            .elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516 {
-                width: 100%;
-                height: 300px;
-                margin-bottom: 10px;
-                
-            }
-        }
-</style>
+
 
 <template>
     <HomeLayout
@@ -72,8 +51,7 @@ onMounted(() => {
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city <br> <br>
-                            <div class="elfsight-app-a79761e1-1e80-481f-9b6b-b0565be7d516" data-elfsight-app-lazy></div>
+                            <strong>Explore <br /></strong> your amazing city <br>
                         </h1>
 
                     </div>
@@ -706,7 +684,9 @@ onMounted(() => {
 
         <section class="smart_accordian-section my-5">
             <div class="container">
-                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS</h2>
+                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
+
+                
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "

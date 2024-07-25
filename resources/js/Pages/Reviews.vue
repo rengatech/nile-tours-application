@@ -11,30 +11,6 @@ onMounted(() => {
     document.body.appendChild(script);
 });
 </script>
-<style>
-.elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea{
-    width: 100%;
-            height: 300px;
-            border: 1px solid #cccccc;
-            left: 98%;
-            bottom: 300px;
-}
-@media (max-width: 600px) {
-            .elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea {
-                width: 100%;
-                height: 400px;
-                
-            }
-        }
-        @media (min-width: 601px) and (max-width: 900px) {
-            .elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea {
-                width: 100%;
-                height: 300px;
-                margin-bottom: 10px;
-                
-            }
-        }
-</style>
 <template>
    
     <HomeLayout
@@ -44,7 +20,10 @@ onMounted(() => {
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)',
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)'
+                
+                
+                ,
             }"
         >
             <div class="overlay"></div>
@@ -68,8 +47,14 @@ onMounted(() => {
                             class="mb-3 bread"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            Reviews <br>
-                            <div class="elfsight-app-d68cac8e-f0aa-40de-b89c-dacba84cdaea" data-elfsight-app-lazy></div>                        </h1>
+                            Reviews <br> <br>
+                           
+                          
+                          
+
+
+                            
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -90,8 +75,8 @@ onMounted(() => {
             <h4>Client Says</h4>
             <!-- Elfsight widget -->
            
-            <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div><br>
-          </section>
+            <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div> <br>
+        </section>
         <!-- reviews end-->
     </HomeLayout>
 </template>
