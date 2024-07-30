@@ -23,6 +23,87 @@ onMounted(() => {
 });
 </script>
 
+<style>
+    @media (max-width: 1200px) {
+            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
+                right: 20%;
+                width: 600px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
+                right: 15%;
+                width: 500px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
+                right: 10%;
+                width: 400px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
+                right: 5%;
+                width: 100%;
+                height: 100px;
+                top: -60px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+                width: 600px;
+                left: 50%;
+                margin-top: -300px;
+                top: -25%;
+            }
+        }
+
+        /* For devices with a maximum width of 992px */
+        @media (max-width: 992px) {
+            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+                width: 500px;
+                left: 40%;
+                margin-top: -250px;
+                top: -20%;
+            }
+        }
+
+        /* For devices with a maximum width of 768px */
+        @media (max-width: 768px) {
+            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+                width: 400px;
+                left: 30%;
+                margin-top: -200px;
+                top: -15%;
+            }
+        }
+
+        /* For devices with a maximum width of 576px */
+        @media (max-width: 576px) {
+            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+                width: 100px;
+                height: 500px;
+                margin-top: -150px;
+                top: -10%;
+                bottom: -400px;
+                position: absolute;
+                right: 600px;
+                left: 20%;
+                margin-left: -300px
+ 
+            }
+        }
+
+</style>
+
 
 <template>
     <HomeLayout
@@ -51,13 +132,10 @@ onMounted(() => {
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city <br>
-                        </h1>
-
-                    </div>
-                    
+                            <strong>Explore <br /></strong> your amazing city <br> </h1>
+                                                       
+                         </div>
                 </div>
-               
             </div>
         </div>
         
@@ -72,6 +150,7 @@ onMounted(() => {
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
         </div>
+
 
         <section class="ftco-section services-section bg-light">
             <div class="container">
@@ -684,9 +763,10 @@ onMounted(() => {
 
         <section class="smart_accordian-section my-5">
             <div class="container">
-                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
-
+                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2><br>
                 
+               <div class="elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7" style="right: 6%; width:690px; height: 330px" data-elfsight-app-lazy></div> 
+               <div class="elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9" style="width: 600px; position: relative; left: 60%; margin-top: -350px; top: -30%;" data-elfsight-app-lazy></div>
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "
@@ -702,6 +782,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <!-- <section class="ftco-section-parallax">
