@@ -24,83 +24,58 @@ onMounted(() => {
 </script>
 
 <style>
-    @media (max-width: 1200px) {
-            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
-                right: 20%;
-                width: 600px;
-                height: 250px;
-            }
-        }
+/* Default styles */
+.elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a {
+    width: 50%;
+    height: 400px;
+    margin-top: -40px;
+    right: 100px;
+    /* Any other styles */
+}
 
-        @media (max-width: 992px) {
-            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
-                right: 15%;
-                width: 500px;
-                height: 200px;
-            }
-        }
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        left: -5px;
+    }
+}
 
-        @media (max-width: 768px) {
-            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
-                right: 10%;
-                width: 400px;
-                height: 150px;
-            }
-        }
+/* Default styles */
+.elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+    width: 80%;
+    height: 650px;
+    margin-top: -400px;
+    position: relative;
+    left: 450px;
+  
+}
 
-        @media (max-width: 576px) {
-            .elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7 {
-                right: 5%;
-                width: 100%;
-                height: 100px;
-                top: -60px;
-            }
-        }
+/* Tablet styles */
+@media only screen and (max-width: 768px) {
+    .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+        width: 85%;
+        height: auto;
+        margin: 15px auto;
+       
+    }
+}
 
-        @media (max-width: 1200px) {
-            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-                width: 600px;
-                left: 50%;
-                margin-top: -300px;
-                top: -25%;
-            }
-        }
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        position: relative;
+        left: 10px;
+       
+    }
+}
 
-        /* For devices with a maximum width of 992px */
-        @media (max-width: 992px) {
-            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-                width: 500px;
-                left: 40%;
-                margin-top: -250px;
-                top: -20%;
-            }
-        }
 
-        /* For devices with a maximum width of 768px */
-        @media (max-width: 768px) {
-            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-                width: 400px;
-                left: 30%;
-                margin-top: -200px;
-                top: -15%;
-            }
-        }
-
-        /* For devices with a maximum width of 576px */
-        @media (max-width: 576px) {
-            .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-                width: 100px;
-                height: 500px;
-                margin-top: -150px;
-                top: -10%;
-                bottom: -400px;
-                position: absolute;
-                right: 600px;
-                left: 20%;
-                margin-left: -300px
- 
-            }
-        }
 
 </style>
 
@@ -591,7 +566,7 @@ onMounted(() => {
             <div class="container1">
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co9hzhMp6qx/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -612,7 +587,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpABOotJ2kT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -633,7 +608,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpPQAyvpiJf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -654,7 +629,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpHqoIeJ71F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -675,7 +650,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co45vbZpzQg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -696,7 +671,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co7Aap5Jy-s/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -717,7 +692,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Cor3bcApTFc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -738,7 +713,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CjFoVOWrGbp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -764,9 +739,8 @@ onMounted(() => {
         <section class="smart_accordian-section my-5">
             <div class="container">
                 <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2><br>
-                
-               <div class="elfsight-app-aecc14e0-72e2-4a2e-80e4-5ebb11ddadd7" style="right: 6%; width:690px; height: 330px" data-elfsight-app-lazy></div> 
-               <div class="elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9" style="width: 600px; position: relative; left: 60%; margin-top: -350px; top: -30%;" data-elfsight-app-lazy></div>
+                <div class="elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a" data-elfsight-app-lazy></div>              
+                <div class="elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9" data-elfsight-app-lazy></div>                
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "
