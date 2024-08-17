@@ -158,7 +158,7 @@ defineProps({ contact_us: Object, page: Object });
                     <div class=" ">
                         <h6>
                             <span><b>Phone :</b></span>
-                            <a href="tel://1234567920" class="text-success"
+                            <a href="tel:+91 9952 787 786" class="text-success"
                                 >+91 9952 787 786</a
                             >
                         </h6>

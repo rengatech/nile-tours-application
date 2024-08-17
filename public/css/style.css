@@ -13608,6 +13608,7 @@ textarea.form-control {
     background: #444;
 }
 
+/* Base styles for .bookForm */
 .bookForm {
     display: none;
     z-index: 2000001;
@@ -13620,8 +13621,25 @@ textarea.form-control {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%);
 }
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+    .bookForm {
+        width: 90%; /* Adjust width to a percentage for better responsiveness */
+        padding: 1.5em; /* Reduce padding to fit smaller screens */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+    .bookForm {
+        width: 95%; /* Further adjust width for very small screens */
+        padding: 1em; /* Reduce padding more for small screens */
+    }
+}
+
 
 .bookForm img {
     display: flex;

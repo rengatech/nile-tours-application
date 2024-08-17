@@ -79,7 +79,7 @@ import { Link } from "@inertiajs/vue3";
                                     >Destinations</Link
                                 >
                             </li>
-                            <li
+                            <!-- <li
                                 :class="[
                                     'nav-item',
                                     route().current('hotels') ? 'active' : null,
@@ -91,7 +91,7 @@ import { Link } from "@inertiajs/vue3";
                                 <Link href="/hotels" class="nav-link"
                                     >Hotels</Link
                                 >
-                            </li>
+                            </li> -->
                             <li
                                 :class="[
                                     'nav-item',

@@ -112,11 +112,11 @@ onMounted(() => {
                                     >Packages</Link
                                 >
                             </li>
-                            <li>
+                            <!-- <li>
                                 <Link href="/hotels" class="py-2 d-block"
                                     >Hotels</Link
                                 >
-                            </li>
+                            </li> -->
                             <li>
                                 <Link href="/reviews" class="py-2 d-block"
                                     >Reviews</Link
@@ -188,10 +188,8 @@ onMounted(() => {
                                 <li>
                                     <a href="#"
                                         ><span class="icon icon-phone"></span
-                                        ><span class="text"
-                                            >+91 9952 787 786</span
-                                        ></a
-                                    >
+                                        > <a href="tel:+919952787786" class="text">+919952787786</a>
+                                        </a>
                                 </li>
                                 <li>
                                     <a href="mailto:Niletours33@gmail.com"
