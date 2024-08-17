@@ -24,6 +24,11 @@ onMounted(() => {
 </script>
 
 <style>
+/* #eapps-instagram-feed-1 {
+    width: 100% !important;
+} */
+
+
 /* Default styles */
 .elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a {
     width: 50%;
@@ -41,6 +46,9 @@ onMounted(() => {
         margin: 0;
         left: -5px;
     }
+    #eapps-instagram-feed-1 {
+    width: 100% !important;
+} 
 }
 
 /* Default styles */
@@ -392,7 +400,7 @@ onMounted(() => {
         </section>
 
         <!-- //////////////////////////////// -->
-        <section
+        <!-- <section
             class="ftco-section ftco-counter img"
             id="section-counter"
             style="background-image: url(images/bg_1.jpg)"
@@ -402,9 +410,9 @@ onMounted(() => {
                     <div
                         class="col-md-7 text-center heading-section heading-section-white ftco-animate"
                     >
-                        <h2 class="mb-4">Nile Tours</h2>
+                        <h2 class="mb-4">Nile Tours</h2> -->
                         <!-- <span class="subheading">More than 100,000 websites hosted</span> -->
-                    </div>
+                    <!-- </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
@@ -463,9 +471,9 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="ftco-section">
+        <!-- <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
@@ -507,30 +515,30 @@ onMounted(() => {
                                     <div class="text p-3">
                                         <div class="d-flex">
                                             <div class="one">
-                                                <h3>
+                                                <h3> -->
                                                     <!-- <a href="#"
                                                             >Mysore, palace</a
                                                         > -->
-                                                    {{ tourHotel.name }}
+                                                    <!-- {{ tourHotel.name }}
                                                 </h3>
                                             </div>
                                         </div>
-                                        <p>
+                                        <p> -->
                                             <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                            {{ tourHotel.short_description }}
+                                            <!-- {{ tourHotel.short_description }}
                                         </p>
-                                        <p class="days">
+                                        <p class="days"> -->
                                             <!-- <span>Oneday -5hours</span> -->
-                                        </p>
+                                        <!-- </p>
                                         <hr />
-                                        <p class="bottom-area-1 d-flex justify-content-center">
+                                        <p class="bottom-area-1 d-flex justify-content-center"> -->
                                             <!-- <span
                                                 ><i class="icon-map-o"></i>
                                                 {{ tourHotel.seo_title }}</span
                                             > -->
-                                            <span>
+                                            <!-- <span>
                                                 <Link
                                                     :href="
                                                         '/hotels/' +
@@ -554,7 +562,7 @@ onMounted(() => {
                     </Link>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- instagram Post Start-->
         <section class="ftco-section">
