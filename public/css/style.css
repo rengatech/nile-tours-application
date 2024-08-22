@@ -13696,7 +13696,7 @@ textarea {
       height: 64px;
 
       }
-    } */
+    } 
 
 @media (min-height:900px) {
     .whatsapp {
@@ -13722,7 +13722,7 @@ textarea {
     .whatsapp {
         width: 10%;
         position: absolute;
-        top: 830px;
+        top: 100px;
         left: 10px;
         border-radius: 50%;
     }
@@ -13780,7 +13780,7 @@ textarea {
     .whatsapp{
       width: 5%;position: absolute;top: 800px;left: 10px;border-radius: 50%;
     }
-    } */
+    } 
 /* Blink for Webkit and others
   (Chrome, Safari, Firefox, IE, ...)
   */
@@ -14096,5 +14096,73 @@ textarea {
     transform: translate(0, -8px) rotate(45deg);
   }
 
+  .callnow {
+    color: white;
+    background:#0d7a3b;
+    margin: 2px 5px;
+    padding: 10px 20px; /* Adjusted padding for consistent button size */
+    border-radius: 5px; /* Rounded corners for both buttons */
+    display: none;
+    font-size: 12px;
+    font-family: 'poppins', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center; /* Center the text inside the button */
+    border-radius: 8px;
+    border-color:white;
 
+}
+
+.callnow a {
+    color: white;
+    text-decoration: none; /* Remove underline from links if any */
+}
+
+.enquire{
+    color: white;
+    background: #0d7a3b;
+    margin: 2px 5px;
+    padding: 10px 20px; /* Adjusted padding for consistent button size */
+    border-radius: 5px; /* Rounded corners for both buttons */
+    display: none;
+    font-size: 12px;
+    font-family: 'poppins', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center; /* Center the text inside the button */
+     border-radius: 8px;
+    border-color:white;
+
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets, small laptops) */
+@media screen and (max-width: 700px) {
+    .enquire {
+        right: -50%; /* Adjust positioning for smaller screens */
+        z-index: 5;
+        bottom: -12px;
+        position: fixed;
+        display: none;
+    }
+    .callnow {
+        left: 50%; /* Adjust positioning for smaller screens */
+        z-index: 5;
+        bottom: -12px;
+        position: fixed;
+        display: none;
+    }
+}
+
+/* Media query for screens smaller than 576px (e.g., mobile devices) */
+@media screen and (max-width: 700px) {
+    .callnow, .enquire{
+        display: block;
+        width: 50%; /* Make buttons full-width */
+        text-align: center; /* Center the text inside the buttons */
+        margin: 5px 0; /* Adjust margin */
+        z-index: 10;
+    }
+    .enquire {
+        left: 0;
+        display: block; /* Reset the position for mobile devices */
+    }
+}
 
