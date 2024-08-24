@@ -30,58 +30,7 @@ onMounted(() => {
 
 
 /* Default styles */
-.elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a {
-    width: 50%;
-    height: 400px;
-    margin-top: -40px;
-    right: 100px;
-    /* Any other styles */
-}
 
-/* Mobile styles */
-@media only screen and (max-width: 600px) {
-    .elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        left: -5px;
-    }
-    #eapps-instagram-feed-1 {
-    width: 100% !important;
-} 
-}
-
-/* Default styles */
-.elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-    width: 80%;
-    height: 650px;
-    margin-top: -400px;
-    position: relative;
-    left: 450px;
-  
-}
-
-/* Tablet styles */
-@media only screen and (max-width: 768px) {
-    .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-        width: 85%;
-        height: auto;
-        margin: 15px auto;
-       
-    }
-}
-
-/* Mobile styles */
-@media only screen and (max-width: 600px) {
-    .elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9 {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-        position: relative;
-        left: 10px;
-       
-    }
-}
 
 
 </style>
@@ -748,9 +697,30 @@ onMounted(() => {
 
         <section class="smart_accordian-section my-5">
             <div class="container">
-                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2><br>
+               
                 <div class="elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a" data-elfsight-app-lazy></div>              
-                <div class="elfsight-app-c0e6f263-c0d5-4a42-a276-4cb2f6547da9" data-elfsight-app-lazy></div>                
+                
+                 <div class="youtube">
+                    <iframe  width="260" height="215" src="https://www.youtube.com/embed/zdOkB0FJjhA?si=Def2LL35ykXd0mmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube1">
+                    <iframe  width="260" height="215" src="https://www.youtube.com/embed/5LvRR4IU3qo?si=zgw5gU2PsD1LFxOB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube1">
+                    <iframe  width="260" height="215" src="https://youtube.com/embed/oGlWmFpUT-s?si=yXUtY-3xS_DFA0we" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2mhpz05h36A?si=NjrCHwCIM0HF7S_Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/2TbBpo__xJc?si=TotrIPH5RDX2mkTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/ktT4blgMtjE?si=7wQuyEJ41Pf53Z3L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
+                
+
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "

@@ -20,7 +20,7 @@ onMounted(() => {
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)'
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg-12.jpg)'
                 
                 
                 ,
