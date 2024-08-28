@@ -63,16 +63,16 @@ defineProps({ contact_us: Object, page: Object });
          <button class="enquire booknow">ENQUIRE NOW</button>
          <button class="callnow"><a href="tel:+919952787786">CALL NOW</a></button>
 
-         <!-- <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+          <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
             /></a>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+        <!-- <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
-        </div>  -->
+        </div>   -->
 
         <!-- <section class="smart_accordian-section my-3">
             <div class="container">
