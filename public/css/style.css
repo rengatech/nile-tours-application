@@ -13689,14 +13689,14 @@ textarea {
     /* height: 30px; */
 }
 
-/* @media (min-width:500px){
+ /* @media (min-width:500px){
     .booknow{
       position: absolute;top: 578px;right: 0;
       width: 16%;
       height: 64px;
 
       }
-    } 
+    }  */
 
 @media (min-height:900px) {
     .whatsapp {
@@ -13708,7 +13708,7 @@ textarea {
     }
 }
 
-@media (min-height:900px) {
+/* @media (min-height:900px) {
     .booknow {
         position: absolute;
         top: 800px;
@@ -13716,11 +13716,11 @@ textarea {
         width: 26%;
         height: 49px;
     }
-}
+} */
 
 @media (max-height:900px) {
     .whatsapp {
-        width: 10%;
+        width: 1%;
         position: absolute;
         top: 100px;
         left: 10px;
@@ -13728,7 +13728,7 @@ textarea {
     }
 }
 
-@media (max-height:900px) {
+/* @media (max-height:900px) {
     .booknow {
         position: absolute;
         top: 830px;
@@ -13736,11 +13736,11 @@ textarea {
         width: 35%;
         height: 49px;
     }
-}
+} */
 
 @media (max-width:400px) {
     .whatsapp {
-        width: 12%;
+        width: 16%;
         position: absolute;
         top: 600px;
         left: 10px;
@@ -13748,7 +13748,7 @@ textarea {
     }
 }
 
-@media (max-width:400px) {
+/* @media (max-width:400px) {
     .booknow {
         position: absolute;
         top: 600px;
@@ -13756,27 +13756,27 @@ textarea {
         width: 42%;
         height: 49px;
     }
-}
+} */
 
 @media (min-width:1000px) {
     .whatsapp {
-        width: 3%;
+        width: 1%;
         position: absolute;
         left: 40px;
         border-radius: 50%;
     }
 }
 
-@media (min-width:1000px) {
+/* @media (min-width:1000px) {
     .booknow {
         position: absolute;
         right: 40px;
         width: 10%;
         height: 49px;
     }
-}
+} */
 
-/* @media (min-width:500px){
+ @media (min-width:500px){
     .whatsapp{
       width: 5%;position: absolute;top: 800px;left: 10px;border-radius: 50%;
     }
