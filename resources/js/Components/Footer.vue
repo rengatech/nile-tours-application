@@ -127,11 +127,7 @@ onMounted(() => {
                                     >Gallery</Link
                                 >
                             </li>
-                            <!-- <li>
-                                <a href="#" class="py-2 d-block"
-                                    >Privacy and Policy</a
-                                >
-                            </li> -->
+                           
                         </ul>
                     </div>
                 </div>
