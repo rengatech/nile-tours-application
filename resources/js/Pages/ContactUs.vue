@@ -129,15 +129,7 @@ defineProps({ contact_us: Object, page: Object });
                             <i class="icon ion-md-add"></i>
                         </div>
                         <div class="answer">
-                            <p>
-                                Short answer, yes. Longer answer is that there
-                                are many options when it comes to travel
-                                insurance. What’s important is getting the most
-                                appropriate plan for the type of trip you’re
-                                taking. Most commonly you will need to make sure
-                                that it includes flight cancellation/trip
-                                interruption, lost bags and theft.
-                            </p>
+                           
                         </div>
                     </div>
                 </div>
