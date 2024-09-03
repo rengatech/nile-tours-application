@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
+use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ShowController;
 use App\Models\Destination;
 use App\Models\FAQ;
@@ -174,3 +175,4 @@ Route::get('/faq', function () {
 
 
 Route::post('/leads', [LeadController::class, 'store']);
+Route::post('/Packages', [PackageController::class, 'store']);
