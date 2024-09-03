@@ -24,12 +24,7 @@ onMounted(() => {
 </script>
 
 <style>
-/* #eapps-instagram-feed-1 {
-    width: 100% !important;
-} */
 
-
-/* Default styles */
 
 
 

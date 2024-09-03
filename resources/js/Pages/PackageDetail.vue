@@ -64,6 +64,15 @@ defineProps({ package: Object, Lead: Object });
             </div>
         </div>
 
+        <button class="enquire booknow">ENQUIRE NOW</button>
+        <button class="callnow"><a href="tel:+919952787786">CALL NOW</a></button>
+
+        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+            <a href="https://wa.link/tmal22">
+                <img src="/images/whatsapp.png" class="whatsapp"
+            /></a>
+        </div>
+
         <section class="ftco-section">
             <div class="container">
                 <div class="row">
