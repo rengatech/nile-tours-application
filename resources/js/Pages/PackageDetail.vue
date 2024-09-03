@@ -16,7 +16,7 @@ onMounted(() => {
         .getAttribute("content");
 });
 
-defineProps({ package: Object, Lead: Object });
+defineProps({ package: Object, Lead: Object , page: Object});
 </script>
 
 <template>
