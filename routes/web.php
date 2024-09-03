@@ -57,15 +57,26 @@ Route::get('/packages', function () {
 
 
 
+// Route::get('/packages/{slug}', function ($slug) {
+//     return Inertia::render(
+//         'PackageDetail',
+//         [
+//             'package' => Package::with('destinations')->where('url_slug', $slug)->first(),
+//         ]
+//     );
+// })->name('package.detail');
+
 Route::get('/packages/{slug}', function ($slug) {
+    $package = Package::with(['destinations', 'images'])->where('url_slug', $slug)->first();
+
     return Inertia::render(
         'PackageDetail',
         [
-            'package' => Package::with('destinations')->where('url_slug', $slug)->first(),
+            'package' => $package,
+            'page' => Page::where('name', 'Packages')->first(),
         ]
     );
 })->name('package.detail');
-
 
 Route::get('/destinations', function () {
     return Inertia::render(
