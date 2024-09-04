@@ -20,7 +20,7 @@ onMounted(() => {
         <div
             class="hero-wrap js-fullheight"
             v-bind:style="{
-                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg_5.jpg)'
+                backgroundImage: page?.background_image ? 'url(storage/' + page.background_image + ')' : 'url(/images/bg-12.jpg)'
                 
                 
                 ,
@@ -59,17 +59,19 @@ onMounted(() => {
                 </div>
             </div>
         </div>
+         <button class="enquire booknow">ENQUIRE NOW</button>
+         <button class="callnow"><a href="tel:+919952787786">CALL NOW</a></button>
         <!-- reviews Start-->
         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"/>
             </a>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+        <!-- <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"/>
             </a>
-        </div>
+        </div>  -->
         <section id="testimonials">
             <!--heading--->
             <h4>Client Says</h4>

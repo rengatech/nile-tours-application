@@ -9629,11 +9629,11 @@ textarea { height: 80px; resize: none; }
       height: 49px;
       }
     }
-  /* @media (min-width:500px){
+   @media (min-width:500px){
   .whatsapp{
     width: 5%;position: absolute;top: 800px;left: 10px;border-radius: 50%;
   }
-  } */
+  } 
 /* Blink for Webkit and others
 (Chrome, Safari, Firefox, IE, ...)
 */
@@ -9840,3 +9840,4 @@ textarea { height: 80px; resize: none; }
 .titleinsta{
   text-transform: uppercase;display: flex;justify-content: center;color: #0D7A3B;
 }
+

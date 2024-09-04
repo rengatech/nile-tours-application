@@ -59,16 +59,20 @@ defineProps({ contact_us: Object, page: Object });
                 </div>
             </div>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+
+         <button class="enquire booknow">ENQUIRE NOW</button>
+         <button class="callnow"><a href="tel:+919952787786">CALL NOW</a></button>
+
+          <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
             /></a>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+        <!-- <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
-        </div>
+        </div>   -->
 
         <!-- <section class="smart_accordian-section my-3">
             <div class="container">
@@ -125,15 +129,7 @@ defineProps({ contact_us: Object, page: Object });
                             <i class="icon ion-md-add"></i>
                         </div>
                         <div class="answer">
-                            <p>
-                                Short answer, yes. Longer answer is that there
-                                are many options when it comes to travel
-                                insurance. What’s important is getting the most
-                                appropriate plan for the type of trip you’re
-                                taking. Most commonly you will need to make sure
-                                that it includes flight cancellation/trip
-                                interruption, lost bags and theft.
-                            </p>
+                           
                         </div>
                     </div>
                 </div>
@@ -158,7 +154,7 @@ defineProps({ contact_us: Object, page: Object });
                     <div class=" ">
                         <h6>
                             <span><b>Phone :</b></span>
-                            <a href="tel://1234567920" class="text-success"
+                            <a href="tel:+91 9952 787 786" class="text-success"
                                 >+91 9952 787 786</a
                             >
                         </h6>

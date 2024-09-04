@@ -23,6 +23,14 @@ onMounted(() => {
 });
 </script>
 
+<style>
+
+
+
+
+</style>
+
+
 
 <template>
     <HomeLayout
@@ -51,27 +59,27 @@ onMounted(() => {
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city <br>
-                        </h1>
-
-                    </div>
-                    
+                            <strong>Explore <br /></strong> your amazing city <br> </h1>
+                                                       
+                         </div>
                 </div>
-               
             </div>
         </div>
-        
+         <button class="enquire booknow">ENQUIRE NOW</button>
+         <button class="callnow"><a href="tel:+919952787786">CALL NOW</a></button>
 
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+
+         <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a href="https://wa.link/tmal22">
                 <img src="/images/whatsapp.png" class="whatsapp"
             /></a>
         </div>
-        <div style="display: flex; position: sticky; top: 0; z-index: 100000">
+        <!-- <div style="display: flex; position: sticky; top: 0; z-index: 100000">
             <a class="nav-link" style="cursor: pointer;">
                 <img src="/images/Book-Now.png" class="booknow blink"
             /></a>
-        </div>
+        </div> -->
+
 
         <section class="ftco-section services-section bg-light">
             <div class="container">
@@ -338,7 +346,7 @@ onMounted(() => {
         </section>
 
         <!-- //////////////////////////////// -->
-        <section
+        <!-- <section
             class="ftco-section ftco-counter img"
             id="section-counter"
             style="background-image: url(images/bg_1.jpg)"
@@ -348,9 +356,9 @@ onMounted(() => {
                     <div
                         class="col-md-7 text-center heading-section heading-section-white ftco-animate"
                     >
-                        <h2 class="mb-4">Nile Tours</h2>
+                        <h2 class="mb-4">Nile Tours</h2> -->
                         <!-- <span class="subheading">More than 100,000 websites hosted</span> -->
-                    </div>
+                    <!-- </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
@@ -409,9 +417,9 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="ftco-section">
+        <!-- <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-start mb-5 pb-3">
                     <div class="col-md-7 heading-section ftco-animate">
@@ -453,30 +461,30 @@ onMounted(() => {
                                     <div class="text p-3">
                                         <div class="d-flex">
                                             <div class="one">
-                                                <h3>
+                                                <h3> -->
                                                     <!-- <a href="#"
                                                             >Mysore, palace</a
                                                         > -->
-                                                    {{ tourHotel.name }}
+                                                    <!-- {{ tourHotel.name }}
                                                 </h3>
                                             </div>
                                         </div>
-                                        <p>
+                                        <p> -->
                                             <!-- Far far away, behind the word
                                                 mountains, far from the
                                                 countries -->
-                                            {{ tourHotel.short_description }}
+                                            <!-- {{ tourHotel.short_description }}
                                         </p>
-                                        <p class="days">
+                                        <p class="days"> -->
                                             <!-- <span>Oneday -5hours</span> -->
-                                        </p>
+                                        <!-- </p>
                                         <hr />
-                                        <p class="bottom-area-1 d-flex justify-content-center">
+                                        <p class="bottom-area-1 d-flex justify-content-center"> -->
                                             <!-- <span
                                                 ><i class="icon-map-o"></i>
                                                 {{ tourHotel.seo_title }}</span
                                             > -->
-                                            <span>
+                                            <!-- <span>
                                                 <Link
                                                     :href="
                                                         '/hotels/' +
@@ -500,7 +508,7 @@ onMounted(() => {
                     </Link>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- instagram Post Start-->
         <section class="ftco-section">
@@ -512,7 +520,7 @@ onMounted(() => {
             <div class="container1">
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co9hzhMp6qx/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -533,7 +541,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpABOotJ2kT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -554,7 +562,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpPQAyvpiJf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -575,7 +583,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CpHqoIeJ71F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -596,7 +604,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co45vbZpzQg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -617,7 +625,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Co7Aap5Jy-s/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -638,7 +646,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/Cor3bcApTFc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -659,7 +667,7 @@ onMounted(() => {
                 </div>
                 <div class="content">
                     <a
-                        href="https://www.instagram.com/niletours33/"
+                        href="https://www.instagram.com/p/CjFoVOWrGbp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                         target="_blank"
                     >
                         <div class="content-overlay"></div>
@@ -684,9 +692,30 @@ onMounted(() => {
 
         <section class="smart_accordian-section my-5">
             <div class="container">
-                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
-
+               
+                <div class="elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a" data-elfsight-app-lazy></div>              
                 
+                 <div class="youtube">
+                    <iframe  width="260" height="215" src="https://www.youtube.com/embed/zdOkB0FJjhA?si=Def2LL35ykXd0mmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube1">
+                    <iframe  width="260" height="215" src="https://www.youtube.com/embed/5LvRR4IU3qo?si=zgw5gU2PsD1LFxOB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube1">
+                    <iframe  width="260" height="215" src="https://youtube.com/embed/oGlWmFpUT-s?si=yXUtY-3xS_DFA0we" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2mhpz05h36A?si=NjrCHwCIM0HF7S_Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/2TbBpo__xJc?si=TotrIPH5RDX2mkTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="youtube2">
+                    <iframe width="560" height="315" src="https://youtube.com/embed/ktT4blgMtjE?si=7wQuyEJ41Pf53Z3L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h2 class="sec_title">FREQUENTLY ASKED QUESTIONS </h2>
+                
+
                 <div class="accourdian">
                     <div class="accordian-item item1" v-for="tourfaq in faq" >
                         <div  class="accordian-link "
@@ -702,6 +731,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <!-- <section class="ftco-section-parallax">
