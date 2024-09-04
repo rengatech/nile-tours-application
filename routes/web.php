@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
-use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ShowController;
 use App\Models\Destination;
 use App\Models\FAQ;
@@ -58,26 +57,15 @@ Route::get('/packages', function () {
 
 
 
-// Route::get('/packages/{slug}', function ($slug) {
-//     return Inertia::render(
-//         'PackageDetail',
-//         [
-//             'package' => Package::with('destinations')->where('url_slug', $slug)->first(),
-//         ]
-//     );
-// })->name('package.detail');
-
 Route::get('/packages/{slug}', function ($slug) {
-    $package = Package::with(['destinations', 'images'])->where('url_slug', $slug)->first();
-
     return Inertia::render(
         'PackageDetail',
         [
-            'package' => $package,
-            'page' => Page::where('name', 'Packages')->first(),
+            'package' => Package::with('destinations')->where('url_slug', $slug)->first(),
         ]
     );
 })->name('package.detail');
+
 
 Route::get('/destinations', function () {
     return Inertia::render(
@@ -172,7 +160,4 @@ Route::get('/faq', function () {
 })->name('faq');
 
 
-
-
 Route::post('/leads', [LeadController::class, 'store']);
-Route::post('/Packages', [PackageController::class, 'store']);
