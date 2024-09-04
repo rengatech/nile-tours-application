@@ -182,7 +182,7 @@ onMounted(() => {
                                     >
                                 </li>
                                 <li>
-                                    <a href="#"
+                                    <a href="tel:+91 9952 787 786"
                                         ><span class="icon icon-phone"></span
                                         > <a href="tel:+919952787786" class="text">+919952787786</a>
                                         </a>
