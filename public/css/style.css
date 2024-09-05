@@ -13700,11 +13700,12 @@ textarea {
 
 @media (min-height:900px) {
     .whatsapp {
-        width: 10%;
-        position: absolute;
-        top: 800px;
-        left: 10px;
+        width: 11%;
+        position: fixed;
+        bottom: 0.3%;
+        left: 40px;
         border-radius: 50%;
+        z-index: 100000;
     }
 }
 
@@ -13722,7 +13723,7 @@ textarea {
     .whatsapp {
         width: 1%;
         position: absolute;
-        top: 100px;
+        bottom: 1%;
         left: 10px;
         border-radius: 50%;
     }
@@ -13741,12 +13742,21 @@ textarea {
 @media (max-width:400px) {
     .whatsapp {
         width: 16%;
-        position: absolute;
-        top: 200px;
+        position: fixed;
+        bottom: 0.3%;
         left: 10px;
         border-radius: 50%;
     }
 }
+/* @media (max-width:400px) {
+    .whatsapp {
+        width: 16%;
+        position: absolute;
+        top: 1155px;
+        left: 10px;
+        border-radius: 50%;
+    }
+} */
 
 /* @media (max-width:400px) {
     .booknow {
@@ -14140,8 +14150,8 @@ textarea {
 .enquire{
     color: white;
     background: #0d7a3b;
-    margin: 2px 5px;
-    padding: 10px 20px; /* Adjusted padding for consistent button size */
+    margin: 2px 5px ;
+    padding: 10px; /* Adjusted padding for consistent button size */
     border-radius: 5px; /* Rounded corners for both buttons */
     display: none;
     font-size: 12px;
@@ -14150,6 +14160,7 @@ textarea {
     text-align: center; /* Center the text inside the button */
      border-radius: 8px;
     border-color:white;
+    cursor: pointer;
 
 }
 
@@ -14158,7 +14169,7 @@ textarea {
     .enquire {
         right: -50%; /* Adjust positioning for smaller screens */
         z-index: 5;
-        bottom: -12px;
+        bottom: -5px;
         position: fixed;
         display: none;
     }
@@ -14181,7 +14192,7 @@ textarea {
         z-index: 10;
     }
     .enquire {
-        left: 0;
+        right: 6px;
         display: block; /* Reset the position for mobile devices */
     }
 }
@@ -14358,3 +14369,43 @@ textarea {
 }
 
 
+.call-icon {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 1px;
+    text-align: center;
+    align-items: center;
+    left: 120px;
+    background-color: var(--blue);
+    color: white;
+    /* border: none; */
+    /* border-color: #fff; */
+  
+    border-radius: 50%;
+    padding: 6px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.call-icon:hover {
+    background-color: #218838;
+}
+
+/* Media query for mobile view */
+@media only screen and (max-width: 768px) {
+    .call-icon {
+        display: block; /* Show the icon only on mobile screens */
+    }
+}
+
+@media (max-width:400px) {
+    .call-icon {
+        width: 16%;
+        position: fixed;
+        bottom: 0.3%;
+        left: 80px;
+        border-radius: 50%;
+        z-index: 100000;
+    }
+}
