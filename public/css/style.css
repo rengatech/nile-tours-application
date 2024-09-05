@@ -13726,6 +13726,7 @@ textarea {
         bottom: 1%;
         left: 10px;
         border-radius: 50%;
+        z-index: 100000;
     }
 }
 
@@ -13746,6 +13747,18 @@ textarea {
         bottom: 0.3%;
         left: 10px;
         border-radius: 50%;
+        z-index: 100000;
+    }
+}
+
+@media (max-width:380px) {
+    .whatsapp {
+        width: 16%;
+        position: fixed;
+        bottom: 0.3%;
+        left: 10px;
+        border-radius: 50%;
+        z-index: 100000;
     }
 }
 /* @media (max-width:400px) {
@@ -13774,6 +13787,7 @@ textarea {
         position: absolute;
         left: 40px;
         border-radius: 50%;
+        z-index: 100000;
     }
 }
 
@@ -13790,6 +13804,7 @@ textarea {
     .whatsapp{
       width: 5%;position: absolute;top: 800px;left: 10px;border-radius: 50%;
       display: none;
+      z-index: 100000;
     }
     } 
 /* Blink for Webkit and others
@@ -14382,7 +14397,7 @@ textarea {
     /* border-color: #fff; */
   
     border-radius: 50%;
-    padding: 6px;
+    padding: 8px;
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     cursor: pointer;
     z-index: 1000;
@@ -14406,6 +14421,17 @@ textarea {
         bottom: 0.3%;
         left: 80px;
         border-radius: 50%;
-        z-index: 100000;
+        /* z-index: 100000; */
+    }
+}
+@media (max-width:380px) {
+    .call-icon {
+        width: 17%;
+        height: 55px;
+        position: fixed;
+        bottom: 0.3%;
+        left: 88px;
+        border-radius: 50%;
+        
     }
 }
