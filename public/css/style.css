@@ -14391,13 +14391,13 @@ textarea {
     text-align: center;
     align-items: center;
     left: 120px;
-    background-color: var(--blue);
+    background-color: #00ff6f;
     color: white;
     /* border: none; */
     /* border-color: #fff; */
   
     border-radius: 50%;
-    padding: 8px;
+    padding: 7px;
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     cursor: pointer;
     z-index: 1000;
@@ -14435,3 +14435,4 @@ textarea {
         
     }
 }
+
