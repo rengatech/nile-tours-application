@@ -23,6 +23,8 @@ onMounted(() => {
 });
 </script>
 
+
+
 <style>
 
 
@@ -693,9 +695,12 @@ onMounted(() => {
         <!-- instagram Post End-->
 
         <section class="smart_accordian-section my-5">
-            <div class="container">
+            <div class="container2">
+
+
+               <div>
                
-                <div class="elfsight-app-c8029c07-6a97-4234-83e5-cd19d18c899a" data-elfsight-app-lazy></div>              
+               </div>
                 
                  <div class="youtube">
                     <iframe  width="260" height="215" src="https://www.youtube.com/embed/zdOkB0FJjhA?si=Def2LL35ykXd0mmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
