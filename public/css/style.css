@@ -13744,21 +13744,23 @@ textarea {
     .whatsapp {
         width: 16%;
         position: fixed;
-        bottom: 0.3%;
+        bottom: 0.1%;
         left: 10px;
         border-radius: 50%;
         z-index: 100000;
+        height: 43px;
     }
 }
 
 @media (max-width:380px) {
     .whatsapp {
-        width: 16%;
+        width: 15%;
         position: fixed;
-        bottom: 0.3%;
+        bottom: 0.1%;
         left: 10px;
         border-radius: 50%;
         z-index: 100000;
+        height: 41px;
     }
 }
 /* @media (max-width:400px) {
@@ -14163,18 +14165,18 @@ textarea {
 }
 
 .enquire{
-    color: white;
-    background: #0d7a3b;
+    color: rgb(15, 15, 15);
+    background: #ede80e;
     margin: 2px 5px ;
     padding: 10px; /* Adjusted padding for consistent button size */
     border-radius: 5px; /* Rounded corners for both buttons */
     display: none;
-    font-size: 12px;
+    font-size: 13px;
     font-family: 'poppins', Arial, sans-serif;
     letter-spacing: 1px;
     text-align: center; /* Center the text inside the button */
      border-radius: 8px;
-    border-color:white;
+    border-color: rgba(28, 28, 28, .9);
     cursor: pointer;
 
 }
@@ -14184,7 +14186,7 @@ textarea {
     .enquire {
         right: -50%; /* Adjust positioning for smaller screens */
         z-index: 5;
-        bottom: -5px;
+        bottom: -3px;
         position: fixed;
         display: none;
     }
@@ -14391,11 +14393,10 @@ textarea {
     text-align: center;
     align-items: center;
     left: 120px;
-    background-color: #00ff6f;
+    background-color: #0dd464;
     color: white;
     /* border: none; */
-    /* border-color: #fff; */
-  
+     border-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     padding: 7px;
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
@@ -14426,13 +14427,29 @@ textarea {
 }
 @media (max-width:380px) {
     .call-icon {
-        width: 17%;
-        height: 55px;
+        width: 14%;
+        height: 42px;
         position: fixed;
-        bottom: 0.3%;
+        bottom: 0.1%;
         left: 88px;
         border-radius: 50%;
         
     }
 }
-
+.wce h6{
+    background-color: rgb(0 0 0 / 48%);
+    position: relative;
+    bottom: -0.9%;
+    position: fixed;
+    z-index: 100000;
+    display: none;
+    width: 479px;
+    height: 46px;
+    right: 0.1px;
+    left: 0.1px;
+}
+@media only screen and (max-width: 768px) {
+    .wce h6 {
+        display: block; /* Show the icon only on mobile screens */
+    }
+}
