@@ -13744,7 +13744,7 @@ textarea {
     .whatsapp {
         width: 16%;
         position: fixed;
-        bottom: 0.1%;
+        bottom: 0.3%;
         left: 10px;
         border-radius: 50%;
         z-index: 100000;
@@ -13756,7 +13756,7 @@ textarea {
     .whatsapp {
         width: 15%;
         position: fixed;
-        bottom: 0.1%;
+        bottom: 0.3%;
         left: 10px;
         border-radius: 50%;
         z-index: 100000;
@@ -14205,7 +14205,7 @@ textarea {
         display: block;
         width: 50%; /* Make buttons full-width */
         text-align: center; /* Center the text inside the buttons */
-        margin: 5px 0; /* Adjust margin */
+        margin: 7px 0; /* Adjust margin */
         z-index: 10;
     }
     .enquire {
@@ -14386,8 +14386,8 @@ textarea {
 }
 
 
-.call-icon {
-    display: none; /* Hidden by default */
+/* .call-icon {
+    display: none; 
     position: fixed;
     bottom: 1px;
     text-align: center;
@@ -14395,11 +14395,9 @@ textarea {
     left: 120px;
     background-color: #0dd464;
     color: white;
-    /* border: none; */
      border-color: rgba(0, 0, 0, 0);
     border-radius: 50%;
     padding: 7px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     cursor: pointer;
     z-index: 1000;
 }
@@ -14408,10 +14406,10 @@ textarea {
     background-color: #218838;
 }
 
-/* Media query for mobile view */
+
 @media only screen and (max-width: 768px) {
     .call-icon {
-        display: block; /* Show the icon only on mobile screens */
+        display: block; 
     }
 }
 
@@ -14422,7 +14420,7 @@ textarea {
         bottom: 0.3%;
         left: 80px;
         border-radius: 50%;
-        /* z-index: 100000; */
+        
     }
 }
 @media (max-width:380px) {
@@ -14435,7 +14433,7 @@ textarea {
         border-radius: 50%;
         
     }
-}
+} */
 .wce h6{
     background-color: rgb(0 0 0 / 48%);
     position: relative;
@@ -14444,7 +14442,7 @@ textarea {
     z-index: 100000;
     display: none;
     width: 479px;
-    height: 46px;
+    height: 54px;
     right: 0.1px;
     left: 0.1px;
 }
@@ -14453,3 +14451,63 @@ textarea {
         display: block; /* Show the icon only on mobile screens */
     }
 }
+/* Default styles for the button */
+
+
+.call-icon {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .call-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease; /* Add a smooth hover effect */
+  }
+  
+  .call-icon:hover img {
+    transform: scale(1.1); /* Scale the icon slightly when hovered */
+  }
+  
+  /* Responsive adjustments for mobile view */
+  @media only screen and (max-width: 768px) {
+    .call-icon img {
+      width: 35px; /* Reduce size of the icon on smaller screens */
+      height: 35px;
+    }
+  
+    .call-icon {
+      padding: 5px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .call-icon img {
+      width: 46px; /* Further reduce icon size on very small screens */
+      height: 46px;
+      position: relative;
+      left: 119px;
+      bottom: 0.3%;
+    }
+  
+    .call-icon {
+      padding: 3px;
+    }
+  }
+  
+  @media only screen and (max-width: 380px) {
+    .call-icon img {
+      width: 39px; /* Further reduce icon size on very small screens */
+      height: 39px;
+      position: relative;
+      left: 88px;
+      bottom: 0.3%;
+    }
+  
+    .call-icon {
+      padding: 3px;
+    }
+  }
+  
