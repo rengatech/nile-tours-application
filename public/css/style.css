@@ -13702,7 +13702,7 @@ textarea {
     .whatsapp {
         width: 11%;
         position: fixed;
-        bottom: 0.3%;
+        bottom: 0.5%;
         left: 40px;
         border-radius: 50%;
         z-index: 100000;
@@ -13742,10 +13742,10 @@ textarea {
 
 @media (max-width:400px) {
     .whatsapp {
-        width: 16%;
+        width: 12%;
         position: fixed;
         bottom: 0.3%;
-        left: 10px;
+        left: 27px;
         border-radius: 50%;
         z-index: 100000;
         height: 43px;
@@ -13761,6 +13761,28 @@ textarea {
         border-radius: 50%;
         z-index: 100000;
         height: 41px;
+    }
+}
+@media (max-width:360px) {
+    .whatsapp {
+        width: 11%;
+        position: fixed;
+        bottom: 0.9%;
+        left: 19px;
+        border-radius: 50%;
+        z-index: 100000;
+        height: 41px;
+    }
+}
+@media (max-width:320px) {
+    .whatsapp {
+        width: 12%;
+        position: fixed;
+        bottom: 0.5%;
+        left: 16px;
+        border-radius: 50%;
+        z-index: 100000;
+        height: 40px;
     }
 }
 /* @media (max-width:400px) {
@@ -14504,6 +14526,34 @@ textarea {
       position: relative;
       left: 88px;
       bottom: 0.3%;
+    }
+  
+    .call-icon {
+      padding: 3px;
+    }
+  }
+  @media only screen and (max-width: 360px) {
+    .call-icon img {
+      width: 39px; /* Further reduce icon size on very small screens */
+      height: 39px;
+      position: relative;
+      left: 88px;
+      bottom: -5px;
+    
+    }
+  
+    .call-icon {
+      padding: 3px;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    .call-icon img {
+      width: 39px; /* Further reduce icon size on very small screens */
+      height: 39px;
+      position: relative;
+      left: 88px;
+      bottom: -5px;
+    
     }
   
     .call-icon {
