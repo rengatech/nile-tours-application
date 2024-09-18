@@ -39,12 +39,12 @@ defineProps({ destination: Object });
                             </span>
                             <span>{{ destination.name }}</span>
                         </p>
-                        <h1
-                            class="mb-3 bread"
+                        <h2
+                            class="mb-3 bread text-white"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
                             {{ destination.name }}
-                        </h1>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -76,11 +76,11 @@ defineProps({ destination: Object });
                                         <span class="subheading"
                                             >Curated packages</span
                                         >
-                                        <h3 class="mb-4">
+                                        <h1 class="mb-4">
                                             <strong>Popular</strong> packages
                                             for
                                             <span>{{ destination.name }}</span>
-                                        </h3>
+                                        </h1>
                                     </div>
 
                                     <div class="col-lg-12">
