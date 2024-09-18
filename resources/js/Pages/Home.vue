@@ -61,7 +61,7 @@ onMounted(() => {
                             class="mb-4"
                             data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
                         >
-                            <strong>Explore <br /></strong> your amazing city <br> </h1>
+                            <strong>Explore <br /></strong> your amazing city<br> </h1>
                                                        
                          </div>
                 </div>
