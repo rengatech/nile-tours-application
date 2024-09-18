@@ -234,7 +234,8 @@ defineProps({ package: Object, Lead: Object });
                                 <h4 class="mb-4">Take A Tour</h4>
                                 <div class="block-16">
                                     <figure>
-                                        <iframe
+                                        <iframe width="100%" height="540" src="https://youtube.com/shorts/6tBLIhNVnx0?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                                        <!-- <iframe
                                             width="100%"
                                             height="540"
                                             :src="
@@ -244,7 +245,7 @@ defineProps({ package: Object, Lead: Object });
                                             frameborder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                             allowfullscreen
-                                        ></iframe>
+                                        ></iframe> -->
                                     </figure>
                                 </div>
                             </div>
