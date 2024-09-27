@@ -3,6 +3,7 @@
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\ThankYouController;
 use App\Models\Destination;
 use App\Models\FAQ;
 use App\Models\Gallery;
@@ -158,6 +159,9 @@ Route::get('/faq', function () {
         ]
     );
 })->name('faq');
+
+Route::get('/thank-you', [ThankYouController::class, 'index'])->name('thankyou');
+
 
 
 Route::post('/leads', [LeadController::class, 'store']);

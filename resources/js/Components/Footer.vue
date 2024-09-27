@@ -1,13 +1,36 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
 import { onMounted } from "vue";
-
+import { ref } from 'vue';
 import { useForm } from "@inertiajs/vue3";
 
 const form = useForm({
     csrf: "",
+    name: '',
+    email: '',
+    mobile_number: '',
+    travel_date: '',
+    number_of_members: '',
+    message: ''
 });
 
+function submit() {
+    form.post('/leads', {
+        onSuccess: () => {
+            // Redirect to ThankYou page and pass the form data
+            this.$inertia.visit('/thank-you', {
+                data: {
+                    name: form.name,
+                    email: form.email,
+                    mobile_number: form.mobile_number,
+                    travel_date: form.travel_date,
+                    number_of_members: form.number_of_members,
+                    message: form.message
+                }
+            });
+        }
+    });
+}
 onMounted(() => {
     form.csrf = document
         .querySelector('meta[name="csrf-token"]')
@@ -25,41 +48,15 @@ onMounted(() => {
         <h2 style="color: #0d7a3b">GET A CALL BACK</h2>
         <small>I'll get back to you as quickly as possible</small>
 
-        <form method="POST" action="/leads">
+        <form @submit.prevent="submit"  action="/leads">
             <input type="hidden" name="_token" :value="form.csrf" />
-            <input placeholder="Name" type="text" name="name" required />
-            <input placeholder="Email" type="email" name="email" required />
-            <input
-                placeholder="Mobile Number"
-                type="text"
-                name="mobile_number"
-                required
-            />
-
-            <!-- <input
-                placeholder="From City"
-                type="text"
-                name="from_city"
-                required
-            /> -->
-            <input
-            placeholder="Travel Date"
-            type="text"
-            name="travel_date"
-            onfocus="(this.type='date')"
-            onblur="(this.type='text')"
-            id="travel_date"
-            required
-            />
-
-            <input
-                placeholder="Number Of Members"
-                type="number"
-                name="number_of_members"
-                required
-            />
-            <textarea placeholder="Message" name="message"></textarea>
-            <input class="formBtn btnsubmit" type="submit" />
+            <input placeholder="Name" v-model="form.name" type="text" required />
+        <input placeholder="Email" v-model="form.email" type="email" required />
+        <input placeholder="Mobile Number" v-model="form.mobile_number" type="text" required />
+        <input placeholder="Travel Date" v-model="form.travel_date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required />
+        <input placeholder="Number Of Members" v-model="form.number_of_members" type="number" required />
+        <textarea placeholder="Message" v-model="form.message"></textarea>
+        <input class="formBtn btnsubmit" type="submit" value="Submit" />
             <!-- <input class="formBtn" type="reset" /> -->
         </form>
     </div>
@@ -203,3 +200,16 @@ onMounted(() => {
         </div>
     </footer>
 </template>
+
+
+<script>
+export default {
+  props: {
+    leads: {
+      type: Array,
+      default: () => [] // Set default if leads are optional
+    }
+  }
+}
+
+</script>

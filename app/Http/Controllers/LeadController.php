@@ -24,7 +24,14 @@ class LeadController extends Controller
             'number_of_members' => $request->number_of_members,
             'message' => $request->message,
         ]);
-
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'mobile_number' => 'required|string',
+            'travel_date' => 'required|date',
+            'number_of_members' => 'required|integer',
+            'message' => 'nullable|string',
+        ]);
         $apiKey = config('app.rednote_api_key');
         $url = 'https://rednote.in/api/v1.7/sales-crm/API/InsertLeadsForAPI';
 
@@ -63,7 +70,11 @@ class LeadController extends Controller
         $privyrResponse = Http::post($privyrUrl, $privyrData);
         //    Http::post($url, $data ,$privyrUrl, $privyrData);
 
-            return Inertia::render('ThankYou');
+        return redirect()->route('thankyou')->with([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'mobile_number' => $validatedData['mobile_number'],
+        ]);
 
     }
 }
