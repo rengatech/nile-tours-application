@@ -249,6 +249,13 @@ defineProps({ package: Object, Lead: Object });
                                     </figure>
                                 </div>
                             </div>
+                            <section id="testimonials">
+            <!--heading--->
+            <h4>Client Says</h4>
+            <!-- Elfsight widget -->
+           
+            <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div> <br>
+        </section>
                         </div>
                     </div>
                     <!-- .col-md-8 -->
