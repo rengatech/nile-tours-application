@@ -33,7 +33,7 @@ class LeadController extends Controller
             'message' => 'nullable|string',
         ]);
         $apiKey = config('app.rednote_api_key');
-        $url = 'https://rednote.in/api/v1.7/sales-crm/API/InsertLeadsForAPI';
+        $url = 'https://rednote.in/api/v1.8/sales-crm/API/InsertLeadsForAPI';
 
         $data = [
             'APIKey' => $apiKey,
@@ -65,6 +65,7 @@ class LeadController extends Controller
             'number_of_members' => $request->number_of_members,
             'message' => $request->message,
         ];
+        
 
         $rednoteResponse = Http::post($url, $data);
         $privyrResponse = Http::post($privyrUrl, $privyrData);
