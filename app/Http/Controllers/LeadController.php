@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Http;
 
 class LeadController extends Controller
 {
-
+    
     public function store(Request $request){
+        $gclid = $request->cookie('gclid');
         Lead::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -23,6 +24,7 @@ class LeadController extends Controller
             'travel_date' => $request->travel_date,
             'number_of_members' => $request->number_of_members,
             'message' => $request->message,
+            'gclid' => $gclid,
         ]);
         $validatedData = $request->validate([
             'name' => 'required|string',
@@ -71,11 +73,11 @@ class LeadController extends Controller
         $privyrResponse = Http::post($privyrUrl, $privyrData);
         //    Http::post($url, $data ,$privyrUrl, $privyrData);
 
-        return redirect()->route('thankyou')->with([
+        return redirect()->route('thankyou', [
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'mobile_number' => $validatedData['mobile_number'],
+            'gclid' => $gclid, 
         ]);
-
     }
 }
