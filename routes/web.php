@@ -161,7 +161,4 @@ Route::get('/faq', function () {
 })->name('faq');
 
 Route::get('/thank-you', [ThankYouController::class, 'index'])->name('thankyou');
-
-
-
 Route::post('/leads', [LeadController::class, 'store']);

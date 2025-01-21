@@ -13,10 +13,11 @@ import { Link } from "@inertiajs/vue3";
                     <Link href="/">
                         <div class="navbar-brand">
                             <img
-                                src="/images/logo-main.png"
+                                src="/images/logo-main1.png"
                                 alt=""
                                 srcset=""
                                 width="150"
+                                height="140"
                             />
                         </div>
                     </Link>
