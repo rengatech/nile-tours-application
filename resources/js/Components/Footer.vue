@@ -6,6 +6,7 @@ import { useForm } from "@inertiajs/vue3";
 
 const form = useForm({
     csrf: "",
+    gclid:" ",
     name: '',
     email: '',
     mobile_number: '',
@@ -39,7 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-    
+
     <div v-if="route().current() != leads" class="bookForm">
         <div class="d-flex justify-content-end">
             <img src="/images/close-outline.svg" width="50" class="call-btn" />
@@ -50,6 +51,7 @@ onMounted(() => {
 
         <form @submit.prevent="submit"  action="/leads">
             <input type="hidden" name="_token" :value="form.csrf" />
+            <input type="hidden" v-model="form.gclid" name="gclid" id="gclid" value="">
             <input placeholder="Name" v-model="form.name" type="text" required />
         <input placeholder="Email" v-model="form.email" type="email" required />
         <input placeholder="Mobile Number" v-model="form.mobile_number" type="text" required />
@@ -124,7 +126,7 @@ onMounted(() => {
                                     >Gallery</Link
                                 >
                             </li>
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -210,6 +212,8 @@ export default {
       default: () => [] // Set default if leads are optional
     }
   }
+
+
 }
 
 </script>

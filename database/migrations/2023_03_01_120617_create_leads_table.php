@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('number_of_members');
             $table->text('message');
             $table->timestamps();
+           
         });
     }
 

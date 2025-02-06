@@ -48,7 +48,7 @@
     fbq('init', '3688447134737887');
     fbq('track', 'PageView');
     </script>
-    
+
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=3688447134737887&ev=PageView&noscript=1"
     /></noscript>
@@ -73,7 +73,7 @@
     <script>
     gtag('event', 'conversion', {'send_to': 'AW-11147814777/_Kf0CNqC1-wYEPnO2MMp'});
   </script>
-  
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -81,7 +81,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KKL23XG4');</script>
     <!-- End Google Tag Manager -->
-   
+
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -107,5 +107,18 @@
     <script src="/js/scrollax.min.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="/js/google-map.js"></script> -->
+
+    <script>
+
+        (function storeGclid() {
+            let params = new URLSearchParams(window.location.search);
+            let gclid = params.get('gclid');
+
+            if (gclid){
+                 document.cookie = `gclid=${gclid}; path=/; max-age=2592000`;
+            }
+        })();
+        </script>
+
 </body>
 </html>
