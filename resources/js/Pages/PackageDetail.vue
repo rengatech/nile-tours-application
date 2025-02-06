@@ -74,7 +74,7 @@ defineProps({ package: Object, Lead: Object });
                 <img src="/images/whatsapp.png" class="whatsapp"
             /></a>
         </div></h6>
-        
+
     </div>
 
         <section class="ftco-section">
@@ -253,7 +253,7 @@ defineProps({ package: Object, Lead: Object });
             <!--heading--->
             <h4>Client Says</h4>
             <!-- Elfsight widget -->
-           
+
             <div class="elfsight-app-93e8f684-45c8-4d1f-9333-bd7eb050827a" data-elfsight-app-lazy></div> <br>
         </section>
                         </div>
@@ -276,6 +276,9 @@ defineProps({ package: Object, Lead: Object });
                                 name="_token"
                                 :value="form.csrf"
                             />
+                            <input type="hidden" id="gclid" name="gclid" value="">
+
+
                             <div class="form-group">
                                 <input
                                     placeholder="Name"

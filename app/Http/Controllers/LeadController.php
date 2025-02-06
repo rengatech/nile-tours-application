@@ -9,12 +9,37 @@ use Inertia\Inertia;
 use App\Services\RedNoteApiService;
 use Spatie\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cookie;
 
 class LeadController extends Controller
 {
-    
+
     public function store(Request $request){
+
+
+        //  $gclid =Str::random(120);
+
+        //  cookie()->queue(cookie('gclid', $gclid, 60 * 24 * 30));
+
+        //  $gclid = $request->storeGclid('gclid', Cookie::get('gclid'));
+
+
+        //  if ($gclid) {
+        //      Cookie::queue('gclid', $gclid, 60 * 24 * 30);
+
+
+        // }
+
+
         $gclid = $request->cookie('gclid');
+
+        if(!$gclid) {
+            $gclid = "yJsvUkfx5tm5HqFKOPHpx9Q7V4aPb9HO3kPjDWQ1hzk8KhiGgD3itYfzo5KUXc4ImE24uEfJ6sD6GlnIK6vZXsNRttqSdIoz9hYzxcWnSJtVdyQs1YX4UL";
+            Cookie::queue('gclid', $gclid, 60 * 24 * 30);
+        }
+
+
         Lead::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -24,8 +49,11 @@ class LeadController extends Controller
             'travel_date' => $request->travel_date,
             'number_of_members' => $request->number_of_members,
             'message' => $request->message,
-            'gclid' => $gclid,
+
         ]);
+
+
+
         $validatedData = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
@@ -53,6 +81,7 @@ class LeadController extends Controller
             'LeadHealthId' => 0,
             'CustomTextValue1' => $request->number_of_members,
             'CustomTextValue2' => $request->travel_date,
+            'gclid' => $gclid,
         ];
 
         $privyrUrl = 'https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/PzwrSsrl#generic-webhook';
@@ -67,7 +96,7 @@ class LeadController extends Controller
             'number_of_members' => $request->number_of_members,
             'message' => $request->message,
         ];
-        
+
 
         $rednoteResponse = Http::post($url, $data);
         $privyrResponse = Http::post($privyrUrl, $privyrData);
@@ -77,7 +106,7 @@ class LeadController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'mobile_number' => $validatedData['mobile_number'],
-            'gclid' => $gclid, 
+            'gclid' => $gclid,
         ]);
     }
 }
